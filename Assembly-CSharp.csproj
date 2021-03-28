@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BombShooter.cs" />
+     <Compile Include="Assets\Scripts\EnemyCharacter.cs" />
      <Compile Include="Assets\Scripts\FPSInput.cs" />
      <Compile Include="Assets\Scripts\Fireball.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
@@ -44,6 +45,7 @@
      <Compile Include="Assets\Scripts\ReactiveTarget.cs" />
      <Compile Include="Assets\Scripts\SceneController.cs" />
      <Compile Include="Assets\Scripts\SceneControllerN.cs" />
+     <Compile Include="Assets\Scripts\SightTarget.cs" />
      <Compile Include="Assets\Scripts\Spin.cs" />
      <Compile Include="Assets\Scripts\WanderingAI.cs" />
     <Reference Include="UnityEngine">
@@ -580,6 +582,15 @@
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -594,6 +605,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

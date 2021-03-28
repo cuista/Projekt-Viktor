@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3852430203189150307}
   - component: {fileID: 3852430203189150304}
   - component: {fileID: 3852430203189150319}
+  - component: {fileID: 1467691089595537500}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -218,6 +219,18 @@ MonoBehaviour:
   obstacleRange: 5
   fireballPrefab: {fileID: 4655674328015735607, guid: 5325b661ccf8f8b4abd7827731ee30b9,
     type: 3}
+--- !u!114 &1467691089595537500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3852430203189150305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac4cac4d461bc54e9728e20a96fe2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4647160718940742248
 GameObject:
   m_ObjectHideFlags: 0

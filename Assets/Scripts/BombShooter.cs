@@ -6,6 +6,8 @@ public class BombShooter : MonoBehaviour
 {
     private int _score=0;
     private Camera _camera;
+
+    [SerializeField] private GameObject bombPrefab;
     public float bombsRadius=5f;
     public int bombsCount=7;
     private int _bombsPlantedCount=0;
@@ -24,7 +26,8 @@ public class BombShooter : MonoBehaviour
         float posX = _camera.pixelWidth/25;
         float posY = _camera.pixelHeight/25;
         GUI.Label(new Rect(posX, posY, sizeX, sizeY),"VIKTOR SCORE:" + _score);
-        GUI.Label(new Rect(posX, posY + 20, sizeX, sizeY),"BOMBS AVAILABLE:" + (bombsCount-_bombsPlantedCount));
+        GUI.Label(new Rect(posX, posY + 20, sizeX, sizeY),"VIKTOR LIFE:" + GetComponent<PlayerCharacter>().Life());
+        GUI.Label(new Rect(posX, posY + 40, sizeX, sizeY),"BOMBS AVAILABLE:" + (bombsCount-_bombsPlantedCount));
     }
 
     // Start is called before the first frame update
@@ -38,6 +41,7 @@ public class BombShooter : MonoBehaviour
         _bombsPlanted=new GameObject[bombsCount];
 
         Sight.GetComponent<MeshRenderer>().enabled=false;
+        Sight.GetComponent<MeshCollider>().enabled=false;
     }
 
     // Update is called once per frame
@@ -48,7 +52,7 @@ public class BombShooter : MonoBehaviour
             _spacePressedTime = Time.timeSinceLevelLoad;
             _spaceHeld = false;
         } else if(Input.GetMouseButtonUp(0)) {
-            // Player has released the space key without holding it
+            // Player has released the button without holding it
             if(!_spaceHeld)
                 {
                 Vector3 point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -59,7 +63,8 @@ public class BombShooter : MonoBehaviour
 
                     if(_bombsPlantedCount < bombsCount)
                     {
-                        GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        GameObject bomb = Instantiate(bombPrefab) as GameObject;
                         bomb.transform.position = hitInfo.point;
                         bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
                         // Removing collider
@@ -70,15 +75,33 @@ public class BombShooter : MonoBehaviour
                         _bombsPlantedCount++;
                     }
                 }
-            } else {
+            } else { // Player has holded and released the button
                 Sight.GetComponent<MeshRenderer>().enabled=false;
+                Sight.GetComponent<MeshCollider>().enabled=false;
+                GameObject targetEnemy = Sight.GetComponent<SightTarget>().GetTargetEnemy();
+                if(targetEnemy!=null) {
+                    //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    GameObject bomb = Instantiate(bombPrefab) as GameObject;
+                    bomb.transform.position = targetEnemy.transform.position;
+                    bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                    // Removing collider
+                    Collider bombCollider = bomb.GetComponent<Collider>();
+                    DestroyImmediate(bombCollider);
+
+                    //parenting bomb to targetEnemy
+                    bomb.transform.parent=targetEnemy.transform;
+
+                    _bombsPlanted[_bombsPlantedCount]=bomb;
+                    _bombsPlantedCount++;
+                }
             }
         } else if (Input.GetMouseButton(0)) {
             // Player has held the Space key for .25 seconds. Consider it "held"
             if (Time.timeSinceLevelLoad - _spacePressedTime > _minimumHeldDuration) {
-            //Debug.Log("Button helded");
-            Sight.GetComponent<MeshRenderer>().enabled=true;
-            _spaceHeld = true;
+                //Debug.Log("Button helded");
+                Sight.GetComponent<MeshRenderer>().enabled=true;
+                Sight.GetComponent<MeshCollider>().enabled=true;
+                _spaceHeld = true;
             }
         } else if (Input.GetMouseButtonDown(1)) {
             int bombPlanted_N=_bombsPlantedCount;
