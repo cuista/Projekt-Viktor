@@ -21,7 +21,6 @@ public class PlayerCharacter : MonoBehaviour
 
     public void Hurt(int damage){
         _health-=damage;
-        Debug.Log("Health: "+_health);
     }
 
     public int Life(){

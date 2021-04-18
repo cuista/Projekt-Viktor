@@ -3613,7 +3613,7 @@ MonoBehaviour:
     type: 3}
   bombsRadius: 4
   bombsCount: 7
-  Sight: {fileID: 1449654820}
+  sight: {fileID: 1449654820}
 --- !u!114 &1278340484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4031,7 +4031,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 1578366994}
 --- !u!33 &1449654822
 MeshFilter:
@@ -4878,6 +4878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35588ce3299756947802038ad54d16e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxEngageDistance: 10
 --- !u!1 &1458543097
 GameObject:
   m_ObjectHideFlags: 0
@@ -5254,7 +5255,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14488
+  m_Name: pb_Mesh14496
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

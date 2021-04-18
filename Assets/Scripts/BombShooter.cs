@@ -13,7 +13,7 @@ public class BombShooter : MonoBehaviour
     private int _bombsPlantedCount=0;
     private GameObject[] _bombsPlanted;
 
-    [SerializeField] private GameObject Sight;
+    [SerializeField] public GameObject sight;
 
     //rapid click bomb on the ground, holding click to attach it
     private const float _minimumHeldDuration = 0.17f;
@@ -36,12 +36,12 @@ public class BombShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        _camera = GetComponentInChildren<Camera>();
+        _camera = GetComponentInChildren<Camera>(); //Prima controlla il chiamante e dopo inizia a controllare i figli (restituisce il primo che trova)
 
         _bombsPlanted=new GameObject[bombsCount];
 
-        Sight.GetComponent<MeshRenderer>().enabled=false;
-        Sight.GetComponent<MeshCollider>().enabled=false;
+        sight.GetComponent<MeshRenderer>().enabled=false;
+        sight.GetComponent<MeshCollider>().enabled=false; //TODO disattivare il GO, false del GO
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class BombShooter : MonoBehaviour
             _spaceHeld = false;
         } else if(Input.GetMouseButtonUp(0)) {
             // Player has released the button without holding it
-            if(!_spaceHeld)
+            if(!_spaceHeld && sight.GetComponent<SightTarget>().GetTargetEnemy()==null)
                 {
                 Vector3 point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 Ray ray = new Ray(transform.position,-transform.up);
@@ -76,9 +76,9 @@ public class BombShooter : MonoBehaviour
                     }
                 }
             } else { // Player has holded and released the button
-                Sight.GetComponent<MeshRenderer>().enabled=false;
-                Sight.GetComponent<MeshCollider>().enabled=false;
-                GameObject targetEnemy = Sight.GetComponent<SightTarget>().GetTargetEnemy();
+                sight.GetComponent<MeshRenderer>().enabled=false;
+                sight.GetComponent<MeshCollider>().enabled=false;
+                GameObject targetEnemy = sight.GetComponent<SightTarget>().GetTargetEnemy();
                 if(targetEnemy!=null) {
                     //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                     GameObject bomb = Instantiate(bombPrefab) as GameObject;
@@ -96,11 +96,11 @@ public class BombShooter : MonoBehaviour
                 }
             }
         } else if (Input.GetMouseButton(0)) {
-            // Player has held the Space key for .25 seconds. Consider it "held"
+            // Player has held the button for more than _minimumHeldDuration, consider it "held"
             if (Time.timeSinceLevelLoad - _spacePressedTime > _minimumHeldDuration) {
                 //Debug.Log("Button helded");
-                Sight.GetComponent<MeshRenderer>().enabled=true;
-                Sight.GetComponent<MeshCollider>().enabled=true;
+                sight.GetComponent<MeshRenderer>().enabled=true;
+                sight.GetComponent<MeshCollider>().enabled=true;
                 _spaceHeld = true;
             }
         } else if (Input.GetMouseButtonDown(1)) {
