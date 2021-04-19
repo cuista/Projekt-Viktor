@@ -7,7 +7,8 @@ public class SightTarget : MonoBehaviour
 
     private GameObject _targetEnemy;
     
-    public float maxEngageDistance = 10f;
+    // It must be longer than gameObject used for collision on the Sight
+    private float maxEngageDistance = 9f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,7 @@ public class SightTarget : MonoBehaviour
             Vector3 playerPosition=new Vector3(player.transform.position.x,player.transform.position.y,player.transform.position.z);
             Vector3 enemyPosition=new Vector3(_targetEnemy.transform.position.x,_targetEnemy.transform.position.y,_targetEnemy.transform.position.z);
 
-            if(Vector3.Distance(playerPosition,enemyPosition)<maxEngageDistance)
+            if(Vector3.Distance(playerPosition,enemyPosition)<=maxEngageDistance)
             {
                 lineRenderer.enabled=true;
                 lineRenderer.SetPosition(0, playerPosition);
@@ -56,16 +57,12 @@ public class SightTarget : MonoBehaviour
     private void OnTriggerEnter(Collider collider) {
         EnemyCharacter enemy=collider.GetComponent<EnemyCharacter>();
         if(enemy!=null){
-            Debug.Log("enemy hit");
+            Debug.Log("Enemy hit <X>");
             _targetEnemy=enemy.gameObject;
         }
     }
 
     public GameObject GetTargetEnemy() {
         return _targetEnemy;
-    }
-
-    public void RemoveTargetEnemy() {
-        _targetEnemy = null;
     }
 }
