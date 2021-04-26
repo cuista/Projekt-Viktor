@@ -40,8 +40,9 @@ public class BombShooter : MonoBehaviour
 
         _bombsPlanted=new GameObject[bombsCount];
 
+        //sight.gameObject.SetActive(false); //--> I can't disable it because the line won't work
         sight.GetComponent<MeshRenderer>().enabled=false;
-        sight.GetComponent<MeshCollider>().enabled=false; //TODO disattivare il GO, false del GO
+        sight.GetComponent<MeshCollider>().enabled=false;
     }
 
     // Update is called once per frame
@@ -76,10 +77,11 @@ public class BombShooter : MonoBehaviour
                     }
                 }
             } else { // Player has holded and released the button
+                //sight.gameObject.SetActive(false); //--> I can't disable it because the line won't work
                 sight.GetComponent<MeshRenderer>().enabled=false;
                 sight.GetComponent<MeshCollider>().enabled=false;
                 GameObject targetEnemy = sight.GetComponent<SightTarget>().GetTargetEnemy();
-                if(targetEnemy!=null) {
+                if(targetEnemy!=null && _bombsPlantedCount < bombsCount) {
                     //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                     GameObject bomb = Instantiate(bombPrefab) as GameObject;
                     bomb.transform.position = targetEnemy.transform.position;
@@ -99,6 +101,7 @@ public class BombShooter : MonoBehaviour
             // Player has held the button for more than _minimumHeldDuration, consider it "held"
             if (Time.timeSinceLevelLoad - _spacePressedTime > _minimumHeldDuration) {
                 //Debug.Log("Button helded");
+                //sight.gameObject.SetActive(true); //--> I can't disable it because the line won't work
                 sight.GetComponent<MeshRenderer>().enabled=true;
                 sight.GetComponent<MeshCollider>().enabled=true;
                 _spaceHeld = true;

@@ -20,11 +20,15 @@ public class Fireball : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        PlayerCharacter player=other.GetComponent<PlayerCharacter>();
-        if(player!=null){
-            //Debug.Log("player hit");
-            player.Hurt(damage);
+        if (other.gameObject.tag == "Sight") {
+            Physics.IgnoreCollision(GetComponent<Collider>(),other);
+        } else {
+            PlayerCharacter player=other.GetComponent<PlayerCharacter>();
+            if(player!=null){
+                //Debug.Log("player hit");
+                player.Hurt(damage);
+            }
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
     }
 }
