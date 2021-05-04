@@ -8,6 +8,16 @@ public class SceneControllerN : MonoBehaviour
     private GameObject[] _enemies;
     public int enemiesCount;
 
+    public float speed;
+
+    private void Awake() {
+        Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, UpdateNewEnemiesSpeed);
+    }
+
+    private void OnDestroy() {
+        Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, UpdateNewEnemiesSpeed);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +39,9 @@ public class SceneControllerN : MonoBehaviour
             if(_enemies[i]==null)
             _enemies[i]=Instantiate(enemyPrefab,new Vector3(Random.Range(-70f,70f),1f,Random.Range(-70f,70f)),Quaternion.Euler(0,Random.Range(0, 360f),0));
         }
+    }
+
+    private void UpdateNewEnemiesSpeed(float value){
+        speed = WanderingAI.baseSpeed * value;
     }
 }

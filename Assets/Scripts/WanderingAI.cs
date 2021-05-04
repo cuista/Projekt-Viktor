@@ -12,6 +12,15 @@ public class WanderingAI : MonoBehaviour
     [SerializeField] private GameObject fireballPrefab;
     private GameObject _fireball;
 
+    public const float baseSpeed = 3.0f;
+
+    private void Awake() {
+        Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
+
+    private void OnDestroy() {
+        Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -45,5 +54,9 @@ public class WanderingAI : MonoBehaviour
 
     public void SetAlive(bool alive){
         _alive=alive;
+    }
+
+    private void OnSpeedChanged(float value){
+        speed = baseSpeed * value;
     }
 }
