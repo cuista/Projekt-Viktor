@@ -19,6 +19,8 @@ public class RelativeMovement : MonoBehaviour
     public float minFall = -1.5f;
     private float _vertSpeed;
 
+    private float _burstDriveTime=0.1f;
+    private float _burstDriveSpeed=1.0f;
     private bool _canBurstDrive;
 
     public const float baseSpeed = 6.0f;
@@ -82,7 +84,8 @@ public class RelativeMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space) && _canBurstDrive)
                 {
-                    _charController.Move(movement.normalized * 500.0f * Time.deltaTime);
+                    //_charController.Move(movement.normalized * 500.0f * Time.deltaTime);
+                    StartCoroutine(BurstDriveCoroutine(movement.normalized));
                     _canBurstDrive = false;
                 }
 
@@ -99,6 +102,16 @@ public class RelativeMovement : MonoBehaviour
             movement *= Time.deltaTime;
 
             _charController.Move(movement);
+        }
+    }
+
+    private IEnumerator BurstDriveCoroutine(Vector3 direction)
+    {
+        float startTime = Time.time; // how long to burst drive
+        while(Time.time < startTime + _burstDriveTime)
+        {
+            _charController.Move(direction * _burstDriveSpeed);
+            yield return null; // this will make Unity stop here and continue next frame
         }
     }
 
