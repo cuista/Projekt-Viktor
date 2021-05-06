@@ -5,13 +5,11 @@ using UnityEngine.EventSystems;
 
 public class BombShooter : MonoBehaviour
 {
-    private Camera _camera;
-
     [SerializeField] private GameObject bombPrefab;
     public float bombsRadius=5f;
-    public int bombsCount=7;
+    public int bombsCapacity;
     private int _bombsPlantedCount=0;
-    private GameObject[] _bombsPlanted;
+    private List<GameObject> _bombsPlanted;
 
     [SerializeField] public GameObject sight;
 
@@ -26,9 +24,11 @@ public class BombShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        _camera = GetComponentInChildren<Camera>(); //Prima controlla il chiamante e dopo inizia a controllare i figli (restituisce il primo che trova)
+        //_camera = GetComponentInChildren<Camera>(); //Prima controlla il chiamante e dopo inizia a controllare i figli (restituisce il primo che trova)
 
-        _bombsPlanted=new GameObject[bombsCount];
+        bombsCapacity=7;
+        _bombsPlanted=new List<GameObject>(bombsCapacity);
+        Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, bombsCapacity);
 
         //sight.gameObject.SetActive(false); //--> I can't disable it because the line won't work
         sight.GetComponent<MeshRenderer>().enabled=false;
@@ -53,18 +53,21 @@ public class BombShooter : MonoBehaviour
                     if (Physics.Raycast(ray, out hitInfo)) { //out è un passaggio per riferimento
                         //Debug.Log("Hit " + hit.point); //for DEBUG print of what hitted
 
-                        if(_bombsPlantedCount < bombsCount)
+                        if(_bombsPlantedCount < bombsCapacity)
                         {
-                            //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                            GameObject bomb = Instantiate(bombPrefab) as GameObject;
-                            bomb.transform.position = hitInfo.point;
-                            bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-                            // Removing collider
-                            Collider bombCollider = bomb.GetComponent<Collider>();
-                            DestroyImmediate(bombCollider);
+                            if(!IncrementIfOverlappingBomb(hitInfo.point)) {
+                                //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                                GameObject bomb = Instantiate(bombPrefab) as GameObject;
+                                bomb.transform.position = hitInfo.point;
+                                bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                                // Removing collider
+                                Collider bombCollider = bomb.GetComponent<Collider>();
+                                DestroyImmediate(bombCollider);
 
-                            _bombsPlanted[_bombsPlantedCount]=bomb;
-                            _bombsPlantedCount++;
+                                _bombsPlanted.Add(bomb);
+                                _bombsPlantedCount++;
+                                Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                            }
                         }
                     }
                 } else if (!EventSystem.current.IsPointerOverGameObject()) { // Player has holded and released the button
@@ -72,20 +75,23 @@ public class BombShooter : MonoBehaviour
                     sight.GetComponent<MeshRenderer>().enabled=false;
                     sight.GetComponent<MeshCollider>().enabled=false;
                     GameObject targetEnemy = sight.GetComponent<SightTarget>().GetTargetEnemy();
-                    if(targetEnemy!=null && _bombsPlantedCount < bombsCount) {
-                        //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                        GameObject bomb = Instantiate(bombPrefab) as GameObject;
-                        bomb.transform.position = targetEnemy.transform.position;
-                        bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-                        // Removing collider
-                        Collider bombCollider = bomb.GetComponent<Collider>();
-                        DestroyImmediate(bombCollider);
+                    if(targetEnemy!=null && _bombsPlantedCount < bombsCapacity) {
+                        if(!IncrementIfOverlappingBomb(targetEnemy.transform.position)) {
+                            //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                            GameObject bomb = Instantiate(bombPrefab) as GameObject;
+                            bomb.transform.position = targetEnemy.transform.position;
+                            bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                            // Removing collider
+                            Collider bombCollider = bomb.GetComponent<Collider>();
+                            DestroyImmediate(bombCollider);
 
-                        //parenting bomb to targetEnemy
-                        bomb.transform.parent=targetEnemy.transform;
+                            //parenting bomb to targetEnemy
+                            bomb.transform.parent=targetEnemy.transform;
 
-                        _bombsPlanted[_bombsPlantedCount]=bomb;
-                        _bombsPlantedCount++;
+                            _bombsPlanted.Add(bomb);
+                            _bombsPlantedCount++;
+                            Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                        }
                     }
                 }
             } else if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) {
@@ -98,10 +104,9 @@ public class BombShooter : MonoBehaviour
                     _spaceHeld = true;
                 }
             } else if (Input.GetMouseButtonDown(1)) {
-                int bombPlanted_N=_bombsPlantedCount;
-                for(int i = 0; i<bombPlanted_N;i++)
+                foreach(GameObject bomb in _bombsPlanted)
                 {
-                    Vector3 point = new Vector3(_bombsPlanted[i].transform.position.x, _bombsPlanted[i].transform.position.y, _bombsPlanted[i].transform.position.z);
+                    Vector3 point = new Vector3(bomb.transform.position.x, bomb.transform.position.y, bomb.transform.position.z);
                     Collider[] hitColliders = Physics.OverlapSphere(point, bombsRadius);
                     foreach (var hitCollider in hitColliders) { //out è un passaggio per riferimento
                         //Debug.Log("Hit " + hit.point); //for DEBUG print of what hitted
@@ -114,12 +119,27 @@ public class BombShooter : MonoBehaviour
                         }
                     }
 
-                    Destroy(_bombsPlanted[i]);
-                    _bombsPlantedCount--;
+                    _bombsPlantedCount-=bomb.GetComponent<Bomb>().GetCounter();
+                    Destroy(bomb);
                 }
+                _bombsPlanted.Clear();
+                Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
             }
         } else {
             _spaceHeld=true; //FIXME fixed bug on settings popup close, viktor putted bomb
         }
+    }
+
+    private bool IncrementIfOverlappingBomb(Vector3 point){
+        foreach(GameObject bombPlanted in _bombsPlanted) { 
+            Bomb bomb = bombPlanted.GetComponent<Bomb>();
+            if(Vector3.Distance(bombPlanted.transform.position, point) < bomb.GetRadius()){
+                bomb.AddBombOver();
+                _bombsPlantedCount++;
+                Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -17,8 +17,6 @@ public class ReactiveTarget : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        Messenger.Broadcast(GameEvent.ENEMY_HIT);
-
         Destroy(this.gameObject);
     }
 

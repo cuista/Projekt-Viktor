@@ -20,7 +20,7 @@ public class RelativeMovement : MonoBehaviour
     private float _vertSpeed;
 
     private float _burstDriveTime=0.1f;
-    private float _burstDriveSpeed=1.0f;
+    private float _burstDriveSpeed=0.1f;
     private bool _canBurstDrive;
 
     public const float baseSpeed = 6.0f;

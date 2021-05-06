@@ -30,17 +30,25 @@ public class OrbitCamera : MonoBehaviour
             float horInput = Input.GetAxis("Horizontal");
 
             // 1)MOUSE-MOVEMENT CAMERA
-            ///*
+            /*
             if(horInput != 0)
             {
                 _rotY += horInput * rotSpeed;
             } else {
                 _rotY += Input.GetAxis("Mouse X") * rotSpeed * 3;
             }
-            //*/
+            */
 
             // 2)MOUSE CAMERA
-            //_rotY += Input.GetAxis("Mouse X") * rotSpeed * 3;
+            /*
+            _rotY += Input.GetAxis("Mouse X") * rotSpeed * 3;
+            */
+
+            // 3)MOUSE-MOVEMENT CAMERA (MOUSE READ EVEN FOR DIAGONAL MOVEMENT)
+            ///*
+            _rotY += horInput * rotSpeed;
+            _rotY += Input.GetAxis("Mouse X") * rotSpeed * 3;
+            //*/
 
             Quaternion rotation = Quaternion.Euler(0,_rotY,0);
             transform.position = target.position - (rotation*_offset);
