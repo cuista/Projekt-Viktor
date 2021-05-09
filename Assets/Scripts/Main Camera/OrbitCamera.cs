@@ -7,6 +7,8 @@ public class OrbitCamera : MonoBehaviour
 
     [SerializeField] private Transform target;
 
+    [SerializeField] private LayerMask camOcclusion;
+
     public float rotSpeed = 1.5f;
     private float _rotY;
 
@@ -52,6 +54,15 @@ public class OrbitCamera : MonoBehaviour
 
             Quaternion rotation = Quaternion.Euler(0,_rotY,0);
             transform.position = target.position - (rotation*_offset);
+
+            /*
+            //FIXME (BURSTDRIVE PROBLEM) OR DELETEME
+            RaycastHit hitPoint = new RaycastHit();
+            if(Physics.Linecast(target.position, transform.position, out hitPoint, camOcclusion)){
+                Vector3 camPosition = new Vector3(hitPoint.point.x + hitPoint.normal.x * 0.3f, transform.position.y, hitPoint.point.z + hitPoint.normal.z * 0.3f);
+                transform.position=Vector3.Lerp(transform.position,camPosition,10f);
+            }
+            */
 
             transform.LookAt(target);
         }

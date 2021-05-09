@@ -46,11 +46,9 @@
      <Compile Include="Assets\Scripts\Main Camera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\Messenger.cs" />
      <Compile Include="Assets\Scripts\Player\BombShooter.cs" />
-     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCharacter.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Player\RelativeMovement.cs" />
-     <Compile Include="Assets\Scripts\Player\SightTarget.cs" />
+     <Compile Include="Assets\Scripts\Player\Sight\SightTarget.cs" />
      <Compile Include="Assets\Scripts\ReactiveTarget.cs" />
      <Compile Include="Assets\Scripts\SettingsPopup.cs" />
      <Compile Include="Assets\Scripts\Spin.cs" />

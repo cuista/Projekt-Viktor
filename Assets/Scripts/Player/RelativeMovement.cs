@@ -10,7 +10,7 @@ public class RelativeMovement : MonoBehaviour
 
     public float rotSpeed = 15.0f;
 
-    public float moveSpeed = 10.0f;
+    private float _moveSpeed = 10.0f;
     private CharacterController _charController;
 
     public float jumpSpeed = 15.0f;
@@ -20,10 +20,14 @@ public class RelativeMovement : MonoBehaviour
     private float _vertSpeed;
 
     private float _burstDriveTime=0.1f;
-    private float _burstDriveSpeed=0.1f;
+    private float _burstDriveSpeed=30f;
     private bool _canBurstDrive;
 
     public const float baseSpeed = 6.0f;
+    private ControllerColliderHit _contact; //to be precise on edge of objects
+
+    private Animator _animator;
+
 
     private void Awake() {
         Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
@@ -32,14 +36,14 @@ public class RelativeMovement : MonoBehaviour
         Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
     }
 
-    private ControllerColliderHit _contact; //to be precise on edge of objects
-
     // Start is called before the first frame update
     void Start()
     {
         _vertSpeed = minFall;
         _canBurstDrive = false;
         _charController = GetComponent<CharacterController>();
+
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,9 +55,14 @@ public class RelativeMovement : MonoBehaviour
             float vertInput = Input.GetAxis("Vertical");
 
             if (horInput != 0 || vertInput != 0) {
-                movement.x = horInput * moveSpeed;
-                movement.z = vertInput * moveSpeed;
-                movement = Vector3.ClampMagnitude(movement,moveSpeed); //avoid diagonal speed-up
+                if(Input.GetKey(KeyCode.LeftShift)){
+                    _moveSpeed=8f;
+                } else {
+                    _moveSpeed=3f;
+                }
+                movement.x = horInput * _moveSpeed;
+                movement.z = vertInput * _moveSpeed;
+                movement = Vector3.ClampMagnitude(movement,_moveSpeed); //avoid diagonal speed-up
                 Quaternion tmp = target.rotation;
                 target.eulerAngles = new Vector3(0, target.eulerAngles.y, 0);
                 movement = target.TransformDirection(movement);
@@ -69,12 +78,15 @@ public class RelativeMovement : MonoBehaviour
                 hitGround = hit.distance <= check;
             }
 
+            _animator.SetFloat("Speed", movement.magnitude);
+
             if (hitGround) {
                 if (Input.GetButtonDown("Jump")){
                     _vertSpeed = jumpSpeed;
                     _canBurstDrive = true;
                 } else {
                     _vertSpeed = minFall;
+                    _animator.SetBool("Jumping",false);
                 }
             } else {
                 _vertSpeed += gravity * 5 * Time.deltaTime;
@@ -82,26 +94,26 @@ public class RelativeMovement : MonoBehaviour
                     _vertSpeed = terminalVelocity;
                 }
 
+                _animator.SetBool("Jumping",true);
+
                 if (Input.GetKeyDown(KeyCode.Space) && _canBurstDrive)
                 {
-                    //_charController.Move(movement.normalized * 500.0f * Time.deltaTime);
-                    StartCoroutine(BurstDriveCoroutine(movement.normalized));
+                    StartCoroutine(BurstDriveCoroutine(movement));
                     _canBurstDrive = false;
                 }
 
                 if (_charController.isGrounded) {
                     if (Vector3.Dot(movement, _contact.normal) < 0) {
-                        movement = _contact.normal * moveSpeed;
+                        movement = _contact.normal * _moveSpeed;
+                        _animator.SetBool("Jumping",false);
                     } else {
-                        movement += _contact.normal * moveSpeed;
+                        movement += _contact.normal * _moveSpeed * 10;
                     }
                 }
             }
-
             movement.y = _vertSpeed;
-            movement *= Time.deltaTime;
 
-            _charController.Move(movement);
+            _charController.Move(movement * Time.deltaTime);
         }
     }
 
@@ -110,7 +122,8 @@ public class RelativeMovement : MonoBehaviour
         float startTime = Time.time; // how long to burst drive
         while(Time.time < startTime + _burstDriveTime)
         {
-            _charController.Move(direction * _burstDriveSpeed);
+            Vector3 movement = Vector3.ClampMagnitude(direction,_burstDriveSpeed);
+            _charController.Move(movement * Time.deltaTime);
             yield return null; // this will make Unity stop here and continue next frame
         }
     }
@@ -120,6 +133,6 @@ public class RelativeMovement : MonoBehaviour
     }
 
     private void OnSpeedChanged(float value) {
-        moveSpeed = baseSpeed * value;
+        _moveSpeed = baseSpeed * value;
     }
 }
