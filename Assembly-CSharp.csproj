@@ -39,9 +39,12 @@
      <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\Controller\SceneControllerN.cs" />
      <Compile Include="Assets\Scripts\Controller\UIController.cs" />
-     <Compile Include="Assets\Scripts\EnemyCharacter.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyCharacter.cs" />
+     <Compile Include="Assets\Scripts\Enemies\ReactiveTarget.cs" />
+     <Compile Include="Assets\Scripts\Enemies\TurretAI.cs" />
+     <Compile Include="Assets\Scripts\Enemies\WanderingAI.cs" />
      <Compile Include="Assets\Scripts\FPSCounter.cs" />
-     <Compile Include="Assets\Scripts\Fireball.cs" />
      <Compile Include="Assets\Scripts\GameEvent.cs" />
      <Compile Include="Assets\Scripts\Main Camera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\Messenger.cs" />
@@ -49,10 +52,8 @@
      <Compile Include="Assets\Scripts\Player\PlayerCharacter.cs" />
      <Compile Include="Assets\Scripts\Player\RelativeMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\SightTarget.cs" />
-     <Compile Include="Assets\Scripts\ReactiveTarget.cs" />
      <Compile Include="Assets\Scripts\SettingsPopup.cs" />
      <Compile Include="Assets\Scripts\Spin.cs" />
-     <Compile Include="Assets\Scripts\WanderingAI.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
