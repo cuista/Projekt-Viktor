@@ -36,17 +36,15 @@ public class TurretAI : MonoBehaviour
             if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
             {
                 RaycastHit hitLinecast;
-                if (Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast))
+                Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast);
+                // if there are NO obstacles between turret and player
+                if(hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
                 {
-                    // if there are NO obstacles between turret and player
-                    if(hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
-                    {
-                        Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
-                        Quaternion toRotation = Quaternion.LookRotation(direction);
-                        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                        transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
-                        _canShoot = true;
-                    }
+                    Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
+                    Quaternion toRotation = Quaternion.LookRotation(direction);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                    transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                    _canShoot = true;
                 }
             }
         }

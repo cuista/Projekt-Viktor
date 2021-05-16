@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7727950683015636419}
   - component: {fileID: 188030548279789811}
   - component: {fileID: 549332288016891779}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2250012ad3016464ebcb7aaaeb576b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sight: {fileID: 5172305849294735755, guid: 8a88b48195096e8488523664c2a28994, type: 3}
 --- !u!114 &3852430203189150319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +243,7 @@ GameObject:
   - component: {fileID: 8580660427378446938}
   - component: {fileID: 8486266710388795551}
   - component: {fileID: 4016445755050293901}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

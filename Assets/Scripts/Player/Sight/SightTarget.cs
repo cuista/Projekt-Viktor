@@ -39,16 +39,23 @@ public class SightTarget : MonoBehaviour
             Vector3 playerPosition=new Vector3(player.transform.position.x,player.transform.position.y,player.transform.position.z);
             Vector3 enemyPosition=new Vector3(_targetEnemy.transform.position.x,_targetEnemy.transform.position.y,_targetEnemy.transform.position.z);
 
-            if(Vector3.Distance(playerPosition,enemyPosition)<=maxEngageDistance)
+            RaycastHit hitLinecast;
+            Physics.Linecast(enemyPosition, playerPosition, out hitLinecast);
+            // if there are NO obstacles between turret and player && distance is less than maxEngageDistance
+            if(hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null && hitLinecast.distance <= maxEngageDistance)
             {
                 lineRenderer.enabled=true;
                 lineRenderer.SetPosition(0, playerPosition);
                 lineRenderer.SetPosition(1, enemyPosition);
-            } else {
-                lineRenderer.enabled=false;
-                _targetEnemy=null;
             }
-        } else {
+            else 
+            {
+            lineRenderer.enabled=false;
+            _targetEnemy=null;
+            }
+        }
+        else 
+        {
             lineRenderer.enabled=false;
         }
 

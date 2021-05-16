@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7474999511837611742}
   - component: {fileID: 7097428817447968799}
   - component: {fileID: 6442280722003530683}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System BombEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4765,7 +4765,7 @@ GameObject:
   - component: {fileID: 3745638782702866696}
   - component: {fileID: 302207124740705514}
   - component: {fileID: 5350175917341997578}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Counter Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4940,7 +4940,7 @@ GameObject:
   - component: {fileID: 7618104695014205686}
   - component: {fileID: 8428321241506999134}
   - component: {fileID: -2662007511788693789}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5035,8 +5035,7 @@ GameObject:
   - component: {fileID: 2033749891630553737}
   - component: {fileID: 9038029447742507546}
   - component: {fileID: 8718850443570146636}
-  - component: {fileID: 2968900999314173667}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9778,16 +9777,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &2968900999314173667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222270566833363592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30920d3e4a2e08b4da4e6125f8763988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0, z: 100}

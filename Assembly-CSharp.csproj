@@ -36,7 +36,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\Controller\SceneControllerN.cs" />
      <Compile Include="Assets\Scripts\Controller\UIController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bullet.cs" />
@@ -48,6 +47,7 @@
      <Compile Include="Assets\Scripts\GameEvent.cs" />
      <Compile Include="Assets\Scripts\Main Camera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\Messenger.cs" />
+     <Compile Include="Assets\Scripts\Player\Bomb.cs" />
      <Compile Include="Assets\Scripts\Player\BombShooter.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCharacter.cs" />
      <Compile Include="Assets\Scripts\Player\RelativeMovement.cs" />
