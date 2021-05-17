@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\Controller\UIController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bullet.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyCharacter.cs" />
+     <Compile Include="Assets\Scripts\Enemies\FollowingAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\ReactiveTarget.cs" />
      <Compile Include="Assets\Scripts\Enemies\TurretAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\WanderingAI.cs" />

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SceneControllerN : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject enemy1Prefab;
+    [SerializeField] private GameObject enemy2Prefab;
     [SerializeField] private GameObject turretPrefab;
     private GameObject[] _enemies;
     public int enemiesCount;
@@ -44,10 +45,19 @@ public class SceneControllerN : MonoBehaviour
                 else if(i==_enemies.Length-6){
                     _enemies[i]=Instantiate(turretPrefab,new Vector3(68f,1f,62.5f),Quaternion.Euler(0,-90f,0));
                 }
+                else if(i==_enemies.Length-7){
+                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(-22f,1f,42f),Quaternion.Euler(0,-180f,0));
+                }
+                else if(i==_enemies.Length-8){
+                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(42f,1f,-22f),Quaternion.Euler(0,0,0));
+                }
+                else if(i==_enemies.Length-9){
+                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(22f,1f,20f),Quaternion.Euler(0,-90f,0));
+                }
                 else
                 {
                     // Alternative to gameObject creation with more lines
-                    _enemies[i]=Instantiate(enemyPrefab) as GameObject;
+                    _enemies[i]=Instantiate(enemy1Prefab) as GameObject;
                     _enemies[i].transform.position=new Vector3(Random.Range(-70f,70f),1f,Random.Range(-70f,70f));
                     float angle = Random.Range(0,360f);
                     _enemies[i].transform.Rotate(0,angle,0);
@@ -63,7 +73,7 @@ public class SceneControllerN : MonoBehaviour
         for(int i=0; i<_enemies.Length; i++){
             if(_enemies[i]==null){
                 Messenger.Broadcast(GameEvent.ENEMY_KILLED);
-                _enemies[i]=Instantiate(enemyPrefab,new Vector3(Random.Range(-70f,70f),1f,Random.Range(-70f,70f)),Quaternion.Euler(0,Random.Range(0, 360f),0));
+                _enemies[i]=Instantiate(enemy1Prefab,new Vector3(Random.Range(-70f,70f),1f,Random.Range(-70f,70f)),Quaternion.Euler(0,Random.Range(0, 360f),0));
             }
         }
     }

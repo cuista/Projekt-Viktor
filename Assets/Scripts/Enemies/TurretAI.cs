@@ -7,9 +7,9 @@ public class TurretAI : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     public float rotationSpeed=3.0f;
     public float range=30.0f;
-    public float fireDelay = 30f;
+    public float fireDelay = 1f;
 
-    private Quaternion defaultRotation;
+    private Quaternion _defaultRotation;
     private float _shootTimer;
     private bool _canShoot;
 
@@ -18,7 +18,7 @@ public class TurretAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        defaultRotation = transform.rotation;
+        _defaultRotation = transform.rotation;
         _shootTimer = 0;
 
         _alive=true;
@@ -62,7 +62,7 @@ public class TurretAI : MonoBehaviour
         }
         else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, defaultRotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, _defaultRotation, rotationSpeed * Time.deltaTime);
             _shootTimer = 0;
         }
     }
