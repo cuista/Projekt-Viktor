@@ -19,8 +19,8 @@ public class RelativeMovement : MonoBehaviour
     public float minFall = -1.5f;
     private float _vertSpeed;
 
-    private float _burstDriveTime=0.1f;
-    private float _burstDriveSpeed=30f;
+    private float _burstDriveTime=0.2f;
+    private float _burstDriveSpeed=50f;
     private bool _canBurstDrive;
 
     public const float baseSpeed = 6.0f;

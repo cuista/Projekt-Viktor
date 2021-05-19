@@ -126,7 +126,7 @@ public class BombShooter : MonoBehaviour
                 Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
             }
         } else {
-            _spaceHeld=true; //FIXME fixed bug on settings popup close, viktor putted bomb
+            _spaceHeld=true; //FIXME fixed bug on settings popup close, viktor putted a bomb
         }
     }
 
