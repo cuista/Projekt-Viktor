@@ -12,6 +12,7 @@ public class BombShooter : MonoBehaviour
     private List<GameObject> _bombsPlanted;
 
     [SerializeField] public GameObject sight;
+    [SerializeField] public GameObject sightOnTop;
 
     //rapid click bomb on the ground, holding click to attach it
     private const float _minimumHeldDuration = 0.17f;
@@ -31,7 +32,7 @@ public class BombShooter : MonoBehaviour
         Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, bombsCapacity);
 
         //sight.gameObject.SetActive(false); //--> I can't disable it because the line won't work
-        sight.GetComponent<MeshRenderer>().enabled=false;
+        sightOnTop.GetComponent<MeshRenderer>().enabled=false;
         sight.GetComponent<MeshCollider>().enabled=false;
     }
 
@@ -72,7 +73,7 @@ public class BombShooter : MonoBehaviour
                     }
                 } else if (!EventSystem.current.IsPointerOverGameObject()) { // Player has holded and released the button
                     //sight.gameObject.SetActive(false); //--> I can't disable it because the line won't work
-                    sight.GetComponent<MeshRenderer>().enabled=false;
+                    sightOnTop.GetComponent<MeshRenderer>().enabled=false;
                     sight.GetComponent<MeshCollider>().enabled=false;
                     GameObject targetEnemy = sight.GetComponent<SightTarget>().GetTargetEnemy();
                     if(targetEnemy!=null && _bombsPlantedCount < bombsCapacity) {
@@ -99,7 +100,7 @@ public class BombShooter : MonoBehaviour
                 if (Time.timeSinceLevelLoad - _spacePressedTime > _minimumHeldDuration) {
                     //Debug.Log("Button helded");
                     //sight.gameObject.SetActive(true); //--> I can't disable it because the line won't work
-                    sight.GetComponent<MeshRenderer>().enabled=true;
+                    sightOnTop.GetComponent<MeshRenderer>().enabled=true;
                     sight.GetComponent<MeshCollider>().enabled=true;
                     _spaceHeld = true;
                 }
