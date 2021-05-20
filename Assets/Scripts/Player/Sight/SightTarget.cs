@@ -15,13 +15,14 @@ public class SightTarget : MonoBehaviour
     {
         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.widthMultiplier = 0.2f; // thickness
+        lineRenderer.widthMultiplier = 0.1f; // thickness
 
         // A simple 2 color gradient with a fixed alpha of 1.0f.
         float alpha = 0.3f;
         Gradient gradient = new Gradient();
         gradient.SetKeys(
-            new GradientColorKey[] { new GradientColorKey(Color.cyan, 0.0f), new GradientColorKey(Color.blue, 1.0f) },
+            //new GradientColorKey[] { new GradientColorKey(new Color(0,219,255), 0.0f), new GradientColorKey(new Color(0,100,255), 1.0f) },
+            new GradientColorKey[] { new GradientColorKey(new Color(0,219,255), 0.0f), new GradientColorKey(Color.blue, 1.0f) },
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
         );
         lineRenderer.colorGradient = gradient;

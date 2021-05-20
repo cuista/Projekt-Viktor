@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Particles Effects\Misc Effects\Scripts\SpawnEffect.cs" />
      <Compile Include="Assets\Scripts\Controller\SceneControllerN.cs" />
      <Compile Include="Assets\Scripts\Controller\UIController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bullet.cs" />
@@ -57,6 +58,12 @@
      <Compile Include="Assets\Scripts\SettingsPopup.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />
+     <Compile Include="Assets\Shared\Ramps\Runtime\RampAsset.cs" />
+     <Compile Include="Assets\Shared\Scripts\AdjustTimeScale.cs" />
+     <Compile Include="Assets\Shared\Scripts\ProximityActivate.cs" />
+     <Compile Include="Assets\Shared\Scripts\SimpleCameraController.cs" />
+     <Compile Include="Assets\Shared\Scripts\SimpleCharacterMotor.cs" />
+     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeTransparent.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -64,11 +71,13 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeShaded-Unlit.shader" />
+     <None Include="Assets\Particles Effects\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Resources\WireframeTransparentCulled-Global.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Packs\02-3D Scifi Kit Starter Kit\_Docs\Doc.txt" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeTransparentCulled.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Wireframe.cginc" />
+     <None Include="Assets\Particles Effects\Misc Effects\Shaders\Respawn.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Wireframe.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -80,6 +89,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\Particles Effects\Misc Effects\Shaders\FireFly.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Resources\WireframeTransparent-Global.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Resources\Wireframe-Global.shader" />
@@ -88,6 +98,7 @@
      <None Include="Assets\Packs\01-Sci-Fi Styled Modular Pack\Readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Resources\WireframeShaded-Unlit-Global.shader" />
+     <None Include="Assets\Particles Effects\Misc Effects\Shaders\Dissolve.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

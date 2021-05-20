@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ReactiveTarget : MonoBehaviour
 {
+
+    [SerializeField] public GameObject explosionEffect;
+
     public void ReactToHit(){
         WanderingAI behavior=GetComponent<WanderingAI>();
         if(behavior!=null){
@@ -14,6 +17,9 @@ public class ReactiveTarget : MonoBehaviour
 
     private IEnumerator Die() {
         this.transform.Rotate(-75, 0, 0);
+
+        GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(explosion,explosion.GetComponent<ParticleSystem>().main.duration);
 
         yield return new WaitForSeconds(0.5f);
 

@@ -94,7 +94,7 @@ public class FollowingAI : MonoBehaviour
 
         if(_canShoot)
         {
-            Debug.Log(_canShoot + " " + _shootTimer);
+            //Debug.Log(_canShoot + " " + _shootTimer);
             _shootTimer += Time.deltaTime;
             if(_shootTimer > fireDelay)
             {

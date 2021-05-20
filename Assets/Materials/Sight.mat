@@ -86,7 +86,7 @@ Material:
     - _UVSec: 0
     - _WindQuality: 0
     - _WireSmoothness: 15
-    - _WireThickness: 700
+    - _WireThickness: 600
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0.75172853, b: 1, a: 0}

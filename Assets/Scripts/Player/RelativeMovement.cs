@@ -18,9 +18,11 @@ public class RelativeMovement : MonoBehaviour
     public float terminalVelocity = -10.0f;
     public float minFall = -1.5f;
     private float _vertSpeed;
+    private bool _isJumping;
 
+    [SerializeField] public GameObject burstEffect;
     private float _burstDriveTime=0.2f;
-    private float _burstDriveSpeed=50f;
+    private float _burstDriveSpeed=4f;
     private bool _canBurstDrive;
 
     public const float baseSpeed = 6.0f;
@@ -41,7 +43,10 @@ public class RelativeMovement : MonoBehaviour
     {
         _vertSpeed = minFall;
         _canBurstDrive = false;
+        _isJumping = false;
         _charController = GetComponent<CharacterController>();
+
+        burstEffect.SetActive(false);
 
         _animator = GetComponent<Animator>();
     }
@@ -86,6 +91,7 @@ public class RelativeMovement : MonoBehaviour
                     _canBurstDrive = true;
                 } else {
                     _vertSpeed = minFall;
+                    _isJumping=false;
                     _animator.SetBool("Jumping",false);
                 }
             } else {
@@ -94,6 +100,7 @@ public class RelativeMovement : MonoBehaviour
                     _vertSpeed = terminalVelocity;
                 }
 
+                _isJumping=true;
                 _animator.SetBool("Jumping",true);
 
                 if (Input.GetKeyDown(KeyCode.Space) && _canBurstDrive)
@@ -105,6 +112,7 @@ public class RelativeMovement : MonoBehaviour
                 if (_charController.isGrounded) {
                     if (Vector3.Dot(movement, _contact.normal) < 0) {
                         movement = _contact.normal * _moveSpeed;
+                        _isJumping=false;
                         _animator.SetBool("Jumping",false);
                     } else {
                         movement += _contact.normal * _moveSpeed * 10;
@@ -123,9 +131,15 @@ public class RelativeMovement : MonoBehaviour
         while(Time.time < startTime + _burstDriveTime)
         {
             Vector3 movement = Vector3.ClampMagnitude(direction,_burstDriveSpeed);
-            _charController.Move(movement * Time.deltaTime);
+            _charController.Move(movement * _burstDriveSpeed * Time.deltaTime);
+            burstEffect.SetActive(true);
             yield return null; // this will make Unity stop here and continue next frame
         }
+        burstEffect.SetActive(false);
+    }
+
+    public bool isJumping(){
+        return _isJumping;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
