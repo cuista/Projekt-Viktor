@@ -110,7 +110,8 @@ public class RelativeMovement : MonoBehaviour
                 }
 
                 if (_charController.isGrounded) {
-                    if (Vector3.Dot(movement, _contact.normal) < 0) {
+                    if (Vector3.Dot(movement, _contact.normal) < 0) // Dot if they point same is 1 (same direction) to -1 (opposite)
+                    {
                         movement = _contact.normal * _moveSpeed;
                         _isJumping=false;
                         _animator.SetBool("Jumping",false);
