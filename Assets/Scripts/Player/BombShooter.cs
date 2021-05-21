@@ -11,6 +11,9 @@ public class BombShooter : MonoBehaviour
     private int _bombsPlantedCount=0;
     private List<GameObject> _bombsPlanted;
 
+    [SerializeField] private GameObject[] specialBombPrefabs;
+    private int _currentSpecialBomb;
+
     [SerializeField] public GameObject sight;
     [SerializeField] public GameObject sightOnTop;
 
@@ -34,6 +37,8 @@ public class BombShooter : MonoBehaviour
         //sight.gameObject.SetActive(false); //--> I can't disable it because the line won't work
         sightOnTop.GetComponent<MeshRenderer>().enabled=false;
         sight.GetComponent<MeshCollider>().enabled=false;
+
+        _currentSpecialBomb = 0;
     }
 
     // Update is called once per frame
@@ -52,8 +57,6 @@ public class BombShooter : MonoBehaviour
                     Ray ray = new Ray(transform.position,-transform.up);
                     RaycastHit hitInfo;
                     if (Physics.Raycast(ray, out hitInfo)) { //out è un passaggio per riferimento
-                        //Debug.Log("Hit " + hit.point); //for DEBUG print of what hitted
-
                         if(_bombsPlantedCount < bombsCapacity)
                         {
                             if(!IncrementIfOverlappingBomb(hitInfo.point) && !GetComponent<RelativeMovement>().isJumping()) {
@@ -128,7 +131,44 @@ public class BombShooter : MonoBehaviour
                 }
                 _bombsPlanted.Clear();
                 Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
+            } else if (Input.GetKeyUp(KeyCode.LeftAlt)){
+                Vector3 point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                Ray ray = new Ray(transform.position,-transform.up);
+                RaycastHit hitInfo;
+                if (Physics.Raycast(ray, out hitInfo)) { //out è un passaggio per riferimento
+                    if(_bombsPlantedCount < bombsCapacity)
+                    {
+                        if(!IncrementIfOverlappingBomb(hitInfo.point) && !GetComponent<RelativeMovement>().isJumping()) {
+                            //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                            GameObject bomb = Instantiate(specialBombPrefabs[_currentSpecialBomb]) as GameObject;
+                            bomb.transform.position = hitInfo.point;
+                            bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                            // Removing collider
+                            Collider bombCollider = bomb.GetComponent<Collider>();
+                            DestroyImmediate(bombCollider);
+
+                            _bombsPlanted.Add(bomb);
+                            _bombsPlantedCount++;
+                            Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                        }
+                    }
+                }
             }
+
+            // Change special bomb type
+            if(Input.GetKeyUp(KeyCode.Q))
+            {
+                _currentSpecialBomb=MathMod(_currentSpecialBomb-1,specialBombPrefabs.Length);
+                Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
+                Debug.Log("n+: "+_currentSpecialBomb);
+            }
+            else if(Input.GetKeyUp(KeyCode.E))
+            {
+                _currentSpecialBomb=MathMod(_currentSpecialBomb+1,specialBombPrefabs.Length);
+                Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
+                Debug.Log("n-: "+_currentSpecialBomb);
+            }
+
         } else {
             _bombButtonHeld=true; //FIXME ??? fixed bug on settings popup close, viktor putted a bomb
         }
@@ -145,5 +185,9 @@ public class BombShooter : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private int MathMod(int a, int b){
+        return (Mathf.Abs(a * b) + a) % b;
     }
 }

@@ -105,8 +105,11 @@ public class RelativeMovement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space) && _canBurstDrive)
                 {
-                    StartCoroutine(BurstDriveCoroutine(movement));
-                    _canBurstDrive = false;
+                    if(movement!=Vector3.zero)
+                    {
+                        StartCoroutine(BurstDriveCoroutine(movement));
+                        _canBurstDrive = false;
+                    }
                 }
 
                 if (_charController.isGrounded) {

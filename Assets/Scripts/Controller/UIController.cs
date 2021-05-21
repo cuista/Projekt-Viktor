@@ -12,6 +12,10 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private SettingsPopup settingsPopup;
 
+    [SerializeField] private Image specialBombImage;
+
+    [SerializeField] private Sprite[] specialBombImages;
+
     private int _score;
     private int _bombsCapacity;
     private int _bombsPlanted;
@@ -21,6 +25,7 @@ public class UIController : MonoBehaviour
         Messenger<int>.AddListener(GameEvent.BOMBS_CAPACITY_CHANGED, OnBombCapacityChanged);
         Messenger.AddListener(GameEvent.BOMB_PLANTED, OnBombPlanted);
         Messenger.AddListener(GameEvent.BOMBS_DETONATED, OnBombsDetonated);
+        Messenger<int>.AddListener(GameEvent.SPECIALBOMB_CHANGED, OnSpecialBombChanged);
     }
 
     void OnDestroy() {
@@ -37,6 +42,8 @@ public class UIController : MonoBehaviour
         _bombsPlanted=0;
         scoreValue.text= _score.ToString();
         settingsPopup.Close();
+
+        specialBombImage.GetComponent<Image>().sprite = specialBombImages[0];
     }
 
     // Update is called once per frame
@@ -74,5 +81,9 @@ public class UIController : MonoBehaviour
 
     public void OnPointerDown(){
         Debug.Log("Pointer down");
+    }
+
+    public void OnSpecialBombChanged(int i){
+        specialBombImage.GetComponent<Image>().sprite = specialBombImages[i];
     }
 }

@@ -60,11 +60,6 @@
      <Compile Include="Assets\Scripts\SettingsPopup.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />
-     <Compile Include="Assets\Shared\Ramps\Runtime\RampAsset.cs" />
-     <Compile Include="Assets\Shared\Scripts\AdjustTimeScale.cs" />
-     <Compile Include="Assets\Shared\Scripts\ProximityActivate.cs" />
-     <Compile Include="Assets\Shared\Scripts\SimpleCameraController.cs" />
-     <Compile Include="Assets\Shared\Scripts\SimpleCharacterMotor.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeTransparent.shader" />
@@ -668,6 +663,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
