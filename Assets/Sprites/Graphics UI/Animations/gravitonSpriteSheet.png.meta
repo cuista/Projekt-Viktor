@@ -1,0 +1,1652 @@
+fileFormatVersion: 2
+guid: 4f9e2cbc8e15be64f9a3a80a9fd71024
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 911021243301391531
+    second: gravitonSpriteSheet_0
+  - first:
+      213: -7738669867917449389
+    second: gravitonSpriteSheet_1
+  - first:
+      213: -6491886652877754447
+    second: gravitonSpriteSheet_2
+  - first:
+      213: -8898835081320444248
+    second: gravitonSpriteSheet_3
+  - first:
+      213: -369033323991758097
+    second: gravitonSpriteSheet_4
+  - first:
+      213: 7002183137190447835
+    second: gravitonSpriteSheet_5
+  - first:
+      213: -64331275894878308
+    second: gravitonSpriteSheet_6
+  - first:
+      213: -6669900669195295318
+    second: gravitonSpriteSheet_7
+  - first:
+      213: 3066376028726512812
+    second: gravitonSpriteSheet_8
+  - first:
+      213: -1707128897578220019
+    second: gravitonSpriteSheet_9
+  - first:
+      213: -5447812797841646460
+    second: gravitonSpriteSheet_10
+  - first:
+      213: 303879714837862426
+    second: gravitonSpriteSheet_11
+  - first:
+      213: 8800912034756339669
+    second: gravitonSpriteSheet_12
+  - first:
+      213: 7272565889824382520
+    second: gravitonSpriteSheet_13
+  - first:
+      213: 1340821005157178599
+    second: gravitonSpriteSheet_14
+  - first:
+      213: 2749479929574604994
+    second: gravitonSpriteSheet_15
+  - first:
+      213: 87133785340475686
+    second: gravitonSpriteSheet_16
+  - first:
+      213: 3960253994368711656
+    second: gravitonSpriteSheet_17
+  - first:
+      213: -3351137082139149634
+    second: gravitonSpriteSheet_18
+  - first:
+      213: -239921888178859930
+    second: gravitonSpriteSheet_19
+  - first:
+      213: 1299934597391693278
+    second: gravitonSpriteSheet_20
+  - first:
+      213: 8450039435127918027
+    second: gravitonSpriteSheet_21
+  - first:
+      213: 1171827230060591412
+    second: gravitonSpriteSheet_22
+  - first:
+      213: 2074712606360947706
+    second: gravitonSpriteSheet_23
+  - first:
+      213: 4435169259395845318
+    second: gravitonSpriteSheet_24
+  - first:
+      213: 3129818295645780656
+    second: gravitonSpriteSheet_25
+  - first:
+      213: -8411608967658193917
+    second: gravitonSpriteSheet_26
+  - first:
+      213: -7050177258020318594
+    second: gravitonSpriteSheet_27
+  - first:
+      213: 1554579720676443592
+    second: gravitonSpriteSheet_28
+  - first:
+      213: -2524481988516526031
+    second: gravitonSpriteSheet_29
+  - first:
+      213: -3447433058223026634
+    second: gravitonSpriteSheet_30
+  - first:
+      213: 6100201666179121628
+    second: gravitonSpriteSheet_31
+  - first:
+      213: 1455854837871122372
+    second: gravitonSpriteSheet_32
+  - first:
+      213: -238193901452181498
+    second: gravitonSpriteSheet_33
+  - first:
+      213: 5237424371774092560
+    second: gravitonSpriteSheet_34
+  - first:
+      213: -8435085568541185859
+    second: gravitonSpriteSheet_35
+  - first:
+      213: 2128637612546080480
+    second: gravitonSpriteSheet_36
+  - first:
+      213: 1277247404038589545
+    second: gravitonSpriteSheet_37
+  - first:
+      213: -6414967350712878632
+    second: gravitonSpriteSheet_38
+  - first:
+      213: 4557195564474648219
+    second: gravitonSpriteSheet_39
+  - first:
+      213: -7403943954640090741
+    second: gravitonSpriteSheet_40
+  - first:
+      213: 5599461454662385159
+    second: gravitonSpriteSheet_41
+  - first:
+      213: 1739714347228027308
+    second: gravitonSpriteSheet_42
+  - first:
+      213: -4366985488648817155
+    second: gravitonSpriteSheet_43
+  - first:
+      213: 7841506653067078043
+    second: gravitonSpriteSheet_44
+  - first:
+      213: 560713975972262006
+    second: gravitonSpriteSheet_45
+  - first:
+      213: 8062304419378731593
+    second: gravitonSpriteSheet_46
+  - first:
+      213: 5934170949617355275
+    second: gravitonSpriteSheet_47
+  - first:
+      213: -4282025466298351234
+    second: gravitonSpriteSheet_48
+  - first:
+      213: 1949980992298003631
+    second: gravitonSpriteSheet_49
+  - first:
+      213: -4126418742804847116
+    second: gravitonSpriteSheet_50
+  - first:
+      213: -859772791793068864
+    second: gravitonSpriteSheet_51
+  - first:
+      213: 335185835372143778
+    second: gravitonSpriteSheet_52
+  - first:
+      213: 118932606471756337
+    second: gravitonSpriteSheet_53
+  - first:
+      213: 3901193781410369082
+    second: gravitonSpriteSheet_54
+  - first:
+      213: 5003842902815108533
+    second: gravitonSpriteSheet_55
+  - first:
+      213: -2028207348082137351
+    second: gravitonSpriteSheet_56
+  - first:
+      213: -3730968923056249258
+    second: gravitonSpriteSheet_57
+  - first:
+      213: -992128800928356487
+    second: gravitonSpriteSheet_58
+  - first:
+      213: 6185423310767744918
+    second: gravitonSpriteSheet_59
+  - first:
+      213: 1895330329283646193
+    second: gravitonSpriteSheet_60
+  - first:
+      213: 50715701915132741
+    second: gravitonSpriteSheet_61
+  - first:
+      213: 3158598309867205483
+    second: gravitonSpriteSheet_62
+  - first:
+      213: -637213228167948968
+    second: gravitonSpriteSheet_63
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac60d57ef894ac00800000000000000
+      internalID: 911021243301391531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 3088
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357e2c0a1c8ba9490800000000000000
+      internalID: -7738669867917449389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf2f151c7f28e5a0800000000000000
+      internalID: -6491886652877754447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 3088
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae4c1f34acf08480800000000000000
+      internalID: -8898835081320444248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea8035a52ee0eaf0800000000000000
+      internalID: -369033323991758097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda8770d670cc2160800000000000000
+      internalID: 7002183137190447835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f8650ab037b1ff0800000000000000
+      internalID: -64331275894878308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2832
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa569751ea0cf63a0800000000000000
+      internalID: -6669900669195295318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac440470c4fd8a20800000000000000
+      internalID: 3066376028726512812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 2832
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06cb0aff4f0f48e0800000000000000
+      internalID: -1707128897578220019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c52d5cf1b7564b0800000000000000
+      internalID: -5447812797841646460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a189b599df8973400800000000000000
+      internalID: 303879714837862426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2576
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7ac1bcdde132a70800000000000000
+      internalID: 8800912034756339669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83eda9425285de460800000000000000
+      internalID: 7272565889824382520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2576
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec96c7a99d8b9210800000000000000
+      internalID: 1340821005157178599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2320
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c04c57bd6d182620800000000000000
+      internalID: 2749479929574604994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 2320
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629772357bf853100800000000000000
+      internalID: 87133785340475686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb3baa8606a5f630800000000000000
+      internalID: 3960253994368711656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebaf471349e5e71d0800000000000000
+      internalID: -3351137082139149634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66012495050abacf0800000000000000
+      internalID: -239921888178859930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2063
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5b5c401ab4a0210800000000000000
+      internalID: 1299934597391693278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 2063
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd87d49812944570800000000000000
+      internalID: 8450039435127918027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43934e938aa234010800000000000000
+      internalID: 1171827230060591412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb4b298f1cdacc10800000000000000
+      internalID: 2074712606360947706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc850161f2ec8d30800000000000000
+      internalID: 4435169259395845318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1807
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba3c7b48295f6b20800000000000000
+      internalID: 3129818295645780656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1807
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c3e35e536f34b80800000000000000
+      internalID: -8411608967658193917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e725924232db82e90800000000000000
+      internalID: -7050177258020318594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c502f9f40af29510800000000000000
+      internalID: 1554579720676443592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138c998b10d37fcd0800000000000000
+      internalID: -2524481988516526031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e8da916e14820d0800000000000000
+      internalID: -3447433058223026634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1551
+        width: 226
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd14ada581548a450800000000000000
+      internalID: 6100201666179121628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c797d7f24c343410800000000000000
+      internalID: 1455854837871122372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1551
+        width: 226
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600474c98e3c1bcf0800000000000000
+      internalID: -238193901452181498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015719197b11fa840800000000000000
+      internalID: 5237424371774092560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8241dcd5e80fa80800000000000000
+      internalID: -8435085568541185859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee385f61a07a8d10800000000000000
+      internalID: 2128637612546080480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1296
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c82003fb1b9b110800000000000000
+      internalID: 1277247404038589545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9b707be2579f6a0800000000000000
+      internalID: -6414967350712878632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1296
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b964f7888396e3f30800000000000000
+      internalID: 4557195564474648219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89c6c67338ef3990800000000000000
+      internalID: -7403943954640090741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70eb4aa968845bd40800000000000000
+      internalID: 5599461454662385159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1040
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca95d2d3bf4b42810800000000000000
+      internalID: 1739714347228027308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df53dc9d5d95563c0800000000000000
+      internalID: -4366985488648817155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1040
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99ecef31c0a2dc60800000000000000
+      internalID: 7841506653067078043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6707c6ee36e08c700800000000000000
+      internalID: 560713975972262006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a912c472f03ef60800000000000000
+      internalID: 8062304419378731593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 784
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a8260c9096a5250800000000000000
+      internalID: 5934170949617355275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e714c1a86803394c0800000000000000
+      internalID: -4282025466298351234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 784
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facafac8169bf0b10800000000000000
+      internalID: 1949980992298003631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f56a9024040cb6c0800000000000000
+      internalID: -4126418742804847116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4d0ad73397114f0800000000000000
+      internalID: -859772791793068864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 529
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4691bcdb1d6a400800000000000000
+      internalID: 335185835372143778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ad5f0539886a100800000000000000
+      internalID: 118932606471756337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 529
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e8de42313d32630800000000000000
+      internalID: 3901193781410369082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd672ecb98317540800000000000000
+      internalID: 5003842902815108533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f62abea92c5ad3e0800000000000000
+      internalID: -2028207348082137351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 272
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656e531388fe83cc0800000000000000
+      internalID: -3730968923056249258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9772b31bc104b32f0800000000000000
+      internalID: -992128800928356487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 272
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6976bb7bab907d550800000000000000
+      internalID: 6185423310767744918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 17
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2d9f084e09d4a10800000000000000
+      internalID: 1895330329283646193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 15
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543af2589ad24b000800000000000000
+      internalID: 50715701915132741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 15
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63b8c78d6895db20800000000000000
+      internalID: 3158598309867205483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravitonSpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 15
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8559ed0f1f92827f0800000000000000
+      internalID: -637213228167948968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1aa82a6144078a34b913d44b407ec402
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

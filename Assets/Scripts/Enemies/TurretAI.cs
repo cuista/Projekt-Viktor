@@ -36,9 +36,8 @@ public class TurretAI : MonoBehaviour
             if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
             {
                 RaycastHit hitLinecast;
-                Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast);
                 // if there are NO obstacles between turret and player
-                if(hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
+                if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
                 {
                     Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
                     Quaternion toRotation = Quaternion.LookRotation(direction);

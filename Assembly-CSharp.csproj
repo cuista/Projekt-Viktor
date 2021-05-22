@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\SettingsPopup.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeTransparent.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -655,6 +654,9 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
@@ -663,9 +665,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

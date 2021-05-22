@@ -12,9 +12,7 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private SettingsPopup settingsPopup;
 
-    [SerializeField] private Image specialBombImage;
-
-    [SerializeField] private Sprite[] specialBombImages;
+    [SerializeField] private Animator specialBombsAnimator;
 
     private int _score;
     private int _bombsCapacity;
@@ -43,7 +41,7 @@ public class UIController : MonoBehaviour
         scoreValue.text= _score.ToString();
         settingsPopup.Close();
 
-        specialBombImage.GetComponent<Image>().sprite = specialBombImages[0];
+        specialBombsAnimator.SetInteger("currentSpecialBomb",0);
     }
 
     // Update is called once per frame
@@ -84,6 +82,6 @@ public class UIController : MonoBehaviour
     }
 
     public void OnSpecialBombChanged(int i){
-        specialBombImage.GetComponent<Image>().sprite = specialBombImages[i];
+        specialBombsAnimator.SetInteger("currentSpecialBomb",i);
     }
 }

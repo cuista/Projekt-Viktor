@@ -1,0 +1,1652 @@
+fileFormatVersion: 2
+guid: a7952289377cadf4bbee878244304f62
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6826245034257789255
+    second: tetradoxSpriteSheet_0
+  - first:
+      213: 6479866174520380407
+    second: tetradoxSpriteSheet_1
+  - first:
+      213: -1686899079397435088
+    second: tetradoxSpriteSheet_2
+  - first:
+      213: -5035412037374191321
+    second: tetradoxSpriteSheet_3
+  - first:
+      213: 7703757902008794402
+    second: tetradoxSpriteSheet_4
+  - first:
+      213: -1968662268442526855
+    second: tetradoxSpriteSheet_5
+  - first:
+      213: 4794859701821225467
+    second: tetradoxSpriteSheet_6
+  - first:
+      213: 4829339375861729035
+    second: tetradoxSpriteSheet_7
+  - first:
+      213: -8509535496241954144
+    second: tetradoxSpriteSheet_8
+  - first:
+      213: 6110646449735371513
+    second: tetradoxSpriteSheet_9
+  - first:
+      213: 7203811050538954444
+    second: tetradoxSpriteSheet_10
+  - first:
+      213: -3845720383308804900
+    second: tetradoxSpriteSheet_11
+  - first:
+      213: 480606367517712180
+    second: tetradoxSpriteSheet_12
+  - first:
+      213: 301791154631230959
+    second: tetradoxSpriteSheet_13
+  - first:
+      213: -1135772718658695041
+    second: tetradoxSpriteSheet_14
+  - first:
+      213: -8811486092916592463
+    second: tetradoxSpriteSheet_15
+  - first:
+      213: -2421582944658085946
+    second: tetradoxSpriteSheet_16
+  - first:
+      213: -3762285195594340163
+    second: tetradoxSpriteSheet_17
+  - first:
+      213: 7661863338664672807
+    second: tetradoxSpriteSheet_18
+  - first:
+      213: 2985912787152463237
+    second: tetradoxSpriteSheet_19
+  - first:
+      213: 5238828575408132791
+    second: tetradoxSpriteSheet_20
+  - first:
+      213: -4030424000785659710
+    second: tetradoxSpriteSheet_21
+  - first:
+      213: 3459771603955537322
+    second: tetradoxSpriteSheet_22
+  - first:
+      213: -3495020406700450675
+    second: tetradoxSpriteSheet_23
+  - first:
+      213: 7779775086653630865
+    second: tetradoxSpriteSheet_24
+  - first:
+      213: -7564984286073027498
+    second: tetradoxSpriteSheet_25
+  - first:
+      213: -7289859591560699436
+    second: tetradoxSpriteSheet_26
+  - first:
+      213: -3042605590850512961
+    second: tetradoxSpriteSheet_27
+  - first:
+      213: -7626862771075855580
+    second: tetradoxSpriteSheet_28
+  - first:
+      213: 4233113812657668468
+    second: tetradoxSpriteSheet_29
+  - first:
+      213: -2181887439711580329
+    second: tetradoxSpriteSheet_30
+  - first:
+      213: 4130631614891634842
+    second: tetradoxSpriteSheet_31
+  - first:
+      213: 7774154778523730782
+    second: tetradoxSpriteSheet_32
+  - first:
+      213: 4541601958206483222
+    second: tetradoxSpriteSheet_33
+  - first:
+      213: 3151254378636726865
+    second: tetradoxSpriteSheet_34
+  - first:
+      213: -1748125753860291827
+    second: tetradoxSpriteSheet_35
+  - first:
+      213: -8499320126592512432
+    second: tetradoxSpriteSheet_36
+  - first:
+      213: 4118300837091650389
+    second: tetradoxSpriteSheet_37
+  - first:
+      213: -1130644094216624252
+    second: tetradoxSpriteSheet_38
+  - first:
+      213: -6597394737085738252
+    second: tetradoxSpriteSheet_39
+  - first:
+      213: 6453651563835482097
+    second: tetradoxSpriteSheet_40
+  - first:
+      213: -3335518550451566006
+    second: tetradoxSpriteSheet_41
+  - first:
+      213: 4495363267788998254
+    second: tetradoxSpriteSheet_42
+  - first:
+      213: -7671018794845310638
+    second: tetradoxSpriteSheet_43
+  - first:
+      213: 2480586022634493173
+    second: tetradoxSpriteSheet_44
+  - first:
+      213: -70439974885214140
+    second: tetradoxSpriteSheet_45
+  - first:
+      213: -8794101644143068102
+    second: tetradoxSpriteSheet_46
+  - first:
+      213: 536907212484062250
+    second: tetradoxSpriteSheet_47
+  - first:
+      213: 7382012973664635983
+    second: tetradoxSpriteSheet_48
+  - first:
+      213: 3885686430777742502
+    second: tetradoxSpriteSheet_49
+  - first:
+      213: 5299990642154737866
+    second: tetradoxSpriteSheet_50
+  - first:
+      213: 4512478121238027468
+    second: tetradoxSpriteSheet_51
+  - first:
+      213: -5939373922860330453
+    second: tetradoxSpriteSheet_52
+  - first:
+      213: -455268645549220798
+    second: tetradoxSpriteSheet_53
+  - first:
+      213: 5110502788462251177
+    second: tetradoxSpriteSheet_54
+  - first:
+      213: -3383425309641030418
+    second: tetradoxSpriteSheet_55
+  - first:
+      213: 3568533954948361706
+    second: tetradoxSpriteSheet_56
+  - first:
+      213: -4079745774713839691
+    second: tetradoxSpriteSheet_57
+  - first:
+      213: 2653339317915361646
+    second: tetradoxSpriteSheet_58
+  - first:
+      213: -7003919481829912847
+    second: tetradoxSpriteSheet_59
+  - first:
+      213: 226262989906383191
+    second: tetradoxSpriteSheet_60
+  - first:
+      213: -6644762585182198054
+    second: tetradoxSpriteSheet_61
+  - first:
+      213: -3435308481690721859
+    second: tetradoxSpriteSheet_62
+  - first:
+      213: 5467684301077538314
+    second: tetradoxSpriteSheet_63
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be4a4fee4e4441a0800000000000000
+      internalID: -6826245034257789255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 3088
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb4b5434fb1de950800000000000000
+      internalID: 6479866174520380407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0391590993ee698e0800000000000000
+      internalID: -1686899079397435088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 3088
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729d5964e6f9e1ab0800000000000000
+      internalID: -5035412037374191321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22db7d0eefe39ea60800000000000000
+      internalID: 7703757902008794402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97bb4c6e818eda4e0800000000000000
+      internalID: -1968662268442526855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9b3ea9e73ca8240800000000000000
+      internalID: 4794859701821225467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2832
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b078b0e4392450340800000000000000
+      internalID: 4829339375861729035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2cbe63d8e08e980800000000000000
+      internalID: -8509535496241954144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 2832
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa8a7802906dc450800000000000000
+      internalID: 6110646449735371513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce6868abf319f360800000000000000
+      internalID: 7203811050538954444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc4667dfa141aac0800000000000000
+      internalID: -3845720383308804900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2576
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f1fa4e1f47ba600800000000000000
+      internalID: 480606367517712180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe54628c47d203400800000000000000
+      internalID: 301791154631230959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2576
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70d4cedabcec30f0800000000000000
+      internalID: -1135772718658695041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2320
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b07960751057b580800000000000000
+      internalID: -8811486092916592463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 2320
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7a285542fc46ed0800000000000000
+      internalID: -2421582944658085946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db863ec4c8da9cbc0800000000000000
+      internalID: -3762285195594340163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e32babc18645a60800000000000000
+      internalID: 7661863338664672807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585e4802cd7107920800000000000000
+      internalID: 2985912787152463237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2063
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b21e5435de04b840800000000000000
+      internalID: 5238828575408132791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 2063
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c846f2b9be0118c0800000000000000
+      internalID: -4030424000785659710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5d0c171f3930030800000000000000
+      internalID: 3459771603955537322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cd0ef15713f7fc0800000000000000
+      internalID: -3495020406700450675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1996c68e83057fb60800000000000000
+      internalID: 7779775086653630865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1807
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65484317fd6c30790800000000000000
+      internalID: -7564984286073027498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1807
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1ec86235735da90800000000000000
+      internalID: -7289859591560699436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7dcb5e55e76c5d0800000000000000
+      internalID: -3042605590850512961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b4f53f7b0f72690800000000000000
+      internalID: -7626862771075855580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4718249a59a0fba30800000000000000
+      internalID: 4233113812657668468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fca180fe068b1e0800000000000000
+      internalID: -2181887439711580329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1551
+        width: 226
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a903d979193f25930800000000000000
+      internalID: 4130631614891634842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5300d2f49853eb60800000000000000
+      internalID: 7774154778523730782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1551
+        width: 226
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bad162be2070f30800000000000000
+      internalID: 4541601958206483222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152598b49218bbb20800000000000000
+      internalID: 3151254378636726865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03027a83e86db7e0800000000000000
+      internalID: -1748125753860291827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e002e40695c0a80800000000000000
+      internalID: -8499320126592512432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1296
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55baa09aac4272930800000000000000
+      internalID: 4118300837091650389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48723dccf252f40f0800000000000000
+      internalID: -1130644094216624252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1296
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f219fce0785174a0800000000000000
+      internalID: -6597394737085738252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffde8687e9ff8950800000000000000
+      internalID: 6453651563835482097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4acb9afc8bd5b1d0800000000000000
+      internalID: -3335518550451566006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1040
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6607e8131db26e30800000000000000
+      internalID: 4495363267788998254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25176e38c011b8590800000000000000
+      internalID: -7671018794845310638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1040
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f49de948dfcc6220800000000000000
+      internalID: 2480586022634493173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448bafe473fb50ff0800000000000000
+      internalID: -70439974885214140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c7c26d52315f580800000000000000
+      internalID: -8794101644143068102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 784
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c257dd34a737700800000000000000
+      internalID: 536907212484062250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c0b9e10bd227660800000000000000
+      internalID: 7382012973664635983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 784
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a41017b83bbce530800000000000000
+      internalID: 3885686430777742502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0178298695d8940800000000000000
+      internalID: 5299990642154737866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc5d1171fa8f9e30800000000000000
+      internalID: 4512478121238027468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 529
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2211b3a2ea139da0800000000000000
+      internalID: -5939373922860330453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c5aa8349f8ea9f0800000000000000
+      internalID: -455268645549220798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 529
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac8fe1a5372ce640800000000000000
+      internalID: 5110502788462251177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4c7c66b98ab01d0800000000000000
+      internalID: -3383425309641030418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeded91a9baf58130800000000000000
+      internalID: 3568533954948361706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 272
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bfd74455d4d167c0800000000000000
+      internalID: -4079745774713839691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e612ce83d0e82d420800000000000000
+      internalID: 2653339317915361646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 272
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe0712f6541dce90800000000000000
+      internalID: -7003919481829912847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 17
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75110339df8d32300800000000000000
+      internalID: 226262989906383191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 15
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6a86d52af09c3a0800000000000000
+      internalID: -6644762585182198054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 15
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db120fe03255350d0800000000000000
+      internalID: -3435308481690721859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tetradoxSpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 15
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06e4bd17ed11eb40800000000000000
+      internalID: 5467684301077538314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

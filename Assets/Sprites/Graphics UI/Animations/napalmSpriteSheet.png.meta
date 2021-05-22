@@ -1,0 +1,1652 @@
+fileFormatVersion: 2
+guid: 4196c57a0ff4ea94ca420830a29bd362
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6709134202588755686
+    second: napalmSpriteSheet_0
+  - first:
+      213: 2444143554752881595
+    second: napalmSpriteSheet_1
+  - first:
+      213: 6057950503283082130
+    second: napalmSpriteSheet_2
+  - first:
+      213: 4455282581080340278
+    second: napalmSpriteSheet_3
+  - first:
+      213: 6753682888412720145
+    second: napalmSpriteSheet_4
+  - first:
+      213: -7743694910697144321
+    second: napalmSpriteSheet_5
+  - first:
+      213: 5365494107677354265
+    second: napalmSpriteSheet_6
+  - first:
+      213: -2498377523140194684
+    second: napalmSpriteSheet_7
+  - first:
+      213: 6965510946992392824
+    second: napalmSpriteSheet_8
+  - first:
+      213: 1408204067490335242
+    second: napalmSpriteSheet_9
+  - first:
+      213: -2298583493600216046
+    second: napalmSpriteSheet_10
+  - first:
+      213: -6425613663310218061
+    second: napalmSpriteSheet_11
+  - first:
+      213: 520145068276189579
+    second: napalmSpriteSheet_12
+  - first:
+      213: 5278227184773728450
+    second: napalmSpriteSheet_13
+  - first:
+      213: 3275123293233042659
+    second: napalmSpriteSheet_14
+  - first:
+      213: -3664008769398604998
+    second: napalmSpriteSheet_15
+  - first:
+      213: -5106224016524397490
+    second: napalmSpriteSheet_16
+  - first:
+      213: -2208114382090907121
+    second: napalmSpriteSheet_17
+  - first:
+      213: 7238649719815169310
+    second: napalmSpriteSheet_18
+  - first:
+      213: -2384828353784078162
+    second: napalmSpriteSheet_19
+  - first:
+      213: 1116704937702540890
+    second: napalmSpriteSheet_20
+  - first:
+      213: 1817750788892516894
+    second: napalmSpriteSheet_21
+  - first:
+      213: 314609244951344909
+    second: napalmSpriteSheet_22
+  - first:
+      213: 1726787893318678875
+    second: napalmSpriteSheet_23
+  - first:
+      213: 4584038986281197968
+    second: napalmSpriteSheet_24
+  - first:
+      213: 3973885652299599726
+    second: napalmSpriteSheet_25
+  - first:
+      213: -7488645243824532857
+    second: napalmSpriteSheet_26
+  - first:
+      213: -1773961388825256048
+    second: napalmSpriteSheet_27
+  - first:
+      213: 1003961925335343577
+    second: napalmSpriteSheet_28
+  - first:
+      213: -3937978265004974122
+    second: napalmSpriteSheet_29
+  - first:
+      213: -6709629265543061505
+    second: napalmSpriteSheet_30
+  - first:
+      213: 7677572580551474798
+    second: napalmSpriteSheet_31
+  - first:
+      213: 1357919720982531286
+    second: napalmSpriteSheet_32
+  - first:
+      213: -4099987340946904648
+    second: napalmSpriteSheet_33
+  - first:
+      213: 6891430486295417229
+    second: napalmSpriteSheet_34
+  - first:
+      213: -4943094797437375025
+    second: napalmSpriteSheet_35
+  - first:
+      213: 7485156588683506027
+    second: napalmSpriteSheet_36
+  - first:
+      213: -3161281590852199304
+    second: napalmSpriteSheet_37
+  - first:
+      213: -9083043563467236942
+    second: napalmSpriteSheet_38
+  - first:
+      213: -284410328054206909
+    second: napalmSpriteSheet_39
+  - first:
+      213: 7389572506636388958
+    second: napalmSpriteSheet_40
+  - first:
+      213: -846568129548207377
+    second: napalmSpriteSheet_41
+  - first:
+      213: 8645394014972568254
+    second: napalmSpriteSheet_42
+  - first:
+      213: -4095656106813882754
+    second: napalmSpriteSheet_43
+  - first:
+      213: -1129616273537991973
+    second: napalmSpriteSheet_44
+  - first:
+      213: 2712061488494238063
+    second: napalmSpriteSheet_45
+  - first:
+      213: -5964490832924456289
+    second: napalmSpriteSheet_46
+  - first:
+      213: 2173268636492052828
+    second: napalmSpriteSheet_47
+  - first:
+      213: 58812430421625711
+    second: napalmSpriteSheet_48
+  - first:
+      213: 9017050370498694278
+    second: napalmSpriteSheet_49
+  - first:
+      213: 4376419669451074123
+    second: napalmSpriteSheet_50
+  - first:
+      213: -4285388956996189810
+    second: napalmSpriteSheet_51
+  - first:
+      213: 380136293714317970
+    second: napalmSpriteSheet_52
+  - first:
+      213: -4163248024620225762
+    second: napalmSpriteSheet_53
+  - first:
+      213: 880626643228646346
+    second: napalmSpriteSheet_54
+  - first:
+      213: -409683699861010642
+    second: napalmSpriteSheet_55
+  - first:
+      213: -7328464865611636178
+    second: napalmSpriteSheet_56
+  - first:
+      213: 1086047378038619702
+    second: napalmSpriteSheet_57
+  - first:
+      213: 207986729764324956
+    second: napalmSpriteSheet_58
+  - first:
+      213: -3173604120741899746
+    second: napalmSpriteSheet_59
+  - first:
+      213: -5860776683424977996
+    second: napalmSpriteSheet_60
+  - first:
+      213: -7754997783440786918
+    second: napalmSpriteSheet_61
+  - first:
+      213: 2137482597368399425
+    second: napalmSpriteSheet_62
+  - first:
+      213: 855845408665664428
+    second: napalmSpriteSheet_63
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: napalmSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1906404dfd54e2a0800000000000000
+      internalID: -6709134202588755686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 3088
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb32b190d975be120800000000000000
+      internalID: 2444143554752881595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2934617e2e9221450800000000000000
+      internalID: 6057950503283082130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 3088
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637774307e754dd30800000000000000
+      internalID: 4455282581080340278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 3088
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c6971fdc6e9bd50800000000000000
+      internalID: 6753682888412720145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff75eea18ed88490800000000000000
+      internalID: -7743694910697144321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9196f8c9670167a40800000000000000
+      internalID: 5365494107677354265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2832
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e886231eaf35dd0800000000000000
+      internalID: -2498377523140194684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2832
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a839a2d477aa060800000000000000
+      internalID: 6965510946992392824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 2832
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a850e6322fa8310800000000000000
+      internalID: 1408204067490335242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cf161bd7ac910e0800000000000000
+      internalID: -2298583493600216046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc7f76ea62a3d6a0800000000000000
+      internalID: -6425613663310218061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2576
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89064a0f2de73700800000000000000
+      internalID: 520145068276189579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2576
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c88f38c8a7004940800000000000000
+      internalID: 5278227184773728450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2576
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e453c86843937d20800000000000000
+      internalID: 3275123293233042659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2320
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b741edf63d62dc0800000000000000
+      internalID: -3664008769398604998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 2320
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44be779f4c0329b0800000000000000
+      internalID: -5106224016524397490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f025a082ba33b51e0800000000000000
+      internalID: -2208114382090907121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1560137199d47460800000000000000
+      internalID: 7238649719815169310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2320
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0ab626f3367eed0800000000000000
+      internalID: -2384828353784078162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2063
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a564faa69355f7f00800000000000000
+      internalID: 1116704937702540890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 2063
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12ef1e26b2f93910800000000000000
+      internalID: 1817750788892516894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d07f0600177bd5400800000000000000
+      internalID: 314609244951344909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5974b7a078c6f710800000000000000
+      internalID: 1726787893318678875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 2063
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09125d5bb27cd9f30800000000000000
+      internalID: 4584038986281197968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1807
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6fc65b32f3162730800000000000000
+      internalID: 3973885652299599726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1807
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7829be8c3dcf21890800000000000000
+      internalID: -7488645243824532857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fdfc5048f9167e0800000000000000
+      internalID: -1773961388825256048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d161a74d0aceed00800000000000000
+      internalID: 1003961925335343577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1807
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df5b2dd1ad7959c0800000000000000
+      internalID: -3937978265004974122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff9dbc6bbb92e2a0800000000000000
+      internalID: -6709629265543061505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1551
+        width: 226
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ebc01a5973c8a60800000000000000
+      internalID: 7677572580551474798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc49aaaacc48d210800000000000000
+      internalID: 1357919720982531286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1551
+        width: 226
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9e24f6c3be917c0800000000000000
+      internalID: -4099987340946904648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1551
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d819fe1d38743af50800000000000000
+      internalID: 6891430486295417229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcde9aba879966bb0800000000000000
+      internalID: -4943094797437375025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61b7a4624e90e760800000000000000
+      internalID: 7485156588683506027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1296
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cd54e642fd024d0800000000000000
+      internalID: -3161281590852199304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1296
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b91328c00c82f180800000000000000
+      internalID: -9083043563467236942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1296
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e60e140529d0cf0800000000000000
+      internalID: -284410328054206909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a0e0c0b090d8660800000000000000
+      internalID: 7389572506636388958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feabc1085c26044f0800000000000000
+      internalID: -846568129548207377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1040
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb26ab52d0c9af770800000000000000
+      internalID: 8645394014972568254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1040
+        width: 226
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ef237787e4927c0800000000000000
+      internalID: -4095656106813882754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1040
+        width: 225
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda7443fbfbc250f0800000000000000
+      internalID: -1129616273537991973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6957befd8d23a520800000000000000
+      internalID: 2712061488494238063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ac67d403fd93da0800000000000000
+      internalID: -5964490832924456289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 784
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c593b977f40092e10800000000000000
+      internalID: 2173268636492052828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 784
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b88a70891f0d000800000000000000
+      internalID: 58812430421625711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 784
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c016f998ff22d70800000000000000
+      internalID: 9017050370498694278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ae9a9808a2cbc30800000000000000
+      internalID: 4376419669451074123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e814cd5d27d3784c0800000000000000
+      internalID: -4285388956996189810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 529
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2925311f1f3864500800000000000000
+      internalID: 380136293714317970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 529
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b2aacbafb2936c0800000000000000
+      internalID: -4163248024620225762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 529
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb5369244d983c00800000000000000
+      internalID: 880626643228646346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27448778d2805af0800000000000000
+      internalID: -409683699861010642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22a94858001c4a90800000000000000
+      internalID: -7328464865611636178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 272
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e7c31165a621f00800000000000000
+      internalID: 1086047378038619702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 272
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56099924dae2e200800000000000000
+      internalID: 207986729764324956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 272
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12967dddd715f3d0800000000000000
+      internalID: -3173604120741899746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 17
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbef8c78a65aaea0800000000000000
+      internalID: -5860776683424977996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 15
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1af11c8a96b06490800000000000000
+      internalID: -7754997783440786918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 15
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14609b1f81dd9ad10800000000000000
+      internalID: 2137482597368399425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: napalmSpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 15
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab7a2e5dd290eb00800000000000000
+      internalID: 855845408665664428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
