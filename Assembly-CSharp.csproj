@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Prefabs\Particles Effects\Misc Effects\Scripts\SpawnEffect.cs" />
+     <Compile Include="Assets\Scripts\Controller\ExplosionController.cs" />
      <Compile Include="Assets\Scripts\Controller\SceneControllerN.cs" />
      <Compile Include="Assets\Scripts\Controller\UIController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bullet.cs" />

@@ -131,7 +131,7 @@ public class BombShooter : MonoBehaviour
                 }
                 _bombsPlanted.Clear();
                 Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
-            } else if (Input.GetKeyUp(KeyCode.LeftAlt)){
+            } else if (Input.GetKeyUp(KeyCode.Mouse2)){
                 Vector3 point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 Ray ray = new Ray(transform.position,-transform.up);
                 RaycastHit hitInfo;

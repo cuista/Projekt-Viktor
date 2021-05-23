@@ -12,12 +12,17 @@ public class Bomb : MonoBehaviour
 
     [SerializeField] public GameObject explosionEffect;
 
+    private ExplosionController _explosionController;
+
     // Start is called before the first frame update
     void Start()
     {
         _counter = 1;
         isExploded = false;
         counterLabel.GetComponent<TMPro.TextMeshPro>().text=_counter.ToString();
+
+        GameObject controller = GameObject.Find("Controller");     
+        _explosionController = controller.GetComponent<ExplosionController>();
     }
 
     // Update is called once per frame
@@ -30,12 +35,7 @@ public class Bomb : MonoBehaviour
     }
 
     private void OnDestroy() {
-       Boom();
-    }
-
-    private void Boom(){
-        GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
-        Destroy(explosion,explosion.GetComponent<ParticleSystem>().main.duration);
+       _explosionController.MakeItBoom(explosionEffect, transform);
     }
 
     public float GetRadius() {

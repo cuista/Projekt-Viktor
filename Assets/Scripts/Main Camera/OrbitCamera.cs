@@ -21,12 +21,6 @@ public class OrbitCamera : MonoBehaviour
         _offset = target.position - transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void LateUpdate() {
         if(!GameEvent.isPaused) {
             float horInput = Input.GetAxis("Horizontal");
