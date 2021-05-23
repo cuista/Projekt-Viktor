@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class PlayerCharacter : MonoBehaviour
 {
 
-    private int _health;
+    private int health;
+    private int healthPackValueA;
+    private int healthPackValueB;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image fillImg;
     [SerializeField] private Text gameOver;
@@ -20,15 +22,43 @@ public class PlayerCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _health=5;
-        barValueDamage = healthBar.maxValue / _health;
+        health = Managers.Player.health;
+        healthBar.maxValue = Managers.Player.maxHealth;
+        healthPackValueA = Managers.Player.healthPackValueA;
+        healthPackValueB = Managers.Player.healthPackValueB;
+        barValueDamage = Managers.Player.barValueDamage;
         healthBarBackground = healthBar.GetComponentInChildren<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_health <= 0){
+        if(Managers.Inventory.GetItemCount("Heal Ampule-A") != 0)
+        {
+            health += healthPackValueA;
+            healthBar.value += (barValueDamage * healthPackValueA);
+
+            if(health > Managers.Player.health) {
+                health = Managers.Player.health;
+                healthBar.value = healthBar.maxValue;
+            }
+
+            Managers.Inventory.ConsumeItem("Heal Ampule-A");
+        }
+        else if(Managers.Inventory.GetItemCount("Heal Ampule-B") != 0)
+        {
+            health += healthPackValueB;
+            healthBar.value += (barValueDamage * healthPackValueB);
+
+            if(health > Managers.Player.health) {
+                health = Managers.Player.health;
+                healthBar.value = healthBar.maxValue;
+            }
+
+            Managers.Inventory.ConsumeItem("Heal Ampule-B");
+        }
+
+        if(health <= 0){
             Death();
         }
         if(damaged) {
@@ -41,7 +71,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void Hurt(int damage){
         damaged=true;
-        _health-=damage;
+        health-=damage;
         healthBar.value -= barValueDamage;
     }
 

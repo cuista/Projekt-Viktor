@@ -139,17 +139,20 @@ public class BombShooter : MonoBehaviour
                     if(_bombsPlantedCount < bombsCapacity)
                     {
                         if(!IncrementIfOverlappingBomb(hitInfo.point) && !GetComponent<RelativeMovement>().isJumping()) {
-                            //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                            GameObject bomb = Instantiate(specialBombPrefabs[_currentSpecialBomb]) as GameObject;
-                            bomb.transform.position = hitInfo.point;
-                            bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-                            // Removing collider
-                            Collider bombCollider = bomb.GetComponent<Collider>();
-                            DestroyImmediate(bombCollider);
+                            if(Managers.Inventory.GetItemCount("Liquid " + _currentSpecialBomb)>0)
+                            {
+                                GameObject bomb = Instantiate(specialBombPrefabs[_currentSpecialBomb]) as GameObject;
+                                bomb.transform.position = hitInfo.point;
+                                bomb.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                                // Removing collider
+                                Collider bombCollider = bomb.GetComponent<Collider>();
+                                DestroyImmediate(bombCollider);
 
-                            _bombsPlanted.Add(bomb);
-                            _bombsPlantedCount++;
-                            Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                                _bombsPlanted.Add(bomb);
+                                _bombsPlantedCount++;
+                                Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                                Managers.Inventory.ConsumeSpecialBomb(_currentSpecialBomb);
+                            }
                         }
                     }
                 }

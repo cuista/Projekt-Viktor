@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplosionController : MonoBehaviour
 {
-    public void MakeItBoom(GameObject explosionEffect, Transform bombTransform){
+    public static void MakeItBoom(GameObject explosionEffect, Transform bombTransform){
         GameObject explosion = Instantiate(explosionEffect, bombTransform.position, bombTransform.rotation);
         Destroy(explosion,explosion.GetComponent<ParticleSystem>().main.duration);
     }
