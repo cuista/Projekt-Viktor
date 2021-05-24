@@ -116,13 +116,12 @@ public class BombShooter : MonoBehaviour
                         //Debug.Log("Hit " + hit.point); //for DEBUG print of what hitted
 
                         GameObject hitObject = hitCollider.transform.gameObject;
-                        ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+                        ReactiveObject target = hitObject.GetComponent<ReactiveObject>();
                         if(target != null){
                             Debug.Log("Target hit");
                             target.ReactToHit();
                             //adding explosion force
-                            Rigidbody targetRigidBody=target.GetComponent<Rigidbody>();
-                            targetRigidBody.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
+                            target.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
                         }
                     }
 

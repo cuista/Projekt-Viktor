@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Prefabs\Particles Effects\Misc Effects\Scripts\SpawnEffect.cs" />
+     <Compile Include="Assets\Scripts\Boxes\ReactiveBox.cs" />
      <Compile Include="Assets\Scripts\Controller\ExplosionController.cs" />
      <Compile Include="Assets\Scripts\Controller\SceneControllerN.cs" />
      <Compile Include="Assets\Scripts\Controller\UI\FPSCounter.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\Scripts\Player\RelativeMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\SightTarget.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\Spin.cs" />
+     <Compile Include="Assets\Scripts\ReactiveObject.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
