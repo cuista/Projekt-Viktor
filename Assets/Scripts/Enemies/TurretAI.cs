@@ -22,7 +22,7 @@ public class TurretAI : MonoBehaviour, IEnemy
         _shootTimer = 0;
 
         _enemyCharacter=GetComponent<EnemyCharacter>();
-        SetAlive(true);
+        SetMoving(true);
     }
 
     // Update is called once per frame
@@ -30,21 +30,35 @@ public class TurretAI : MonoBehaviour, IEnemy
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position,range);
         _canShoot = false;
-        foreach(var hitCollider in hitColliders)
+        Vector3 graviton = GetGraviton();
+        if(graviton != Vector3.zero)
         {
-            GameObject hitOverlapSphere = hitCollider.transform.gameObject;
-            // check if player is within range
-            if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
+            Vector3 direction = (graviton - transform.position).normalized;
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+        }
+        else
+        {
+            foreach(var hitCollider in hitColliders)
             {
-                RaycastHit hitLinecast;
-                // if there are NO obstacles between turret and player
-                if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
+                GameObject hitOverlapSphere = hitCollider.transform.gameObject;
+                // check if player is within range
+                if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
                 {
-                    Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
-                    Quaternion toRotation = Quaternion.LookRotation(direction);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
-                    _canShoot = true;
+                    RaycastHit hitLinecast;
+                    // if there are NO obstacles between turret and player
+                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
+                    {
+                        if(IsMoving())
+                        {
+                            Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
+                            Quaternion toRotation = Quaternion.LookRotation(direction);
+                            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                            transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                        }
+                        _canShoot = true;
+                    }
                 }
             }
         }
@@ -75,12 +89,26 @@ public class TurretAI : MonoBehaviour, IEnemy
         return _enemyCharacter.GetLives();
     }
 
-    public bool IsAlive(){
-        return _enemyCharacter.IsAlive();
+    public bool IsMoving(){
+        return _enemyCharacter.IsMoving();
     }
 
-    public void SetAlive(bool alive){
-        _enemyCharacter.SetAlive(alive);
+    public void SetMoving(bool moving){
+        _enemyCharacter.SetMoving(moving);
+    }
+
+    public Vector3 GetGraviton(){
+        return _enemyCharacter.GetGraviton();
+    }
+
+    public void AddGravitonAddiction(Vector3 graviton)
+    {
+        _enemyCharacter.AddGravitonAddiction(graviton);
+    }
+
+    public void RemoveGravitonAddiction()
+    {
+        _enemyCharacter.RemoveGravitonAddiction();
     }
 
     public void OnSpeedChanged(float value){

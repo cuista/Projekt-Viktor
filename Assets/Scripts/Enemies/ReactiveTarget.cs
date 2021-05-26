@@ -11,8 +11,9 @@ public class ReactiveTarget : MonoBehaviour, ReactiveObject
         IEnemy enemy=GetComponent<IEnemy>();
         if(enemy!=null){
             enemy.RemoveLives(numHits);
+            ExplosionController.MakeItBoom(explosionEffect, transform);
             if(enemy.GetLives()<1){
-                enemy.SetAlive(false);
+                enemy.SetMoving(false);
                 StartCoroutine(Die());
             }
         }

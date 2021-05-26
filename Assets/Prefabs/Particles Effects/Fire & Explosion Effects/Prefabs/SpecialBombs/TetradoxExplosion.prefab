@@ -14359,6 +14359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96797cff1960d7468fc801091e16ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightingEffect: {fileID: 2668178543025089184, guid: 28b704db841405b4fbc4f6b304badaab,
+    type: 3}
 --- !u!135 &1066157924180511490
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -5,9 +5,10 @@ using UnityEngine;
 public class ParalysisTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.GetComponent<EnemyCharacter>() != null)
+        EnemyCharacter enemy = other.gameObject.GetComponent<EnemyCharacter>();
+        if(enemy != null)
         {
-            Debug.Log("Paralysis: " + other.gameObject.name);
+            SpecialEffectController.TetradoxEffect(enemy);
         }
     }
 }

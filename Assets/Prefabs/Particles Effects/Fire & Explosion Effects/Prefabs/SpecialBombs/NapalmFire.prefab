@@ -4721,7 +4721,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956197547661106}
   serializedVersion: 6
-  lengthInSec: 10
+  lengthInSec: 5
   simulationSpeed: 1.25
   stopAction: 0
   cullingMode: 3
@@ -5725,7 +5725,7 @@ ParticleSystem:
           outWeight: 0.08739837
         - serializedVersion: 3
           time: 1
-          value: 0.5663716
+          value: 0.32307687
           inSlope: -0.2779138
           outSlope: -0.2779138
           tangentMode: 0
@@ -9446,6 +9446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdfa0e5a7adb5e4aa0fa33858099183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flamesEffect: {fileID: 3218459349261004741, guid: 02f8bb59d4cc256468055984f784276d,
+    type: 3}
 --- !u!1 &1982324152055030
 GameObject:
   m_ObjectHideFlags: 0

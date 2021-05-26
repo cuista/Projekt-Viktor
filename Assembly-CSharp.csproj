@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\Boxes\ReactiveBox.cs" />
      <Compile Include="Assets\Scripts\Controller\ExplosionController.cs" />
      <Compile Include="Assets\Scripts\Controller\SceneControllerN.cs" />
+     <Compile Include="Assets\Scripts\Controller\SpecialEffectController.cs" />
      <Compile Include="Assets\Scripts\Controller\UI\FPSCounter.cs" />
      <Compile Include="Assets\Scripts\Controller\UI\GameEvent.cs" />
      <Compile Include="Assets\Scripts\Controller\UI\Messenger.cs" />
@@ -53,6 +54,7 @@
      <Compile Include="Assets\Scripts\Enemies\ReactiveTarget.cs" />
      <Compile Include="Assets\Scripts\Enemies\TurretAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\WanderingAI.cs" />
+     <Compile Include="Assets\Scripts\FlamesTrigger.cs" />
      <Compile Include="Assets\Scripts\GameManager\IGameManager.cs" />
      <Compile Include="Assets\Scripts\GameManager\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\GameManager\Items\CollectibleItem.cs" />
@@ -60,7 +62,7 @@
      <Compile Include="Assets\Scripts\GameManager\ManagerStatus.cs" />
      <Compile Include="Assets\Scripts\GameManager\Managers.cs" />
      <Compile Include="Assets\Scripts\GameManager\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\HarmfulFlames.cs" />
+     <Compile Include="Assets\Scripts\GravityTrigger.cs" />
      <Compile Include="Assets\Scripts\Main Camera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\Main Camera\PlayerCamera\TransparentPlayer.cs" />
      <Compile Include="Assets\Scripts\ParalysisTrigger.cs" />
@@ -70,7 +72,6 @@
      <Compile Include="Assets\Scripts\Player\RelativeMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\SightTarget.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\Spin.cs" />
-     <Compile Include="Assets\Scripts\QuantumGravity.cs" />
      <Compile Include="Assets\Scripts\ReactiveObject.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />

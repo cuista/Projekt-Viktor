@@ -36,59 +36,70 @@ public class FollowingAI : MonoBehaviour, IEnemy
         _shootTimer = 0;
 
         _enemyCharacter=GetComponent<EnemyCharacter>();
-        SetAlive(true);
+        SetMoving(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(IsAlive()){
+        if(IsMoving()){
         transform.Translate(0,0,speed*Time.deltaTime); //move continuosly enemy
         }
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position,range);
         _canShoot = false;
         _isFollowing = false;
-        foreach(var hitCollider in hitColliders)
+        Vector3 graviton = GetGraviton();
+        if(graviton != Vector3.zero)
         {
-            GameObject hitOverlapSphere = hitCollider.transform.gameObject;
-            // check if player is within range
-            if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
-            {
-                _isFollowing = true;
-                RaycastHit hitLinecast;
-                // if there are NO obstacles between this enemy and player
-                if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
-                {
-                    Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
-                    Quaternion toRotation = Quaternion.LookRotation(direction);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
-                    _canShoot = true;
-                }
-            }
+            Vector3 direction = (graviton - transform.position).normalized;
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
         }
-
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-        if (Physics.SphereCast(ray,0.75f,out hit)){
-            GameObject hitObject = hit.transform.gameObject;
-            if(hit.distance < obstacleRange)
+        else
+        {
+            foreach(var hitCollider in hitColliders)
             {
-                float angle=Random.Range(-110,110);
-                transform.Rotate(0,angle, 0);
-            }
-            else if(Vector3.Distance(transform.position, _defaultPosition) > range)
-            {
-                if(_isFollowing)
+                GameObject hitOverlapSphere = hitCollider.transform.gameObject;
+                // check if player is within range
+                if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
                 {
-                    transform.Translate(0,0,-speed*Time.deltaTime);
+                    _isFollowing = true;
+                    RaycastHit hitLinecast;
+                    // if there are NO obstacles between this enemy and player
+                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
+                    {
+                        Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
+                        Quaternion toRotation = Quaternion.LookRotation(direction);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                        _canShoot = true;
+                    }
                 }
-                else
+            }
+
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hit;
+            if (Physics.SphereCast(ray,0.75f,out hit)){
+                GameObject hitObject = hit.transform.gameObject;
+                if(hit.distance < obstacleRange)
                 {
-                    Quaternion toRotation = Quaternion.LookRotation(_defaultPosition);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                    transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                    float angle=Random.Range(-110,110);
+                    transform.Rotate(0,angle, 0);
+                }
+                else if(Vector3.Distance(transform.position, _defaultPosition) > range)
+                {
+                    if(_isFollowing)
+                    {
+                        transform.Translate(0,0,-speed*Time.deltaTime);
+                    }
+                    else
+                    {
+                        Quaternion toRotation = Quaternion.LookRotation(_defaultPosition);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                    }
                 }
             }
         }
@@ -113,12 +124,26 @@ public class FollowingAI : MonoBehaviour, IEnemy
         return _enemyCharacter.GetLives();
     }
 
-    public bool IsAlive(){
-        return _enemyCharacter.IsAlive();
+    public bool IsMoving(){
+        return _enemyCharacter.IsMoving();
     }
 
-    public void SetAlive(bool alive){
-        _enemyCharacter.SetAlive(alive);
+    public Vector3 GetGraviton(){
+        return _enemyCharacter.GetGraviton();
+    }
+
+    public void AddGravitonAddiction(Vector3 graviton)
+    {
+        _enemyCharacter.AddGravitonAddiction(graviton);
+    }
+
+    public void RemoveGravitonAddiction()
+    {
+        _enemyCharacter.RemoveGravitonAddiction();
+    }
+
+    public void SetMoving(bool moving){
+        _enemyCharacter.SetMoving(moving);
     }
 
     public void OnSpeedChanged(float value){

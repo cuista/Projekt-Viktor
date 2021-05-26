@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCharacter : MonoBehaviour
+public class EnemyCharacter : MonoBehaviour, IEnemy
 {
     [SerializeField] private int lives;
 
-    private bool _alive;
+    private bool _isMoving;
+
+    private Vector3 _graviton;
 
     public void RemoveLives(int livesToRemove){
         lives -= livesToRemove;
@@ -16,12 +18,29 @@ public class EnemyCharacter : MonoBehaviour
         return lives;
     }
 
-    public bool IsAlive(){
-        return _alive;
+    public bool IsMoving(){
+        return _isMoving;
     }
 
-    public void SetAlive(bool alive){
-        _alive=alive;
+    public void SetMoving(bool moving){
+        _isMoving=moving;
+    }
+
+    public Vector3 GetGraviton(){
+        return _graviton;
+    }
+
+    public void AddGravitonAddiction(Vector3 graviton)
+    {
+        _graviton = graviton;
+    }
+
+    public void RemoveGravitonAddiction()
+    {
+        _graviton = Vector3.zero;
+    }
+
+    public void OnSpeedChanged(float value){
     }
     
 }

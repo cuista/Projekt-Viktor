@@ -8,9 +8,15 @@ public interface IEnemy
 
     int GetLives();
 
-    bool IsAlive();
+    bool IsMoving();
 
-    void SetAlive(bool alive);
+    void SetMoving(bool moving);
+
+    Vector3 GetGraviton();
+
+    void AddGravitonAddiction(Vector3 graviton);
+
+    void RemoveGravitonAddiction();
 
     void OnSpeedChanged(float value);
 }

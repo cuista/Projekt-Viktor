@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterLabel: {fileID: 4934006040724041023}
-  explosionEffect: {fileID: 3935722342293003912, guid: 52a8347c76075534bbcab1c6c0dbda32,
+  explosionEffect: {fileID: 3935722342293003912, guid: bc9cc0e74cad0494a9289dedc9f173aa,
     type: 3}
 --- !u!1 &4934006040724041023
 GameObject:
