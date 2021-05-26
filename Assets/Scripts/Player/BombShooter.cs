@@ -118,10 +118,13 @@ public class BombShooter : MonoBehaviour
                         GameObject hitObject = hitCollider.transform.gameObject;
                         ReactiveObject target = hitObject.GetComponent<ReactiveObject>();
                         if(target != null){
-                            Debug.Log("Target hit");
-                            target.ReactToHit();
-                            //adding explosion force
-                            target.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
+                            if(bomb.tag != "SpecialBomb")
+                            {
+                                Debug.Log("Target hit");
+                                target.ReactToHits(bomb.GetComponent<Bomb>().GetCounter());
+                                //adding explosion force
+                                target.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
+                            }
                         }
                     }
 
@@ -192,4 +195,5 @@ public class BombShooter : MonoBehaviour
     private int MathMod(int a, int b){
         return (Mathf.Abs(a * b) + a) % b;
     }
+
 }

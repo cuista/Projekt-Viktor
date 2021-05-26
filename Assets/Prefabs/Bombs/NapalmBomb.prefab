@@ -4942,7 +4942,7 @@ GameObject:
   - component: {fileID: 6085819160906048381}
   m_Layer: 2
   m_Name: NapalmBomb
-  m_TagString: Untagged
+  m_TagString: SpecialBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

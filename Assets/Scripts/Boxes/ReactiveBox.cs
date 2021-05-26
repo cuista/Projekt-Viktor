@@ -7,7 +7,7 @@ public class ReactiveBox : MonoBehaviour, ReactiveObject
     [SerializeField] public GameObject item;
     [SerializeField] public GameObject explosionEffect;
 
-    public void ReactToHit(){
+    public void ReactToHits(int numHits){
         StartCoroutine(Open());
     }
 
@@ -22,10 +22,5 @@ public class ReactiveBox : MonoBehaviour, ReactiveObject
     }
 
     public void AddExplosionForce(float explosionForce, Vector3 explosionPosition, float explosionRadius) {
-        Rigidbody rigidBody=GetComponent<Rigidbody>();
-        if(rigidBody != null)
-        {
-            rigidBody.AddExplosionForce(1000f, explosionPosition, explosionRadius);
-        }
     }
 }

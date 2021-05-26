@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Enemies\DroneAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyCharacter.cs" />
      <Compile Include="Assets\Scripts\Enemies\FollowingAI.cs" />
+     <Compile Include="Assets\Scripts\Enemies\IEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\ReactiveTarget.cs" />
      <Compile Include="Assets\Scripts\Enemies\TurretAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\WanderingAI.cs" />
@@ -59,14 +60,17 @@
      <Compile Include="Assets\Scripts\GameManager\ManagerStatus.cs" />
      <Compile Include="Assets\Scripts\GameManager\Managers.cs" />
      <Compile Include="Assets\Scripts\GameManager\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\HarmfulFlames.cs" />
      <Compile Include="Assets\Scripts\Main Camera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\Main Camera\PlayerCamera\TransparentPlayer.cs" />
+     <Compile Include="Assets\Scripts\ParalysisTrigger.cs" />
      <Compile Include="Assets\Scripts\Player\Bomb.cs" />
      <Compile Include="Assets\Scripts\Player\BombShooter.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCharacter.cs" />
      <Compile Include="Assets\Scripts\Player\RelativeMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\SightTarget.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\Spin.cs" />
+     <Compile Include="Assets\Scripts\QuantumGravity.cs" />
      <Compile Include="Assets\Scripts\ReactiveObject.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />

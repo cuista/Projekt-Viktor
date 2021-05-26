@@ -7,12 +7,15 @@ public class ReactiveTarget : MonoBehaviour, ReactiveObject
 
     [SerializeField] public GameObject explosionEffect;
 
-    public void ReactToHit(){
-        WanderingAI behavior=GetComponent<WanderingAI>();
-        if(behavior!=null){
-            behavior.SetAlive(false);
+    public void ReactToHits(int numHits){
+        IEnemy enemy=GetComponent<IEnemy>();
+        if(enemy!=null){
+            enemy.RemoveLives(numHits);
+            if(enemy.GetLives()<1){
+                enemy.SetAlive(false);
+                StartCoroutine(Die());
+            }
         }
-        StartCoroutine(Die());
     }
 
     private IEnumerator Die() {

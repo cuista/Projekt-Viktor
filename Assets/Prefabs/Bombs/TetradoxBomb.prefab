@@ -9695,7 +9695,7 @@ GameObject:
   - component: {fileID: 8216565399923972400}
   m_Layer: 2
   m_Name: TetradoxBomb
-  m_TagString: Untagged
+  m_TagString: SpecialBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9777,5 +9777,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterLabel: {fileID: 1185318313295537136}
-  explosionEffect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
+  explosionEffect: {fileID: 6036831319607024059, guid: 861c6e2944bb6f941b01daed628d0002,
     type: 3}

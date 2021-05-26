@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 2741881081941317631}
   m_Layer: 2
   m_Name: GravitonBomb
-  m_TagString: Untagged
+  m_TagString: SpecialBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterLabel: {fileID: 4934006040724041023}
-  explosionEffect: {fileID: 3179952393707856448, guid: 283d0203d41cfac4ab3363c0334734a4,
+  explosionEffect: {fileID: 3935722342293003912, guid: 52a8347c76075534bbcab1c6c0dbda32,
     type: 3}
 --- !u!1 &4934006040724041023
 GameObject:

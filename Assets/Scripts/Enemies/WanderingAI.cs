@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WanderingAI : MonoBehaviour
+public class WanderingAI : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject bulletPrefab;
     public float speed=3.0f;
     public float obstacleRange=1.0f;
     public const float baseSpeed = 3.0f;
-
-    private bool _alive;
     private GameObject _bullet;
+
+    private EnemyCharacter _enemyCharacter;
 
 
     private void Awake() {
@@ -24,13 +24,14 @@ public class WanderingAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _alive=true;
+        _enemyCharacter=GetComponent<EnemyCharacter>();
+        SetAlive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_alive){
+        if(IsAlive()){
         transform.Translate(0,0,speed*Time.deltaTime); //move continuosly enemy
         }
 
@@ -51,11 +52,23 @@ public class WanderingAI : MonoBehaviour
         }
     }
 
-    public void SetAlive(bool alive){
-        _alive=alive;
+    public void RemoveLives(int livesToRemove){
+        _enemyCharacter.RemoveLives(livesToRemove);
     }
 
-    private void OnSpeedChanged(float value){
+    public int GetLives(){
+        return _enemyCharacter.GetLives();
+    }
+
+    public bool IsAlive(){
+        return _enemyCharacter.IsAlive();
+    }
+
+    public void SetAlive(bool alive){
+        _enemyCharacter.SetAlive(alive);
+    }
+
+    public void OnSpeedChanged(float value){
         speed = baseSpeed * value;
     }
 }

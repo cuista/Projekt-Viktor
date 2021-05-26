@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretAI : MonoBehaviour
+public class TurretAI : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject bulletPrefab;
     public float rotationSpeed=3.0f;
@@ -13,7 +13,7 @@ public class TurretAI : MonoBehaviour
     private float _shootTimer;
     private bool _canShoot;
 
-    private bool _alive;
+    private EnemyCharacter _enemyCharacter;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,8 @@ public class TurretAI : MonoBehaviour
         _defaultRotation = transform.rotation;
         _shootTimer = 0;
 
-        _alive=true;
+        _enemyCharacter=GetComponent<EnemyCharacter>();
+        SetAlive(true);
     }
 
     // Update is called once per frame
@@ -66,8 +67,23 @@ public class TurretAI : MonoBehaviour
         }
     }
 
-    public void SetAlive(bool alive)
-    {
-        _alive=alive;
+    public void RemoveLives(int livesToRemove){
+        _enemyCharacter.RemoveLives(livesToRemove);
+    }
+
+    public int GetLives(){
+        return _enemyCharacter.GetLives();
+    }
+
+    public bool IsAlive(){
+        return _enemyCharacter.IsAlive();
+    }
+
+    public void SetAlive(bool alive){
+        _enemyCharacter.SetAlive(alive);
+    }
+
+    public void OnSpeedChanged(float value){
+        
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowingAI : MonoBehaviour
+public class FollowingAI : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject bulletPrefab;
     public float speed=4.0f;
@@ -10,7 +10,6 @@ public class FollowingAI : MonoBehaviour
     public float rotationSpeed=5.0f;
     public float range=30.0f;
     public float fireDelay = 1f;
-    private bool _alive;
     public const float baseSpeed = 3.0f;
 
     private GameObject _bullet;
@@ -18,6 +17,8 @@ public class FollowingAI : MonoBehaviour
     private float _shootTimer;
     private bool _canShoot;
     private bool _isFollowing;
+
+    private EnemyCharacter _enemyCharacter;
 
 
     private void Awake() {
@@ -34,13 +35,14 @@ public class FollowingAI : MonoBehaviour
         _defaultPosition=transform.position;
         _shootTimer = 0;
 
-        _alive=true;
+        _enemyCharacter=GetComponent<EnemyCharacter>();
+        SetAlive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_alive){
+        if(IsAlive()){
         transform.Translate(0,0,speed*Time.deltaTime); //move continuosly enemy
         }
 
@@ -103,11 +105,23 @@ public class FollowingAI : MonoBehaviour
         }
     }
 
-    public void SetAlive(bool alive){
-        _alive=alive;
+    public void RemoveLives(int livesToRemove){
+        _enemyCharacter.RemoveLives(livesToRemove);
     }
 
-    private void OnSpeedChanged(float value){
+    public int GetLives(){
+        return _enemyCharacter.GetLives();
+    }
+
+    public bool IsAlive(){
+        return _enemyCharacter.IsAlive();
+    }
+
+    public void SetAlive(bool alive){
+        _enemyCharacter.SetAlive(alive);
+    }
+
+    public void OnSpeedChanged(float value){
         speed = baseSpeed * value;
     }
 
