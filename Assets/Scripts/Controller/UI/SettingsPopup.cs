@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsPopup : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class SettingsPopup : MonoBehaviour
     public void Close() {
         gameObject.SetActive(false);
         UnPauseGame();
+    }
+
+    public void ExitGame() {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void PauseGame() {

@@ -82,6 +82,9 @@ public class UIController : MonoBehaviour
     }
 
     public void OnSpecialBombChanged(int i){
-        specialBombsAnimator.SetInteger("currentSpecialBomb",i);
+        if(specialBombsAnimator != null) //FIXME on load scene it's null
+        {
+            specialBombsAnimator.SetInteger("currentSpecialBomb",i);
+        }
     }
 }
