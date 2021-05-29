@@ -6,9 +6,6 @@ TagManager:
   tags:
   - Sight
   - Bullet
-  - TetradoxBomb
-  - NapalmBomb
-  - GravitonBomb
   - SpecialBomb
   layers:
   - Default

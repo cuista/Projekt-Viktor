@@ -12,7 +12,9 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private SettingsPopup settingsPopup;
 
-    [SerializeField] private Animator specialBombsAnimator;
+    [SerializeField] private GameObject[] specialBomb_quantityValues;
+
+    [SerializeField] private Animator[] specialBombsAnimator_slots;
 
     private int _score;
     private int _bombsCapacity;
@@ -41,7 +43,11 @@ public class UIController : MonoBehaviour
         scoreValue.text= _score.ToString();
         settingsPopup.Close();
 
-        specialBombsAnimator.SetInteger("currentSpecialBomb",0);
+        for (int i = 0; i < specialBombsAnimator_slots.Length; i++)
+        {
+            specialBomb_quantityValues[i].SetActive(i==0?true:false);
+            specialBombsAnimator_slots[i].SetInteger("currentSpecialBomb",i);
+        }
     }
 
     // Update is called once per frame
@@ -81,10 +87,16 @@ public class UIController : MonoBehaviour
         Debug.Log("Pointer down");
     }
 
-    public void OnSpecialBombChanged(int i){
-        if(specialBombsAnimator != null) //FIXME on load scene it's null
+    public void OnSpecialBombChanged(int selectedSpecialBomb){
+         //FIXME on new load scene it's null, HUD must be DontDestroyOnLoad and created one time
+        for (int i = 0; i < specialBombsAnimator_slots.Length; i++)
         {
-            specialBombsAnimator.SetInteger("currentSpecialBomb",i);
+            specialBomb_quantityValues[i].SetActive(i==selectedSpecialBomb?true:false);
+            specialBombsAnimator_slots[i].SetInteger("currentSpecialBomb",MathMod(selectedSpecialBomb+i,specialBombsAnimator_slots.Length));
         }
+    }
+
+    private int MathMod(int a, int b){
+        return (Mathf.Abs(a * b) + a) % b;
     }
 }

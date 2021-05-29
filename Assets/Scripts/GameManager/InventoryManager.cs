@@ -13,18 +13,12 @@ public class InventoryManager : MonoBehaviour, IGameManager
 
     [SerializeField] public Text[] specialBombsValue;
 
-    [SerializeField] public Text[] specialBombsCapacityValue;
-
     public void Startup(){
         Debug.Log("Inventory manager starting...");
 
         _items = new Dictionary<string, int>();
 
         _specialBombsCapacity = 10;
-
-        foreach(Text capacityValue in specialBombsCapacityValue){
-            capacityValue.text = _specialBombsCapacity.ToString();
-        }
 
         status = ManagerStatus.Started;
     }
