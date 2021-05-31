@@ -11,8 +11,6 @@ public class InventoryManager : MonoBehaviour, IGameManager
 
     private int _specialBombsCapacity;
 
-    [SerializeField] public Text[] specialBombsValue;
-
     public void Startup(){
         Debug.Log("Inventory manager starting...");
 
@@ -50,7 +48,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
             _items[name] = 1;
         }
 
-        specialBombsValue[int.Parse(name.Split(' ')[1])].text=GetItemCount(name).ToString();
+        Messenger<int>.Broadcast(GameEvent.LIQUID_COLLECTED, int.Parse(name.Split(' ')[1]));
 
         DisplayItems();
     }
@@ -90,7 +88,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
             Debug.Log("cannot consume " + name);
         }
 
-        specialBombsValue[i].text=GetItemCount(name).ToString();
+        Messenger<int>.Broadcast(GameEvent.LIQUID_CONSUMED, int.Parse(name.Split(' ')[1]));
 
         DisplayItems();
     }

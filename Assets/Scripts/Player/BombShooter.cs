@@ -70,7 +70,7 @@ public class BombShooter : MonoBehaviour
 
                                 _bombsPlanted.Add(bomb);
                                 _bombsPlantedCount++;
-                                Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                                Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED,-1);
                             }
                         }
                     }
@@ -94,7 +94,7 @@ public class BombShooter : MonoBehaviour
 
                             _bombsPlanted.Add(bomb);
                             _bombsPlantedCount++;
-                            Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                            Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, -1);
                         }
                     }
                 }
@@ -152,7 +152,7 @@ public class BombShooter : MonoBehaviour
 
                                 _bombsPlanted.Add(bomb);
                                 _bombsPlantedCount++;
-                                Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                                Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, _currentSpecialBomb);
                                 Managers.Inventory.ConsumeSpecialBomb(_currentSpecialBomb);
                             }
                         }
@@ -185,7 +185,7 @@ public class BombShooter : MonoBehaviour
             if(Vector3.Distance(bombPlanted.transform.position, point) < bomb.GetRadius()){
                 bomb.AddBombOver();
                 _bombsPlantedCount++;
-                Messenger.Broadcast(GameEvent.BOMB_PLANTED);
+                Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, -1);
                 return true;
             }
         }

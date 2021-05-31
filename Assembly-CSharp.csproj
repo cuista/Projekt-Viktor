@@ -45,7 +45,7 @@
      <Compile Include="Assets\Scripts\Controller\UI\GameEvent.cs" />
      <Compile Include="Assets\Scripts\Controller\UI\Messenger.cs" />
      <Compile Include="Assets\Scripts\Controller\UI\SettingsPopup.cs" />
-     <Compile Include="Assets\Scripts\Controller\UIController.cs" />
+     <Compile Include="Assets\Scripts\Controller\UI\UIController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bullet.cs" />
      <Compile Include="Assets\Scripts\Enemies\DroneAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyCharacter.cs" />
