@@ -17,6 +17,7 @@ public class FollowingAI : MonoBehaviour, IEnemy
     private float _shootTimer;
     private bool _canShoot;
     private bool _isFollowing;
+    private bool _isPatrolling;
 
     private EnemyCharacter _enemyCharacter;
 
@@ -37,6 +38,8 @@ public class FollowingAI : MonoBehaviour, IEnemy
 
         _enemyCharacter=GetComponent<EnemyCharacter>();
         SetMoving(true);
+
+        _isPatrolling = true;
     }
 
     // Update is called once per frame
@@ -66,6 +69,7 @@ public class FollowingAI : MonoBehaviour, IEnemy
                 if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
                 {
                     _isFollowing = true;
+                    _isPatrolling = false;
                     RaycastHit hitLinecast;
                     // if there are NO obstacles between this enemy and player
                     if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
@@ -79,14 +83,71 @@ public class FollowingAI : MonoBehaviour, IEnemy
                 }
             }
 
+            // really close to default position
+            if(Vector3.Distance(transform.position, _defaultPosition)<5f){
+                _isPatrolling=true;
+            }
+            // returning to default position
+            if(!_isFollowing && !_isPatrolling){
+                Vector3 forwardDir = (_defaultPosition - transform.position).normalized;
+                Vector3 rightDir = Quaternion.Euler(0,90,0) * forwardDir;
+                Vector3 leftDir = Quaternion.Euler(0,-90,0) * forwardDir;
+                RaycastHit forwardHit, rightHit, leftHit;
+                if (!Physics.Raycast(transform.position,forwardDir, out forwardHit) || forwardHit.distance>4f)
+                {
+                    Quaternion toRotation = Quaternion.LookRotation(forwardDir);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                    transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                }
+                else
+                {
+                    bool hasHittedRight = Physics.Raycast(transform.position,rightDir, out rightHit);
+                    bool hasHittedLeft = Physics.Raycast(transform.position,leftDir, out leftHit);
+                    if(!hasHittedRight || (hasHittedLeft && rightHit.distance >= leftHit.distance && rightHit.distance>4f))
+                    {
+                        Quaternion toRotation = Quaternion.LookRotation(rightDir);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                    }
+                    else if(!hasHittedLeft || (hasHittedRight && leftHit.distance >= rightHit.distance && leftHit.distance>4f))
+                    {
+                        Quaternion toRotation = Quaternion.LookRotation(leftDir);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                        transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                    }
+                    else
+                    {
+                        if(forwardHit.distance >= rightHit.distance && forwardHit.distance >= leftHit.distance)
+                        {
+                            Quaternion toRotation = Quaternion.LookRotation(forwardDir);
+                            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                            transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                        }
+                        else if(rightHit.distance >= forwardHit.distance && rightHit.distance >= leftHit.distance)
+                        {
+                            Quaternion toRotation = Quaternion.LookRotation(rightDir);
+                            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                            transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                        }
+                        else
+                        {
+                            Quaternion toRotation = Quaternion.LookRotation(leftDir);
+                            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                            transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                        }
+                    }
+
+                }       
+            }
+
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.SphereCast(ray,0.75f,out hit)){
                 GameObject hitObject = hit.transform.gameObject;
                 if(hit.distance < obstacleRange)
                 {
-                    float angle=Random.Range(-110,110);
-                    transform.Rotate(0,angle, 0);
+                    float patrolAngle=Random.Range(-110,110);
+                    transform.Rotate(0,patrolAngle, 0);
                 }
                 else if(Vector3.Distance(transform.position, _defaultPosition) > range)
                 {
@@ -96,9 +157,7 @@ public class FollowingAI : MonoBehaviour, IEnemy
                     }
                     else
                     {
-                        Quaternion toRotation = Quaternion.LookRotation(_defaultPosition);
-                        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                        transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y,0); // only y rotation
+                        _isPatrolling = false; // trigger return to default position
                     }
                 }
             }
