@@ -128,8 +128,9 @@ public class BombShooter : MonoBehaviour
                         }
                     }
 
-                    _bombsPlantedCount-=bomb.GetComponent<Bomb>().GetCounter();
-                    Destroy(bomb);
+                    Bomb bombToDetonate = bomb.GetComponent<Bomb>();
+                    _bombsPlantedCount-=bombToDetonate.GetCounter();
+                    bombToDetonate.Detonate();
                 }
                 _bombsPlanted.Clear();
                 Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
@@ -190,6 +191,12 @@ public class BombShooter : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void ResetBombsPlanted(){
+        _bombsPlantedCount = 0;
+        _bombsPlanted.Clear();
+        Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
     }
 
     private int MathMod(int a, int b){

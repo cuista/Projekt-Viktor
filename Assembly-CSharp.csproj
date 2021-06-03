@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\GameManager\Managers.cs" />
      <Compile Include="Assets\Scripts\GameManager\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\GravityTrigger.cs" />
+     <Compile Include="Assets\Scripts\Levels\Level_0\EndLevel_0.cs" />
      <Compile Include="Assets\Scripts\MainCamera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\MainCamera\PlayerCamera\TransparentPlayer.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
@@ -74,6 +75,8 @@
      <Compile Include="Assets\Scripts\Player\Sight\SightTarget.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\Spin.cs" />
      <Compile Include="Assets\Scripts\ReactiveObject.cs" />
+     <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoadManager.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

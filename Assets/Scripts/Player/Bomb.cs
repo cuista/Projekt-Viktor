@@ -29,8 +29,9 @@ public class Bomb : MonoBehaviour
         }
     }
 
-    private void OnDestroy() {
-       ExplosionController.MakeItBoom(explosionEffect, transform);
+    public void Detonate(){
+        ExplosionController.MakeItBoom(explosionEffect, transform);
+        Destroy(this.gameObject);
     }
 
     public float GetRadius() {
