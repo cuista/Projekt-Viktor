@@ -12,7 +12,6 @@ public class ReactiveBox : MonoBehaviour, ReactiveObject
     }
 
     private IEnumerator Open() {
-        this.transform.Rotate(-75, 0, 0);
         ExplosionController.MakeItBoom(explosionEffect, transform);
 
         yield return new WaitForSeconds(0.5f);

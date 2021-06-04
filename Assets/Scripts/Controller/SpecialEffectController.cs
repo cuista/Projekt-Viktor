@@ -51,9 +51,9 @@ public class SpecialEffectController : MonoBehaviour
         flamesOnEnemy.transform.parent = enemy.transform;
         Destroy(flamesOnEnemy, _specialEffectController.flamesEffect.GetComponent<ParticleSystem>().main.duration/2);
 
-        ReactiveTarget reactiveTarget = enemy.GetComponent<ReactiveTarget>();
+        ReactiveEnemy reactiveEnemy = enemy.GetComponent<ReactiveEnemy>();
         while(flamesOnEnemy != null){
-            reactiveTarget.ReactToHits(1);
+            reactiveEnemy.ReactToHits(1);
             yield return new WaitForSeconds(2f);
         }
     }

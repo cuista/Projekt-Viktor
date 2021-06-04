@@ -51,7 +51,7 @@
      <Compile Include="Assets\Scripts\Enemies\EnemyCharacter.cs" />
      <Compile Include="Assets\Scripts\Enemies\FollowingAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\IEnemy.cs" />
-     <Compile Include="Assets\Scripts\Enemies\ReactiveTarget.cs" />
+     <Compile Include="Assets\Scripts\Enemies\ReactiveEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\TurretAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\WanderingAI.cs" />
      <Compile Include="Assets\Scripts\FlamesTrigger.cs" />
@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\GameManager\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\GravityTrigger.cs" />
      <Compile Include="Assets\Scripts\Levels\Level_0\EndLevel_0.cs" />
+     <Compile Include="Assets\Scripts\Levels\Level_0\SceneController_0.cs" />
      <Compile Include="Assets\Scripts\MainCamera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\MainCamera\PlayerCamera\TransparentPlayer.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
@@ -77,12 +78,14 @@
      <Compile Include="Assets\Scripts\ReactiveObject.cs" />
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoadManager.cs" />
+     <Compile Include="Assets\Scripts\Targets\ReactiveTarget.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeTransparent.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\Packs\00-PolygonSciFiCity\Shaders\Polygon_Triplanar.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeShaded-Unlit.shader" />
@@ -95,6 +98,7 @@
      <None Include="Assets\Prefabs\Particles Effects\Misc Effects\Shaders\Respawn.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Wireframe.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\Packs\00-PolygonSciFiCity\Shaders\Polygon_UVScroll.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
@@ -684,6 +688,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
