@@ -19,4 +19,13 @@ public static class DontDestroyOnLoadManager
         }
         _ddolObjects.Clear();
     }
+
+    public static GameObject GetPlayer(){
+        foreach(var go in _ddolObjects)
+        {
+            if(go.GetComponent<PlayerCharacter>() != null)
+                return go;
+        }
+        return null;
+    }
 }

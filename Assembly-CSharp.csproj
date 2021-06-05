@@ -65,6 +65,10 @@
      <Compile Include="Assets\Scripts\GravityTrigger.cs" />
      <Compile Include="Assets\Scripts\Levels\Level_0\EndLevel_0.cs" />
      <Compile Include="Assets\Scripts\Levels\Level_0\SceneController_0.cs" />
+     <Compile Include="Assets\Scripts\Levels\Level_1\EndLevel_1.cs" />
+     <Compile Include="Assets\Scripts\Levels\Level_1\SceneController_1.cs" />
+     <Compile Include="Assets\Scripts\Levels\Level_2\EndLevel_2.cs" />
+     <Compile Include="Assets\Scripts\Levels\Level_2\SceneController_2.cs" />
      <Compile Include="Assets\Scripts\MainCamera\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\MainCamera\PlayerCamera\TransparentPlayer.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
@@ -92,11 +96,12 @@
      <None Include="Assets\Prefabs\Particles Effects\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Resources\WireframeTransparentCulled-Global.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\Packs\02-3D Scifi Kit Starter Kit\_Docs\Doc.txt" />
+     <None Include="Assets\Packs\02b-3D Scifi Kit Starter Kit\_Docs\Doc.txt" />
      <None Include="Assets\Shaders\Wireframe\Shaders\WireframeTransparentCulled.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Wireframe.cginc" />
      <None Include="Assets\Prefabs\Particles Effects\Misc Effects\Shaders\Respawn.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Wireframe.shader" />
+     <None Include="Assets\Packs\01-Cube - Sci Fi Underworld City\Read me.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\Packs\00-PolygonSciFiCity\Shaders\Polygon_UVScroll.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -106,6 +111,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Packs\01-Cube - Sci Fi Underworld City\www.meshtint.com.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Prefabs\Particles Effects\Misc Effects\Shaders\FireFly.shader" />
@@ -114,7 +120,7 @@
      <None Include="Assets\Shaders\Wireframe\Shaders\Resources\Wireframe-Global.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-     <None Include="Assets\Packs\01-Sci-Fi Styled Modular Pack\Readme.txt" />
+     <None Include="Assets\Packs\02a-Sci-Fi Styled Modular Pack\Readme.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Shaders\Wireframe\Shaders\Resources\WireframeShaded-Unlit-Global.shader" />
      <None Include="Assets\Prefabs\Particles Effects\Misc Effects\Shaders\Dissolve.shader" />
@@ -650,6 +656,9 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProGrids">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -661,6 +670,9 @@
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -688,12 +700,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids">
-        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-        <HintPath>D:/VirtualReality Workspace Unity3D/ProjektViktor/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

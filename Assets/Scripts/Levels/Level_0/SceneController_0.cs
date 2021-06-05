@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class SceneController_0 : MonoBehaviour
 {
+
+    private GameObject _player;
+
+    [SerializeField] public GameObject playerSpawn;
+
+    /*
     [SerializeField] private GameObject enemy1Prefab;
     [SerializeField] private GameObject enemy2Prefab;
     [SerializeField] private GameObject enemy3Prefab;
     [SerializeField] private GameObject enemy4Prefab;
     private GameObject[] _enemies;
     public int enemiesCount;
+    */
 
     public float speed;
 
@@ -24,6 +31,11 @@ public class SceneController_0 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        _player = DontDestroyOnLoadManager.GetPlayer();
+        _player.transform.position = playerSpawn.transform.position;
+
+        /*
         _enemies=new GameObject[enemiesCount];
 
         for(int i=0; i<_enemies.Length; i++){
@@ -74,18 +86,21 @@ public class SceneController_0 : MonoBehaviour
                 }
             }
         }
+        */
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         for(int i=0; i<_enemies.Length; i++){
             if(_enemies[i]==null){
                 Messenger.Broadcast(GameEvent.ENEMY_KILLED);
                 _enemies[i]=Instantiate(enemy1Prefab,new Vector3(Random.Range(-70f,70f),1f,Random.Range(-70f,70f)),Quaternion.Euler(0,Random.Range(0, 360f),0));
             }
         }
+        */
     }
 
     private void UpdateNewEnemiesSpeed(float value){
