@@ -5,7 +5,13 @@ using UnityEngine;
 public static class DontDestroyOnLoadManager
 {
 
+    private static List<GameObject> _permanentObjects = new List<GameObject>();
     private static List<GameObject> _ddolObjects = new List<GameObject>();
+
+    public static void PermanentObject(this GameObject go){
+        UnityEngine.Object.DontDestroyOnLoad(go);
+        _permanentObjects.Add(go);
+    }
 
     public static void DontDestroyOnLoad(this GameObject go){
         UnityEngine.Object.DontDestroyOnLoad(go);
@@ -24,6 +30,15 @@ public static class DontDestroyOnLoadManager
         foreach(var go in _ddolObjects)
         {
             if(go.GetComponent<PlayerCharacter>() != null)
+                return go;
+        }
+        return null;
+    }
+
+    public static GameObject GetLoadingScreen(){
+        foreach(var go in _permanentObjects)
+        {
+            if(go.tag == "LoadingScreen")
                 return go;
         }
         return null;

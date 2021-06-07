@@ -7,6 +7,7 @@ TagManager:
   - Sight
   - Bullet
   - SpecialBomb
+  - LoadingScreen
   layers:
   - Default
   - TransparentFX
