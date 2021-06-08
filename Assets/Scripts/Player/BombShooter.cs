@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class BombShooter : MonoBehaviour
@@ -17,6 +18,13 @@ public class BombShooter : MonoBehaviour
 
     [SerializeField] public GameObject sight;
     [SerializeField] public GameObject sightOnTop;
+
+    [SerializeField] public GameObject shield;
+    [SerializeField] public Slider shieldSlider;
+    public bool hasShield = false;
+    public float shieldDuration = 5f;
+    private bool _canUseShield = true;
+    public float shieldRecoveryTime = 15f;
 
     //rapid click bomb on the ground, holding click to attach it
     private const float _minimumHeldDuration = 0.17f;
@@ -40,6 +48,8 @@ public class BombShooter : MonoBehaviour
         sight.GetComponent<MeshCollider>().enabled=false;
 
         _currentSpecialBomb = 0;
+
+        shield.SetActive(false);
     }
 
     // Update is called once per frame
@@ -182,16 +192,21 @@ public class BombShooter : MonoBehaviour
                 Debug.Log("n-: "+_currentSpecialBomb);
             }
 
+            if(Input.GetKeyUp(KeyCode.F) && _canUseShield)
+            {
+                StartCoroutine(UseShield());
+            }
+
+            if(Managers.Inventory.GetItemCount("E-Chip") != 0)
+            {
+                _bombsCapacity = MathMod(_bombsCapacity+1,_maxCapacity+1);
+                Managers.Inventory.ConsumeItem("E-Chip");
+                Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
+            }
         } else {
             _bombButtonHeld=true; //FIXME ??? fixed bug on settings popup close, viktor putted a bomb
         }
 
-        if(Managers.Inventory.GetItemCount("E-Chip") != 0)
-        {
-            _bombsCapacity = MathMod(_bombsCapacity+1,_maxCapacity+1);
-            Managers.Inventory.ConsumeItem("E-Chip");
-            Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
-        }
     }
 
     private bool IncrementIfOverlappingBomb(Vector3 point){
@@ -211,6 +226,32 @@ public class BombShooter : MonoBehaviour
         _bombsPlantedCount = 0;
         _bombsPlanted.Clear();
         Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
+    }
+
+    private IEnumerator UseShield()
+    {
+        float totalTime = 0;
+        hasShield = true;
+        _canUseShield = false;
+        shield.SetActive(true);
+        while(totalTime <= shieldDuration)
+        {
+            shieldSlider.value = 1 - (totalTime / shieldDuration);
+            totalTime += Time.deltaTime;
+            yield return null;
+        }
+        shield.SetActive(false);
+        hasShield = false;
+
+        // Recharge shield
+        totalTime = 0;
+        while(totalTime <= shieldRecoveryTime)
+        {
+            shieldSlider.value = totalTime / shieldRecoveryTime;
+            totalTime += Time.deltaTime;
+            yield return null;
+        }
+        _canUseShield = true;
     }
 
     private int MathMod(int a, int b){

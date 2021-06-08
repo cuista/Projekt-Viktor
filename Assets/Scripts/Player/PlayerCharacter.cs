@@ -70,9 +70,12 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     public void Hurt(int damage){
-        damaged=true;
-        health-=damage;
-        healthBar.value -= barValueDamage;
+        if(!GetComponent<BombShooter>().hasShield)
+        {
+            damaged=true;
+            health-=damage;
+            healthBar.value -= barValueDamage;
+        }
     }
 
     public void Death(){
