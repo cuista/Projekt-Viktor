@@ -61,9 +61,9 @@ public class RelativeMovement : MonoBehaviour
 
             if (horInput != 0 || vertInput != 0) {
                 if(Input.GetKey(KeyCode.LeftShift)){
-                    _moveSpeed=8f;
+                    _moveSpeed=9f;
                 } else {
-                    _moveSpeed=3f;
+                    _moveSpeed=6f;
                 }
                 movement.x = horInput * _moveSpeed;
                 movement.z = vertInput * _moveSpeed;

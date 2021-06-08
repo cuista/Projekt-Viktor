@@ -21,6 +21,8 @@ public class FollowingAI : MonoBehaviour, IEnemy
 
     private EnemyCharacter _enemyCharacter;
 
+    private Animator _animator;
+
 
     private void Awake() {
         Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
@@ -40,13 +42,18 @@ public class FollowingAI : MonoBehaviour, IEnemy
         SetMoving(true);
 
         _isPatrolling = true;
+
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        bool animatorMovingHandler = false;
+
         if(IsMoving()){
-        transform.Translate(0,0,speed*Time.deltaTime); //move continuosly enemy
+            transform.Translate(0,0,speed*Time.deltaTime); //move continuosly enemy
+            animatorMovingHandler = true;
         }
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position,range);
@@ -154,6 +161,7 @@ public class FollowingAI : MonoBehaviour, IEnemy
                     if(_isFollowing)
                     {
                         transform.Translate(0,0,-speed*Time.deltaTime);
+                        animatorMovingHandler = false;
                     }
                     else
                     {
@@ -173,6 +181,9 @@ public class FollowingAI : MonoBehaviour, IEnemy
                 _shootTimer = -2;
             }
         }
+
+        if(_animator != null)
+            _animator.SetBool("IsMoving", animatorMovingHandler);
     }
 
     public void RemoveLives(int livesToRemove){
