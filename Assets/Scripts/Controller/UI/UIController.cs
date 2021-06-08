@@ -78,16 +78,18 @@ public class UIController : MonoBehaviour
     }
 
     private void OnBombCapacityChanged(int capacity){
+        int oldCapacity = _bombsCapacity;
         _bombsCapacity=capacity;
 
         for (int i = 0; i < bomb_countValues.Length; i++)
         {
-            if(i<_bombsCapacity)
+            if(i < _bombsCapacity && i >= _bombsCapacity - (_bombsCapacity - oldCapacity))
             {
                 bomb_countValues[i].SetActive(false);
             }
-            else
+            else if(i>=_bombsCapacity)
             {
+                bomb_countValues[i].SetActive(true);
                 bomb_countValues[i].GetComponent<Image>().sprite = red_crossImage;
             }
         }

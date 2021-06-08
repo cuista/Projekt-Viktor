@@ -7,7 +7,8 @@ public class BombShooter : MonoBehaviour
 {
     [SerializeField] private GameObject bombPrefab;
     public float bombsRadius=15f;
-    public int bombsCapacity;
+    private int _bombsCapacity;
+    private int _maxCapacity=8;
     private int _bombsPlantedCount=0;
     private List<GameObject> _bombsPlanted;
 
@@ -30,9 +31,9 @@ public class BombShooter : MonoBehaviour
 
         //_camera = GetComponentInChildren<Camera>(); //Prima controlla il chiamante e dopo inizia a controllare i figli (restituisce il primo che trova)
 
-        bombsCapacity=7;
-        _bombsPlanted=new List<GameObject>(bombsCapacity);
-        Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, bombsCapacity);
+        _bombsCapacity=2;
+        _bombsPlanted=new List<GameObject>(_bombsCapacity);
+        Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
 
         //sight.gameObject.SetActive(false); //--> I can't disable it because the line won't work
         sightOnTop.GetComponent<MeshRenderer>().enabled=false;
@@ -57,7 +58,7 @@ public class BombShooter : MonoBehaviour
                     Ray ray = new Ray(transform.position,-transform.up);
                     RaycastHit hitInfo;
                     if (Physics.Raycast(ray, out hitInfo)) { //out è un passaggio per riferimento
-                        if(_bombsPlantedCount < bombsCapacity)
+                        if(_bombsPlantedCount < _bombsCapacity)
                         {
                             if(!IncrementIfOverlappingBomb(hitInfo.point) && !GetComponent<RelativeMovement>().isJumping()) {
                                 //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -79,7 +80,7 @@ public class BombShooter : MonoBehaviour
                     sightOnTop.GetComponent<MeshRenderer>().enabled=false;
                     sight.GetComponent<MeshCollider>().enabled=false;
                     GameObject targetEnemy = sight.GetComponent<SightTarget>().GetTargetEnemy();
-                    if(targetEnemy!=null && _bombsPlantedCount < bombsCapacity) {
+                    if(targetEnemy!=null && _bombsPlantedCount < _bombsCapacity) {
                         if(!IncrementIfOverlappingBomb(targetEnemy.transform.position)) {
                             //GameObject bomb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                             GameObject bomb = Instantiate(bombPrefab) as GameObject;
@@ -145,7 +146,7 @@ public class BombShooter : MonoBehaviour
                 Ray ray = new Ray(transform.position,-transform.up);
                 RaycastHit hitInfo;
                 if (Physics.Raycast(ray, out hitInfo)) { //out è un passaggio per riferimento
-                    if(_bombsPlantedCount < bombsCapacity)
+                    if(_bombsPlantedCount < _bombsCapacity)
                     {
                         if(!IncrementIfOverlappingBomb(hitInfo.point) && !GetComponent<RelativeMovement>().isJumping()) {
                             if(Managers.Inventory.GetItemCount("Liquid " + _currentSpecialBomb)>0)
@@ -183,6 +184,13 @@ public class BombShooter : MonoBehaviour
 
         } else {
             _bombButtonHeld=true; //FIXME ??? fixed bug on settings popup close, viktor putted a bomb
+        }
+
+        if(Managers.Inventory.GetItemCount("E-Chip") != 0)
+        {
+            _bombsCapacity = MathMod(_bombsCapacity+1,_maxCapacity+1);
+            Managers.Inventory.ConsumeItem("E-Chip");
+            Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
         }
     }
 
