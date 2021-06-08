@@ -19,6 +19,8 @@ public class ReactiveTarget : MonoBehaviour, ReactiveObject
 
         yield return new WaitForSeconds(0.5f);
 
+        ExplosionController.MakeFloorOnFire(transform);
+
         Destroy(this.gameObject);
     }
 

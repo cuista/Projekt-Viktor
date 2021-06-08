@@ -23,7 +23,17 @@ public class ReactiveEnemy : MonoBehaviour, ReactiveObject
         this.transform.Rotate(-75, 0, 0);
         ExplosionController.MakeItBoom(explosionEffect, transform);
 
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        if(rigidbody.isKinematic)
+        {
+            rigidbody.isKinematic=false;
+            rigidbody.useGravity=true;
+            yield return new WaitForSeconds(0.5f);
+        }
+
         yield return new WaitForSeconds(0.5f);
+
+        ExplosionController.MakeFloorOnFire(transform);
 
         Destroy(this.gameObject);
     }

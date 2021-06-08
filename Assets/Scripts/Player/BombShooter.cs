@@ -126,6 +126,12 @@ public class BombShooter : MonoBehaviour
                                 target.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
                             }
                         }
+                        else // player get hurt too
+                        {
+                            PlayerCharacter playerCharacter = hitObject.GetComponent<PlayerCharacter>();
+                            if(playerCharacter != null)
+                                playerCharacter.Hurt(1);
+                        }
                     }
 
                     Bomb bombToDetonate = bomb.GetComponent<Bomb>();

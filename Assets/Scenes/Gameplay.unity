@@ -1688,6 +1688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fb6bbdbfeed704c9288a000e63216f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flamesEffect: {fileID: 1956197547661106, guid: f293a2dcc753a4a489fefe7f8f312d69,
+    type: 3}
 --- !u!4 &756781636
 Transform:
   m_ObjectHideFlags: 0

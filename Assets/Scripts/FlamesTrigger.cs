@@ -10,5 +10,12 @@ public class FlamesTrigger : MonoBehaviour
         {
             SpecialEffectController.NapalmEffect(enemy);
         }
+        else
+        {
+            PlayerCharacter player = other.gameObject.GetComponent<PlayerCharacter>();
+            if(player != null)
+                player.Hurt(1);
+        }
+
     }
 }
