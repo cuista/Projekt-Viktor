@@ -21,6 +21,8 @@ public class DroneAI : MonoBehaviour, IEnemy
 
     private EnemyCharacter _enemyCharacter;
 
+    public GameObject bulletCreationPoint;
+
     private Vector3 _targetPosition;
 
 
@@ -216,7 +218,7 @@ public class DroneAI : MonoBehaviour, IEnemy
         for(int i=0; i<3; i++)
         {
             GameObject bullet=Instantiate(bulletPrefab) as GameObject;
-            bullet.transform.position=transform.TransformPoint(Vector3.forward*2.5f);
+            bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*2.5f);
             bullet.transform.LookAt(_targetPosition);
 
             yield return new WaitForSeconds(0.5f);

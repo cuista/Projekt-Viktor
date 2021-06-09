@@ -13,6 +13,8 @@ public class WanderingAI : MonoBehaviour, IEnemy
 
     private EnemyCharacter _enemyCharacter;
 
+    public GameObject bulletCreationPoint;
+
 
     private void Awake() {
         Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
@@ -53,7 +55,7 @@ public class WanderingAI : MonoBehaviour, IEnemy
                 if(hitObject.GetComponent<PlayerCharacter>()){
                     if(_bullet==null){
                         _bullet=Instantiate(bulletPrefab) as GameObject;
-                        _bullet.transform.position=transform.TransformPoint(Vector3.forward*1.5f);
+                        _bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*1.5f);
                         _bullet.transform.rotation=transform.rotation;
                     }
                 }else if(hit.distance < obstacleRange){

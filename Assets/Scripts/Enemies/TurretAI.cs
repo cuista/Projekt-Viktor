@@ -15,6 +15,8 @@ public class TurretAI : MonoBehaviour, IEnemy
 
     private EnemyCharacter _enemyCharacter;
 
+    public GameObject bulletCreationPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,7 @@ public class TurretAI : MonoBehaviour, IEnemy
             if(_shootTimer > fireDelay)
             {
                 GameObject bullet=Instantiate(bulletPrefab) as GameObject;
-                bullet.transform.position=transform.TransformPoint(Vector3.forward*2.5f);
+                bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*2.5f);
                 bullet.transform.rotation=transform.rotation;
                 _shootTimer = 0;
             }
