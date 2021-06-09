@@ -9,6 +9,12 @@ public class UIController : MonoBehaviour
     private int _bombsCapacity;
     private int _bombsPlanted;
     [SerializeField] private Text scoreValue;
+    [SerializeField] private GameObject scoreMultiplier;
+
+    private int _multiplier = 1;
+
+    public float _multiplierDuration = 5f;
+
 
     [SerializeField] private SettingsPopup settingsPopup;
 
@@ -61,6 +67,8 @@ public class UIController : MonoBehaviour
             specialBomb_quantityValues[i].SetActive(i==0?true:false);
             specialBombsAnimator_slots[i].SetInteger("currentSpecialBomb",i);
         }
+
+        scoreMultiplier.SetActive(false);
     }
 
     // Update is called once per frame
@@ -73,7 +81,11 @@ public class UIController : MonoBehaviour
     }
 
     private void OnEnemyHit(){
-        _score+=10;
+        _score+=10*_multiplier;
+        if(_multiplier>1)
+            _multiplier+=1;
+        else
+            StartCoroutine(ScoreMultiplier());
         scoreValue.text=_score.ToString("D4");
     }
 
@@ -141,6 +153,33 @@ public class UIController : MonoBehaviour
         Text textComponent = specialBomb_quantityValues[liquidType].GetComponent<Text>();
         int currentQuantity = int.Parse(textComponent.text);
         textComponent.text = (currentQuantity-1).ToString();
+    }
+
+    private IEnumerator ScoreMultiplier(){
+
+        _multiplier+=1;
+        Text multiplierValue = scoreMultiplier.transform.GetChild(1).GetComponent<Text>();
+        multiplierValue.text = _multiplier.ToString();
+        scoreMultiplier.SetActive(true);
+
+        while(_multiplier>1)
+        {
+            float time = 0;
+            int currentMultiplier = _multiplier;
+            while(time <= _multiplierDuration)
+            {
+                time += Time.deltaTime / _multiplierDuration;
+                if(_multiplier>currentMultiplier)
+                {
+                    time=0;
+                    multiplierValue.text = _multiplier.ToString();
+                }
+                yield return null;
+            }
+            _multiplier-=1;
+        }
+
+        scoreMultiplier.SetActive(false);
     }
 
     private int MathMod(int a, int b){

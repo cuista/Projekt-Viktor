@@ -16,7 +16,6 @@ public class SceneController_0 : MonoBehaviour
     [SerializeField] private GameObject soldier;
     [SerializeField] private GameObject miniDrone;
     private List<GameObject> _enemies;
-    private int _enemiesCount = 0;
 
     public float speed;
 
@@ -51,8 +50,11 @@ public class SceneController_0 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(var enemy in _enemies){
-            if(enemy==null){
+        for(int i = _enemies.Count - 1; i >= 0; --i)
+        {
+            if(_enemies[i] == null)
+            {
+                _enemies.RemoveAt(i);
                 Messenger.Broadcast(GameEvent.ENEMY_KILLED);
             }
         }
@@ -60,7 +62,6 @@ public class SceneController_0 : MonoBehaviour
 
     private void AddEnemy(GameObject enemyPrefab, Vector3 position, Quaternion rotation){
         _enemies.Add(Instantiate(enemyPrefab, position, rotation));
-        _enemiesCount++;
     }
 
     private void UpdateNewEnemiesSpeed(float value){

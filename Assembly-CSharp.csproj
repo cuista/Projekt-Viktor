@@ -75,9 +75,10 @@
      <Compile Include="Assets\Scripts\ReactiveObject.cs" />
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoadManager.cs" />
+     <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\PermanentObject.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\CameraMenu.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\Scenes\Introduction\PermanentObject.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\EndLevel_0.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\SceneController_0.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_1\EndLevel_1.cs" />
