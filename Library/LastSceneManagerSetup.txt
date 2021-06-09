@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/__Debug1.unity
+- path: Assets/Scenes/INIT_ProjektViktor.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

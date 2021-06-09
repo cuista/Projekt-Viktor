@@ -9,14 +9,14 @@ public class SceneController_0 : MonoBehaviour
 
     [SerializeField] public GameObject playerSpawn;
 
-    /*
-    [SerializeField] private GameObject enemy1Prefab;
-    [SerializeField] private GameObject enemy2Prefab;
-    [SerializeField] private GameObject enemy3Prefab;
-    [SerializeField] private GameObject enemy4Prefab;
-    private GameObject[] _enemies;
-    public int enemiesCount;
-    */
+    [SerializeField] private GameObject dummy;
+    [SerializeField] private GameObject turret;
+    [SerializeField] private GameObject robot;
+    [SerializeField] private GameObject drone;
+    [SerializeField] private GameObject soldier;
+    [SerializeField] private GameObject miniDrone;
+    private List<GameObject> _enemies;
+    private int _enemiesCount = 0;
 
     public float speed;
 
@@ -35,72 +35,32 @@ public class SceneController_0 : MonoBehaviour
         _player = DontDestroyOnLoadManager.GetPlayer();
         _player.transform.position = playerSpawn.transform.position;
 
-        /*
-        _enemies=new GameObject[enemiesCount];
+        _enemies=new List<GameObject>();
 
-        for(int i=0; i<_enemies.Length; i++){
-            if(_enemies[i]==null){
-                if(i==_enemies.Length-1){
-                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(-9f,1f,9f),Quaternion.Euler(0,90f,0));
-                }
-                else if(i==_enemies.Length-2){
-                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(9f,1f,9f),Quaternion.Euler(0,-90f,0));
-                }
-                else if(i==_enemies.Length-3){
-                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(52f,1f,23f),Quaternion.Euler(0,-90f,0));
-                }
-                else if(i==_enemies.Length-4){
-                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(-23f,1f,48f),Quaternion.Euler(0,-180f,0));
-                }
-                else if(i==_enemies.Length-5){
-                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(48f,1f,-27f),Quaternion.Euler(0,0,0));
-                }
-                else if(i==_enemies.Length-6){
-                    _enemies[i]=Instantiate(enemy2Prefab,new Vector3(68f,1f,62.5f),Quaternion.Euler(0,-90f,0));
-                }
-                else if(i==_enemies.Length-7){
-                    _enemies[i]=Instantiate(enemy3Prefab,new Vector3(-22f,1f,42f),Quaternion.Euler(0,-180f,0));
-                }
-                else if(i==_enemies.Length-8){
-                    _enemies[i]=Instantiate(enemy3Prefab,new Vector3(42f,1f,-22f),Quaternion.Euler(0,0,0));
-                }
-                else if(i==_enemies.Length-9){
-                    _enemies[i]=Instantiate(enemy3Prefab,new Vector3(22f,1f,20f),Quaternion.Euler(0,-90f,0));
-                }
-                else if(i==_enemies.Length-10){
-                    _enemies[i]=Instantiate(enemy4Prefab,new Vector3(30f,6f,20f),Quaternion.Euler(0,-90f,0));
-                }
-                else if(i==_enemies.Length-11){
-                    _enemies[i]=Instantiate(enemy4Prefab,new Vector3(-20f,6f,30f),Quaternion.Euler(0,-90f,0));
-                }
-                else if(i==_enemies.Length-12){
-                    _enemies[i]=Instantiate(enemy4Prefab,new Vector3(5f,6f,-20f),Quaternion.Euler(0,-90f,0));
-                }
-                else
-                {
-                    // Alternative to gameObject creation with more lines
-                    _enemies[i]=Instantiate(enemy1Prefab) as GameObject;
-                    _enemies[i].transform.position=new Vector3(Random.Range(-70f,70f),1f,Random.Range(-70f,70f));
-                    float angle = Random.Range(0,360f);
-                    _enemies[i].transform.Rotate(0,angle,0);
-                }
-            }
-        }
-        */
+        //first enemy
+        AddEnemy(drone, new Vector3(-120, 5, 75), Quaternion.Euler(0,90,0));
+
+        //square enemies
+        AddEnemy(drone, new Vector3(-10, 5, 160), Quaternion.Euler(0,-90,0));
+        AddEnemy(drone, new Vector3(15, 5, 180), Quaternion.Euler(0,-90,0));
+        AddEnemy(drone, new Vector3(15, 5, 210), Quaternion.Euler(0,-90,0));
+        AddEnemy(drone, new Vector3(-10, 5, 230), Quaternion.Euler(0,-90,0));
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        for(int i=0; i<_enemies.Length; i++){
-            if(_enemies[i]==null){
+        foreach(var enemy in _enemies){
+            if(enemy==null){
                 Messenger.Broadcast(GameEvent.ENEMY_KILLED);
-                _enemies[i]=Instantiate(enemy1Prefab,new Vector3(Random.Range(-70f,70f),1f,Random.Range(-70f,70f)),Quaternion.Euler(0,Random.Range(0, 360f),0));
             }
         }
-        */
+    }
+
+    private void AddEnemy(GameObject enemyPrefab, Vector3 position, Quaternion rotation){
+        _enemies.Add(Instantiate(enemyPrefab, position, rotation));
+        _enemiesCount++;
     }
 
     private void UpdateNewEnemiesSpeed(float value){

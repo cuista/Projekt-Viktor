@@ -19,7 +19,7 @@ public class SettingsPopup : MonoBehaviour
     }
 
     public void ExitGame() {
-        SceneManager.LoadSceneAsync("InitialMenu");
+        LoadingScenesManager.LoadingScenes("InitialMenu");
         DontDestroyOnLoadManager.DestroyAll();
     }
 

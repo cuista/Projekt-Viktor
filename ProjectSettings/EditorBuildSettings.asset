@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Introduction.unity
+    path: Assets/Scenes/Init_ProjektViktor.unity
     guid: e80243826374ec94cba5c4320cc83e59
   - enabled: 1
     path: Assets/Scenes/InitialMenu.unity
