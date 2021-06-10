@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoadManager.cs" />
      <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\GamePresentation.cs" />
      <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\PermanentObject.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\CameraMenu.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\MainMenu.cs" />

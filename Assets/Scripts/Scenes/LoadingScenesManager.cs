@@ -27,8 +27,6 @@ public class LoadingScenesManager : MonoBehaviour
     void Start()
     {
         this.gameObject.SetActive(false);
-        //StartCoroutine(Presentation()); //TODO: Presentation to the game
-        LoadingScenes("InitialMenu");
     }
 
     public static void LoadingScenes(params string[] scenes) {
@@ -39,9 +37,7 @@ public class LoadingScenesManager : MonoBehaviour
     }
 
     private static IEnumerator LoadingScreen(){
-
-        yield return new WaitForSeconds(_loadingSM._crossfadeTime);
-
+        yield return new WaitForSeconds(2f);
         float totalProgress = 0;
         for(int i=0; i<scenesToLoad.Count; i++)
         {
@@ -52,9 +48,9 @@ public class LoadingScenesManager : MonoBehaviour
                 yield return null;
             }
         }
+        _loadingSM.loadingProgressBar.fillAmount = 1;
 
         _loadingSM.crossfade.SetTrigger("Start");
-
         yield return new WaitForSeconds(_loadingSM._crossfadeTime);
 
         _loadingSM.loadingInterface.gameObject.SetActive(false);
