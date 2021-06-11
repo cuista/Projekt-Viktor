@@ -43,4 +43,22 @@ public static class DontDestroyOnLoadManager
         }
         return null;
     }
+
+    public static GameObject GetMainCamera(){
+        foreach(var go in _ddolObjects)
+        {
+            if(go.tag == "MainCamera")
+                return go;
+        }
+        return null;
+    }
+
+    public static GameObject GetHUD(){
+        foreach(var go in _ddolObjects)
+        {
+            if(go.tag == "HUD")
+                return go;
+        }
+        return null;
+    }
 }

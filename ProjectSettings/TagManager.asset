@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - SpecialBomb
   - LoadingScreen
+  - HUD
   layers:
   - Default
   - TransparentFX

@@ -19,8 +19,11 @@ public class SceneController_0 : MonoBehaviour
 
     public float speed;
 
+    public GameObject timeline1;
+
     private void Awake() {
         Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, UpdateNewEnemiesSpeed);
+        BeforeCutscene();
     }
 
     private void OnDestroy() {
@@ -66,5 +69,24 @@ public class SceneController_0 : MonoBehaviour
 
     private void UpdateNewEnemiesSpeed(float value){
         speed = WanderingAI.baseSpeed * value;
+    }
+
+    public void BeforeCutscene() {
+        GameEvent.isPaused=true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        DontDestroyOnLoadManager.GetMainCamera().SetActive(false);
+        DontDestroyOnLoadManager.GetHUD().SetActive(false);
+    }
+
+    public void AfterCutscene() {
+        GameEvent.isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        timeline1.SetActive(false);
+        DontDestroyOnLoadManager.GetMainCamera().SetActive(true);
+        DontDestroyOnLoadManager.GetHUD().SetActive(true);
     }
 }
