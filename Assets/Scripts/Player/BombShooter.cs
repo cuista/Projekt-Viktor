@@ -31,6 +31,14 @@ public class BombShooter : MonoBehaviour
     private float _bombButtonPressedTime = 0;
     private bool _bombButtonHeld = false;
 
+    void Awake() {
+        Messenger<Bomb>.AddListener(GameEvent.BOMBS_DETONATED_BECAUSE_ENEMY_DEATH, OnBombsDetonateBecauseEnemyDeath);
+    }
+
+    void OnDestroy() {
+        Messenger<Bomb>.RemoveListener(GameEvent.BOMBS_DETONATED_BECAUSE_ENEMY_DEATH, OnBombsDetonateBecauseEnemyDeath);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -226,6 +234,12 @@ public class BombShooter : MonoBehaviour
         _bombsPlantedCount = 0;
         _bombsPlanted.Clear();
         Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
+    }
+
+    public void OnBombsDetonateBecauseEnemyDeath(Bomb bomb){
+        _bombsPlantedCount-=bomb.GetCounter();
+        Messenger<int>.Broadcast(GameEvent.BOMBS_DETONATED_N,bomb.GetCounter());
+        _bombsPlanted.Remove(bomb.gameObject);
     }
 
     private IEnumerator UseShield()

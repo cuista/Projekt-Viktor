@@ -8,6 +8,8 @@ public class GameEvent : MonoBehaviour
     public const string BOMBS_CAPACITY_CHANGED = "BOMBS_CAPACITY_CHANGED";
     public const string BOMB_PLANTED = "BOMB_PLANTED";
     public const string BOMBS_DETONATED = "BOMBS_DETONATED";
+    public const string BOMBS_DETONATED_N = "BOMBS_DETONATED_N";
+    public const string BOMBS_DETONATED_BECAUSE_ENEMY_DEATH = "BOMBS_DETONATED_BECAUSE_ENEMY_DEATH";
     public const string SPECIALBOMB_CHANGED = "SPECIALBOMB_CHANGED";
     public const string LIQUID_COLLECTED = "LIQUID_COLLECTED";
     public const string LIQUID_CONSUMED = "LIQUID_CONSUMED";

@@ -39,6 +39,7 @@ public class UIController : MonoBehaviour
         Messenger<int>.AddListener(GameEvent.BOMBS_CAPACITY_CHANGED, OnBombCapacityChanged);
         Messenger<int>.AddListener(GameEvent.BOMB_PLANTED, OnBombPlanted);
         Messenger.AddListener(GameEvent.BOMBS_DETONATED, OnBombsDetonated);
+        Messenger<int>.AddListener(GameEvent.BOMBS_DETONATED_N, OnBombsDetonatedN);
         Messenger<int>.AddListener(GameEvent.SPECIALBOMB_CHANGED, OnSpecialBombChanged);
         Messenger<int>.AddListener(GameEvent.LIQUID_COLLECTED, OnLiquidCollectedChanged);
         Messenger<int>.AddListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
@@ -49,6 +50,7 @@ public class UIController : MonoBehaviour
         Messenger<int>.RemoveListener(GameEvent.BOMBS_CAPACITY_CHANGED, OnBombCapacityChanged);
         Messenger<int>.RemoveListener(GameEvent.BOMB_PLANTED, OnBombPlanted);
         Messenger.RemoveListener(GameEvent.BOMBS_DETONATED, OnBombsDetonated);
+        Messenger<int>.RemoveListener(GameEvent.BOMBS_DETONATED_N, OnBombsDetonatedN);
         Messenger<int>.RemoveListener(GameEvent.SPECIALBOMB_CHANGED, OnSpecialBombChanged);
         Messenger<int>.RemoveListener(GameEvent.LIQUID_COLLECTED, OnLiquidCollectedChanged);
         Messenger<int>.RemoveListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
@@ -143,6 +145,34 @@ public class UIController : MonoBehaviour
         {
             bomb_countValues[i].SetActive(false);
         }
+    }
+
+    private void OnBombsDetonatedN(int numOfBombs){
+        List<int> indexToAdjust = new List<int>();
+        for (int i = _bombsPlanted-1; i >= 0; i--)
+        {
+            if(bomb_countValues[i].GetComponent<Image>().sprite == bombImage)
+            {
+                if(indexToAdjust.Count>=numOfBombs)
+                    break;
+                else
+                    indexToAdjust.Add(i);
+            }
+        }
+
+        foreach(int index in indexToAdjust)
+        {
+            for (int i = index; i < _bombsPlanted-1; i++)
+            {
+                bomb_countValues[i].GetComponent<Image>().sprite = bomb_countValues[i+1].GetComponent<Image>().sprite;
+            }
+        }
+
+        for (int i = (_bombsPlanted-numOfBombs); i < _bombsPlanted; i++)
+        {
+            bomb_countValues[i].SetActive(false);
+        }
+        _bombsPlanted-=numOfBombs;
     }
 
     public void OnOpenSettings() {

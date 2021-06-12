@@ -37,6 +37,16 @@ public class ReactiveEnemy : MonoBehaviour, ReactiveObject
 
         Destroy(this.gameObject);
     }
+
+    private void OnDestroy() {
+        Bomb bombAttached = this.GetComponentInChildren<Bomb>();
+        if(bombAttached != null)
+        {
+            Messenger<Bomb>.Broadcast(GameEvent.BOMBS_DETONATED_BECAUSE_ENEMY_DEATH,bombAttached);
+            bombAttached.Detonate();
+        }
+    }
+
     public void AddExplosionForce(float explosionForce, Vector3 explosionPosition, float explosionRadius) {
         Rigidbody rigidBody=GetComponent<Rigidbody>();
         if(rigidBody != null)
