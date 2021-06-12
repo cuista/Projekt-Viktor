@@ -14,10 +14,6 @@ public class LoadingScenesManager : MonoBehaviour
 
     private static List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
-    public Animator crossfade;
-
-    private float _crossfadeTime = 1f;
-
     void Awake()
     {
         _loadingSM = this;
@@ -37,7 +33,6 @@ public class LoadingScenesManager : MonoBehaviour
     }
 
     private static IEnumerator LoadingScreen(){
-        yield return new WaitForSeconds(2f);
         float totalProgress = 0;
         for(int i=0; i<scenesToLoad.Count; i++)
         {
@@ -49,10 +44,6 @@ public class LoadingScenesManager : MonoBehaviour
             }
         }
         _loadingSM.loadingProgressBar.fillAmount = 1;
-
-        _loadingSM.crossfade.SetTrigger("Start");
-        yield return new WaitForSeconds(_loadingSM._crossfadeTime);
-
         _loadingSM.loadingInterface.gameObject.SetActive(false);
     }
 }

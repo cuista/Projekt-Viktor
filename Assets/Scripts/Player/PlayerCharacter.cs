@@ -13,7 +13,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private Image fillImg;
     [SerializeField] private Text gameOver;
     [SerializeField] private Image damageImage;
-    private Color flashColor = new Color(1f,0f,0f,0.1f);
+    private Color flashColor = new Color(1f,0f,0f,0.7f);
     private float flashSpeed = 5f;
     private float barValueDamage;
     private Image healthBarBackground;
