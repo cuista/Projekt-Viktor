@@ -91,8 +91,11 @@ public class UIController : MonoBehaviour
             if((Time.timeSinceLevelLoad - _comboTimer) > _comboDuration)
             {
                 _multiplier-=1;
-                _comboTimer = Time.timeSinceLevelLoad;
-                _multiplierValue.text = _multiplier.ToString();
+                if(_multiplier>1)
+                {
+                    _comboTimer = Time.timeSinceLevelLoad;
+                    _multiplierValue.text = _multiplier.ToString();
+                }
             }
         }
         else
@@ -184,7 +187,6 @@ public class UIController : MonoBehaviour
     }
 
     public void OnSpecialBombChanged(int selectedSpecialBomb){
-         //FIXME on new load scene it's null, HUD must be DontDestroyOnLoad and created one time
         for (int i = 0; i < specialBombsAnimator_slots.Length; i++)
         {
             specialBomb_quantityValues[i].SetActive(i==selectedSpecialBomb?true:false);
