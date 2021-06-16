@@ -16,7 +16,7 @@ public class ReactiveBox : MonoBehaviour, ReactiveObject
 
         yield return new WaitForSeconds(0.5f);
 
-        Instantiate(item, transform.position, transform.rotation);
+        Instantiate(item, new Vector3(transform.position.x, transform.position.y+1, transform.position.z), transform.rotation);
         Destroy(this.gameObject);
     }
 

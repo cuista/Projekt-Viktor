@@ -41,12 +41,20 @@ public class SceneController_0 : MonoBehaviour
 
         //first enemy
         AddEnemy(drone, new Vector3(-120, 5, 75), Quaternion.Euler(0,90,0));
+        AddEnemy(robot, new Vector3(-119, 1.1f, 192), Quaternion.Euler(0,180,0));
+        AddEnemy(robot, new Vector3(-78, 1.1f, 194), Quaternion.Euler(0,-90,0));
 
         //square enemies
         AddEnemy(drone, new Vector3(-10, 5, 160), Quaternion.Euler(0,-90,0));
         AddEnemy(drone, new Vector3(15, 5, 180), Quaternion.Euler(0,-90,0));
         AddEnemy(drone, new Vector3(15, 5, 210), Quaternion.Euler(0,-90,0));
         AddEnemy(drone, new Vector3(-10, 5, 230), Quaternion.Euler(0,-90,0));
+
+        AddEnemy(robot, new Vector3(33, 2.1f, 192), Quaternion.Euler(0,-90,0));
+        AddEnemy(robot, new Vector3(33, 2.1f, 203), Quaternion.Euler(0,-90,0));
+        AddEnemy(robot, new Vector3(33, 2.1f, 213), Quaternion.Euler(0,-90,0));
+        AddEnemy(robot, new Vector3(28, 2.1f, 268), Quaternion.Euler(0,-90,0));
+        AddEnemy(robot, new Vector3(28, 2.1f, 138), Quaternion.Euler(0,-90,0));
         
     }
 
