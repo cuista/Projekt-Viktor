@@ -13,6 +13,7 @@ public class GameEvent : MonoBehaviour
     public const string SPECIALBOMB_CHANGED = "SPECIALBOMB_CHANGED";
     public const string LIQUID_COLLECTED = "LIQUID_COLLECTED";
     public const string LIQUID_CONSUMED = "LIQUID_CONSUMED";
+    public const string GAMEOVER = "GAMEOVER";
     public const string SPEED_CHANGED = "SPEED_CHANGED";
 
     public static bool isPaused = false;

@@ -8,14 +8,31 @@ public class SettingsPopup : MonoBehaviour
 {
     [SerializeField] private Text nameLabel;
 
+    private bool _isGameOver = false;
+
+    private void Awake() {
+        Messenger.AddListener(GameEvent.GAMEOVER, OnGameOver);
+    }
+
+    private void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.GAMEOVER, OnGameOver);
+    }
+
     public void Open() {
         gameObject.SetActive(true);
-        PauseGame();
+        if(!_isGameOver)
+            PauseGame();
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public void Close() {
         gameObject.SetActive(false);
-        UnPauseGame();
+        if(!_isGameOver)
+            UnPauseGame();
     }
 
     public void ExitGame() {
@@ -44,5 +61,9 @@ public class SettingsPopup : MonoBehaviour
 
     public void OnSpeedValue(float speed) {
         Messenger<float>.Broadcast(GameEvent.SPEED_CHANGED, speed);
+    }
+
+    public void OnGameOver(){
+        _isGameOver = true;
     }
 }
