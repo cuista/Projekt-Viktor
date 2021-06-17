@@ -33,6 +33,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private Sprite napalmImage;
     [SerializeField] private Sprite gravitonImage;
 
+    private bool isPlayingCutscene = false;
+
 
     void Awake() {
         Messenger.AddListener(GameEvent.ENEMY_KILLED, OnEnemyHit);
@@ -43,6 +45,8 @@ public class UIController : MonoBehaviour
         Messenger<int>.AddListener(GameEvent.SPECIALBOMB_CHANGED, OnSpecialBombChanged);
         Messenger<int>.AddListener(GameEvent.LIQUID_COLLECTED, OnLiquidCollectedChanged);
         Messenger<int>.AddListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
+        Messenger.AddListener(GameEvent.CUTSCENE_STARTED, OnCutsceneStarted);
+        Messenger.AddListener(GameEvent.CUTSCENE_ENDED, OnCutsceneEnded);
     }
 
     void OnDestroy() {
@@ -54,6 +58,8 @@ public class UIController : MonoBehaviour
         Messenger<int>.RemoveListener(GameEvent.SPECIALBOMB_CHANGED, OnSpecialBombChanged);
         Messenger<int>.RemoveListener(GameEvent.LIQUID_COLLECTED, OnLiquidCollectedChanged);
         Messenger<int>.RemoveListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
+        Messenger.RemoveListener(GameEvent.CUTSCENE_STARTED, OnCutsceneStarted);
+        Messenger.RemoveListener(GameEvent.CUTSCENE_ENDED, OnCutsceneEnded);
     }
 
     // Start is called before the first frame update
@@ -82,7 +88,10 @@ public class UIController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            settingsPopup.Open();
+            if(isPlayingCutscene)
+                Messenger.Broadcast(GameEvent.CUTSCENE_STOPPED);
+            else
+                settingsPopup.Open();
         }
 
         if(_multiplier>1)
@@ -204,6 +213,14 @@ public class UIController : MonoBehaviour
         Text textComponent = specialBomb_quantityValues[liquidType].GetComponent<Text>();
         int currentQuantity = int.Parse(textComponent.text);
         textComponent.text = (currentQuantity-1).ToString();
+    }
+
+    public void OnCutsceneStarted(){
+        isPlayingCutscene = true;
+    }
+
+    public void OnCutsceneEnded(){
+        isPlayingCutscene = false;
     }
 
     private int MathMod(int a, int b){

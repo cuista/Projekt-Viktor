@@ -61,4 +61,13 @@ public static class DontDestroyOnLoadManager
         }
         return null;
     }
+
+    public static GameObject GetSkipMessage(){
+        foreach(var go in _ddolObjects)
+        {
+            if(go.tag == "SkipMessage")
+                return go;
+        }
+        return null;
+    }
 }

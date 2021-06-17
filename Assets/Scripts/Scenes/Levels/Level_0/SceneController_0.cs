@@ -23,11 +23,13 @@ public class SceneController_0 : MonoBehaviour
 
     private void Awake() {
         Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, UpdateNewEnemiesSpeed);
+        Messenger.AddListener(GameEvent.CUTSCENE_STOPPED, AfterCutscene);
         BeforeCutscene();
     }
 
     private void OnDestroy() {
         Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, UpdateNewEnemiesSpeed);
+        Messenger.RemoveListener(GameEvent.CUTSCENE_STOPPED, AfterCutscene);
     }
 
     // Start is called before the first frame update
@@ -85,6 +87,9 @@ public class SceneController_0 : MonoBehaviour
 
         DontDestroyOnLoadManager.GetMainCamera().SetActive(false);
         DontDestroyOnLoadManager.GetHUD().SetActive(false);
+        DontDestroyOnLoadManager.GetSkipMessage().SetActive(true);
+
+        Messenger.Broadcast(GameEvent.CUTSCENE_STARTED);
     }
 
     public void AfterCutscene() {
@@ -94,6 +99,9 @@ public class SceneController_0 : MonoBehaviour
         timeline1.SetActive(false);
         DontDestroyOnLoadManager.GetMainCamera().SetActive(true);
         DontDestroyOnLoadManager.GetHUD().SetActive(true);
+        DontDestroyOnLoadManager.GetSkipMessage().SetActive(false);
+
+        Messenger.Broadcast(GameEvent.CUTSCENE_ENDED);
 
         //To make special_bombs animators works after cutscene
         Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED, 0);

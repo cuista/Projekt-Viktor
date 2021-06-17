@@ -25,7 +25,7 @@ public class TransparentPlayer : MonoBehaviour
     {
         RaycastHit hit;
         CharacterController playerCharContr = player.GetComponent<CharacterController>();
-        Vector3 p1 = transform.position + playerCharContr.center + Vector3.up * -playerCharContr.height * 0.5F;
+        Vector3 p1 = transform.position + playerCharContr.center + Vector3.up * -playerCharContr.height * 0.2F;
         Vector3 p2 = p1 + Vector3.up * playerCharContr.height;
         float playerToCamDistance = (transform.position-player.transform.position).magnitude;
 

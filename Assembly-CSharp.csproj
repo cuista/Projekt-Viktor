@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\GamePresentation.cs" />
      <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\PermanentObject.cs" />
+     <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\SkipMessage.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\CameraMenu.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\EndLevel_0.cs" />
