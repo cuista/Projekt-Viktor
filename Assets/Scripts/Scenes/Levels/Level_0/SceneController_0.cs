@@ -8,6 +8,7 @@ public class SceneController_0 : MonoBehaviour
     private GameObject _player;
 
     [SerializeField] public GameObject playerSpawn;
+    [SerializeField] public GameObject endLevel;
 
     [SerializeField] private GameObject dummy;
     [SerializeField] private GameObject turret;
@@ -16,6 +17,12 @@ public class SceneController_0 : MonoBehaviour
     [SerializeField] private GameObject soldier;
     [SerializeField] private GameObject miniDrone;
     private List<GameObject> _enemies;
+
+    [SerializeField] private GameObject obstacle_1;
+    [SerializeField] private GameObject obstacle_2;
+    [SerializeField] private GameObject obstacle_3;
+    
+    private List<GameObject> _targets;
 
     public float speed;
 
@@ -39,9 +46,11 @@ public class SceneController_0 : MonoBehaviour
         _player = DontDestroyOnLoadManager.GetPlayer();
         _player.transform.position = playerSpawn.transform.position;
 
-        _enemies=new List<GameObject>();
+        endLevel.gameObject.SetActive(false);
 
-        //first enemy
+        /*ENEMIES*/
+        _enemies=new List<GameObject>();
+        //first enemies
         AddEnemy(drone, new Vector3(-120, 5, 75), Quaternion.Euler(0,90,0));
         AddEnemy(robot, new Vector3(-119, 1.1f, 192), Quaternion.Euler(0,180,0));
         AddEnemy(robot, new Vector3(-78, 1.1f, 194), Quaternion.Euler(0,-90,0));
@@ -51,13 +60,22 @@ public class SceneController_0 : MonoBehaviour
         AddEnemy(drone, new Vector3(15, 5, 180), Quaternion.Euler(0,-90,0));
         AddEnemy(drone, new Vector3(15, 5, 210), Quaternion.Euler(0,-90,0));
         AddEnemy(drone, new Vector3(-10, 5, 230), Quaternion.Euler(0,-90,0));
+        AddEnemy(drone, new Vector3(20, 5, 130), Quaternion.Euler(0,-90,0));
+        AddEnemy(drone, new Vector3(20, 5, 260), Quaternion.Euler(0,-90,0));
 
         AddEnemy(robot, new Vector3(33, 2.1f, 192), Quaternion.Euler(0,-90,0));
         AddEnemy(robot, new Vector3(33, 2.1f, 203), Quaternion.Euler(0,-90,0));
         AddEnemy(robot, new Vector3(33, 2.1f, 213), Quaternion.Euler(0,-90,0));
         AddEnemy(robot, new Vector3(28, 2.1f, 268), Quaternion.Euler(0,-90,0));
         AddEnemy(robot, new Vector3(28, 2.1f, 138), Quaternion.Euler(0,-90,0));
+
+        /*TARGETS*/
+        _targets=new List<GameObject>();
+        AddTarget(obstacle_1, new Vector3(0,0.1f,0), Quaternion.Euler(0,0,0));
+        AddTarget(obstacle_2, new Vector3(-23.7f,0.1f,74.6f), Quaternion.Euler(0,-90,0));
+        AddTarget(obstacle_3, new Vector3(-119.8f,0.1f,106.9f), Quaternion.Euler(0,0,0));
         
+        Messenger<int>.Broadcast(GameEvent.TARGET_TOTAL, (_enemies.Count + _targets.Count));
     }
 
     // Update is called once per frame
@@ -69,12 +87,32 @@ public class SceneController_0 : MonoBehaviour
             {
                 _enemies.RemoveAt(i);
                 Messenger.Broadcast(GameEvent.ENEMY_KILLED);
+                Messenger.Broadcast(GameEvent.TARGET_ELIMINATED);
             }
+        }
+
+        for(int i = _targets.Count - 1; i >= 0; --i)
+        {
+            if(_targets[i].GetComponentInChildren<ReactiveTarget>() == null)
+            {
+                _targets.RemoveAt(i);
+                Messenger.Broadcast(GameEvent.TARGET_ELIMINATED);
+            }
+        }
+
+        if(_enemies.Count <= 0)
+        {
+            endLevel.gameObject.SetActive(true);
         }
     }
 
     private void AddEnemy(GameObject enemyPrefab, Vector3 position, Quaternion rotation){
         _enemies.Add(Instantiate(enemyPrefab, position, rotation));
+    }
+
+    private void AddTarget(GameObject targetPrefab, Vector3 position, Quaternion rotation){
+        _targets.Add(Instantiate(targetPrefab, position, rotation));
+        Debug.Log("INSTANTIATE ONE TARGET");
     }
 
     private void UpdateNewEnemiesSpeed(float value){

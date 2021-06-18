@@ -1844,8 +1844,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ce9efbd244b4b3143ba89d173c2a87bc, type: 2}
+  m_sharedMaterial: {fileID: 4416346552340753057, guid: ce9efbd244b4b3143ba89d173c2a87bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1869,8 +1870,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2822,10 +2823,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.23529412}
-    m_HighlightedColor: {r: 0.85882354, g: 0, b: 0.33333334, a: 0.29803923}
-    m_PressedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.48235294}
-    m_SelectedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.29803923}
+    m_NormalColor: {r: 1, g: 0.27450982, b: 0, a: 0.23529412}
+    m_HighlightedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
+    m_PressedColor: {r: 1, g: 0.27450982, b: 0, a: 0.48235294}
+    m_SelectedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -6512,10 +6513,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.23529412}
-    m_HighlightedColor: {r: 0.85882354, g: 0, b: 0.33333334, a: 0.29803923}
-    m_PressedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.48235294}
-    m_SelectedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.29803923}
+    m_NormalColor: {r: 1, g: 0.27450982, b: 0, a: 0.23529412}
+    m_HighlightedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
+    m_PressedColor: {r: 1, g: 0.27450982, b: 0, a: 0.48235294}
+    m_SelectedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -10803,10 +10804,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.23529412}
-    m_HighlightedColor: {r: 0.85882354, g: 0, b: 0.33333334, a: 0.29803923}
-    m_PressedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.48235294}
-    m_SelectedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.29803923}
+    m_NormalColor: {r: 1, g: 0.27450982, b: 0, a: 0.23529412}
+    m_HighlightedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
+    m_PressedColor: {r: 1, g: 0.27450982, b: 0, a: 0.48235294}
+    m_SelectedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -11093,10 +11094,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.23529412}
-    m_HighlightedColor: {r: 0.85882354, g: 0, b: 0.33333334, a: 0.29803923}
-    m_PressedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.48235294}
-    m_SelectedColor: {r: 0.85882354, g: 0, b: 0.3372549, a: 0.29803923}
+    m_NormalColor: {r: 1, g: 0.27272725, b: 0, a: 0.23529412}
+    m_HighlightedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
+    m_PressedColor: {r: 1, g: 0.27450982, b: 0, a: 0.48235294}
+    m_SelectedColor: {r: 1, g: 0.27450982, b: 0, a: 0.29803923}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -11839,8 +11840,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ce9efbd244b4b3143ba89d173c2a87bc, type: 2}
+  m_sharedMaterial: {fileID: 4416346552340753057, guid: ce9efbd244b4b3143ba89d173c2a87bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11864,8 +11866,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12491,8 +12493,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ce9efbd244b4b3143ba89d173c2a87bc, type: 2}
+  m_sharedMaterial: {fileID: 4416346552340753057, guid: ce9efbd244b4b3143ba89d173c2a87bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12516,8 +12519,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14572,8 +14575,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ce9efbd244b4b3143ba89d173c2a87bc, type: 2}
+  m_sharedMaterial: {fileID: 4416346552340753057, guid: ce9efbd244b4b3143ba89d173c2a87bc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14597,8 +14601,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

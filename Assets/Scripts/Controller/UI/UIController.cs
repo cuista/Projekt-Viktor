@@ -35,6 +35,12 @@ public class UIController : MonoBehaviour
 
     private bool isPlayingCutscene = false;
 
+    [SerializeField] private GameObject target;
+
+    [SerializeField] private Text targetCount;
+
+    [SerializeField] private Text targetTotal;
+
 
     void Awake() {
         Messenger.AddListener(GameEvent.ENEMY_KILLED, OnEnemyHit);
@@ -47,6 +53,8 @@ public class UIController : MonoBehaviour
         Messenger<int>.AddListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
         Messenger.AddListener(GameEvent.CUTSCENE_STARTED, OnCutsceneStarted);
         Messenger.AddListener(GameEvent.CUTSCENE_ENDED, OnCutsceneEnded);
+        Messenger<int>.AddListener(GameEvent.TARGET_TOTAL, OnTargetTotal);
+        Messenger.AddListener(GameEvent.TARGET_ELIMINATED, OnTargetEliminated);
     }
 
     void OnDestroy() {
@@ -60,6 +68,8 @@ public class UIController : MonoBehaviour
         Messenger<int>.RemoveListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
         Messenger.RemoveListener(GameEvent.CUTSCENE_STARTED, OnCutsceneStarted);
         Messenger.RemoveListener(GameEvent.CUTSCENE_ENDED, OnCutsceneEnded);
+        Messenger<int>.RemoveListener(GameEvent.TARGET_TOTAL, OnTargetTotal);
+        Messenger.RemoveListener(GameEvent.TARGET_ELIMINATED, OnTargetEliminated);
     }
 
     // Start is called before the first frame update
@@ -221,6 +231,15 @@ public class UIController : MonoBehaviour
 
     public void OnCutsceneEnded(){
         isPlayingCutscene = false;
+    }
+
+    public void OnTargetTotal(int total){
+        target.SetActive(true);
+        targetTotal.text=total.ToString();
+    }
+
+    public void OnTargetEliminated(){
+        targetCount.text=(int.Parse(targetCount.text)+1).ToString();
     }
 
     private int MathMod(int a, int b){
