@@ -235,6 +235,7 @@ public class UIController : MonoBehaviour
 
     public void OnTargetTotal(int total){
         target.SetActive(true);
+        targetCount.text="0";
         targetTotal.text=total.ToString();
     }
 

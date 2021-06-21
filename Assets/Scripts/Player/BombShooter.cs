@@ -139,7 +139,7 @@ public class BombShooter : MonoBehaviour
                         if(target != null){
                             if(bomb.tag != "SpecialBomb")
                             {
-                                Debug.Log("Target hit");
+                                //Debug.Log("Target hit");
                                 target.ReactToHits(bomb.GetComponent<Bomb>().GetCounter());
                                 //adding explosion force
                                 target.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
@@ -191,13 +191,13 @@ public class BombShooter : MonoBehaviour
             {
                 _currentSpecialBomb=MathMod(_currentSpecialBomb-1,specialBombPrefabs.Length);
                 Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
-                Debug.Log("n+: "+_currentSpecialBomb);
+                //Debug.Log("n+: "+_currentSpecialBomb);
             }
             else if(Input.GetKeyUp(KeyCode.E))
             {
                 _currentSpecialBomb=MathMod(_currentSpecialBomb+1,specialBombPrefabs.Length);
                 Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
-                Debug.Log("n-: "+_currentSpecialBomb);
+                //Debug.Log("n-: "+_currentSpecialBomb);
             }
 
             if(Input.GetKeyUp(KeyCode.F) && _canUseShield)

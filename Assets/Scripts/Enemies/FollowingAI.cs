@@ -75,13 +75,13 @@ public class FollowingAI : MonoBehaviour, IEnemy
             {
                 GameObject hitOverlapSphere = hitCollider.transform.gameObject;
                 // check if player is within range
-                if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
+                if(hitOverlapSphere.tag == "Player")
                 {
                     _isFollowing = true;
                     _isPatrolling = false;
                     RaycastHit hitLinecast;
                     // if there are NO obstacles between this enemy and player
-                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
+                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.tag == "Player")
                     {
                         Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
                         Quaternion toRotation = Quaternion.LookRotation(direction);

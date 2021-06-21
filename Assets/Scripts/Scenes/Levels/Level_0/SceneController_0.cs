@@ -60,8 +60,8 @@ public class SceneController_0 : MonoBehaviour
         AddEnemy(drone, new Vector3(15, 5, 180), Quaternion.Euler(0,-90,0));
         AddEnemy(drone, new Vector3(15, 5, 210), Quaternion.Euler(0,-90,0));
         AddEnemy(drone, new Vector3(-10, 5, 230), Quaternion.Euler(0,-90,0));
-        AddEnemy(drone, new Vector3(20, 5, 130), Quaternion.Euler(0,-90,0));
-        AddEnemy(drone, new Vector3(20, 5, 260), Quaternion.Euler(0,-90,0));
+        AddEnemy(drone, new Vector3(10, 5, 130), Quaternion.Euler(0,-90,0));
+        AddEnemy(drone, new Vector3(10, 5, 260), Quaternion.Euler(0,-90,0));
 
         AddEnemy(robot, new Vector3(33, 2.1f, 192), Quaternion.Euler(0,-90,0));
         AddEnemy(robot, new Vector3(33, 2.1f, 203), Quaternion.Euler(0,-90,0));
@@ -100,7 +100,7 @@ public class SceneController_0 : MonoBehaviour
             }
         }
 
-        if(_enemies.Count <= 0)
+        if((_enemies.Count + _targets.Count) <= 0 && !endLevel.gameObject.activeInHierarchy)
         {
             endLevel.gameObject.SetActive(true);
         }
@@ -112,7 +112,6 @@ public class SceneController_0 : MonoBehaviour
 
     private void AddTarget(GameObject targetPrefab, Vector3 position, Quaternion rotation){
         _targets.Add(Instantiate(targetPrefab, position, rotation));
-        Debug.Log("INSTANTIATE ONE TARGET");
     }
 
     private void UpdateNewEnemiesSpeed(float value){

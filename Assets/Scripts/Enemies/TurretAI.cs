@@ -46,11 +46,11 @@ public class TurretAI : MonoBehaviour, IEnemy
             {
                 GameObject hitOverlapSphere = hitCollider.transform.gameObject;
                 // check if player is within range
-                if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
+                if(hitOverlapSphere.tag == "Player")
                 {
                     RaycastHit hitLinecast;
                     // if there are NO obstacles between turret and player
-                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
+                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.tag == "Player")
                     {
                         if(IsMoving())
                         {

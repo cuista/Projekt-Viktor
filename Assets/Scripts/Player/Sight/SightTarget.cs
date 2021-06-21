@@ -70,7 +70,7 @@ public class SightTarget : MonoBehaviour
     private void OnTriggerEnter(Collider collider) {
         EnemyCharacter enemy=collider.GetComponent<EnemyCharacter>();
         if(enemy!=null){
-            Debug.Log("Enemy hit <X>");
+            //Debug.Log("Enemy hit <X>");
             _targetEnemy=enemy.gameObject;
         }
     }
