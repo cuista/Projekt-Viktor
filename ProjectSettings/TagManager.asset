@@ -10,6 +10,7 @@ TagManager:
   - LoadingScreen
   - HUD
   - SkipMessage
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - 
   - 
   - OnTop
-  - 
-  - 
+  - Enemy
+  - Box
   - 
   - 
   - 

@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5466668921020872125}
   m_Layer: 0
-  m_Name: RightRockWall
+  m_Name: RightBricksWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3456410972875192064}
   m_Layer: 0
-  m_Name: LeftRockWall
+  m_Name: LeftBricksWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 2510766967303822729}
   - component: {fileID: 6659294388352655118}
   m_Layer: 0
-  m_Name: RockTarget
+  m_Name: BricksTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

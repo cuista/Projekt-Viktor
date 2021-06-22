@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: -5522434489249432707}
   - component: {fileID: 5953623509333456443}
   - component: {fileID: -744016137907027631}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3_Drone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

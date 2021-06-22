@@ -109,9 +109,9 @@ GameObject:
   - component: {fileID: 3852430203189150304}
   - component: {fileID: 3852430203189150319}
   - component: {fileID: 1467691089595537500}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,6 +238,8 @@ MonoBehaviour:
     type: 3}
   speed: 3
   obstacleRange: 5
+  rotationSpeed: 5
+  bulletCreationPoint: {fileID: 0}
 --- !u!114 &1467691089595537500
 MonoBehaviour:
   m_ObjectHideFlags: 0
