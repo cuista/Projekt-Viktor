@@ -11,6 +11,7 @@ TagManager:
   - HUD
   - SkipMessage
   - Enemy
+  - AudioManager
   layers:
   - Default
   - TransparentFX

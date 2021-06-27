@@ -9,7 +9,6 @@ public class CollectibleSpecialBomb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.GetComponent<CharacterController>()){
-            Debug.Log("Consumed: " + itemName);
             if(Managers.Inventory.GetItemCount(itemName)<Managers.Inventory.GetSpecialBombsCapacity())
             {
                 Managers.Inventory.AddSpecialBomb(itemName);

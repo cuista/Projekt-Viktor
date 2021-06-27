@@ -150,6 +150,8 @@ public class SceneController_1 : MonoBehaviour
         DontDestroyOnLoadManager.GetSkipMessage().SetActive(true);
 
         Messenger.Broadcast(GameEvent.CUTSCENE_STARTED);
+
+        DontDestroyOnLoadManager.GetAudioManager().StopCurrentSoundtrack();
     }
 
     public void AfterCutscene() {
@@ -167,5 +169,10 @@ public class SceneController_1 : MonoBehaviour
 
         //To make special_bombs animators works after cutscene
         Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED, 0);
+
+        //if skip before cutscene makes level soundtrack playing
+        AudioManager audioManager = DontDestroyOnLoadManager.GetAudioManager();
+        if(!audioManager.isPlayingClip(audioManager.level1_soundtrack))
+            audioManager.PlaySoundtrackLevel_1();
     }
 }

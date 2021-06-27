@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 27.866666666666664
+    m_Start: 24.650252970300542
     m_ClipIn: 0
     m_Asset: {fileID: -243151915485426246}
     m_Duration: 4.68333377838135
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 27.96666711171468
+    m_Start: 24.75025341534856
     m_ClipIn: 0
     m_Asset: {fileID: -4171882040620412737}
     m_Duration: 4.583333333333333
@@ -861,7 +861,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 27.96666711171468
+    m_PreExtrapolationTime: 24.75025341534856
     m_DisplayName: Recorded (5)
   m_Markers:
     m_Objects: []
@@ -908,8 +908,8 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -7643349909492459325}
-    m_Duration: 10.016666666666667
-    m_TimeScale: 1
+    m_Duration: 8.347222222222223
+    m_TimeScale: 1.1999999999999997
     m_ParentTrack: {fileID: -4765468210427899971}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
@@ -1142,10 +1142,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 19.983333333333334
+    m_Start: 17.37752569757327
     m_ClipIn: 0
     m_Asset: {fileID: -1309989276748412841}
-    m_Duration: 7.983333778381347
+    m_Duration: 7.272727272727273
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2395177043125195838}
     m_EaseInDuration: 0
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 32.55000044504801
+  m_Time: 29.333586748681892
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 34c2c847e34cdd4479b15d17430f2a4f, type: 2}
@@ -1287,10 +1287,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 10.033333333333333
+    m_Start: 8.347222222222223
     m_ClipIn: 0
     m_Asset: {fileID: -7397762839366757231}
-    m_Duration: 9.950000000000003
+    m_Duration: 9.030303475351044
     m_TimeScale: 1
     m_ParentTrack: {fileID: -736639648495297372}
     m_EaseInDuration: 0
@@ -1422,11 +1422,11 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 19.96666711171468
+    m_Start: 17.37752569757327
     m_ClipIn: 0
     m_Asset: {fileID: 3936985778548564538}
-    m_Duration: 8
-    m_TimeScale: 1
+    m_Duration: 7.272727272727273
+    m_TimeScale: 1.0999999999999999
     m_ParentTrack: {fileID: 540834374860992709}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
@@ -1488,7 +1488,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 19.96666711171468
+    m_PreExtrapolationTime: 17.37752569757327
     m_DisplayName: Recorded (2)
   m_Markers:
     m_Objects: []
@@ -1560,19 +1560,19 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.3500004
+        time: 2.6333334
         value: {x: 2.8950002, y: -26.053001, z: 13.26}
-        inSlope: {x: 1.5961643, y: -7.73063, z: 3.9448764}
-        outSlope: {x: 1.5961643, y: -7.73063, z: 3.9448764}
+        inSlope: {x: 2.2068183, y: -10.688183, z: 5.454091}
+        outSlope: {x: 2.2068183, y: -10.688183, z: 5.454091}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 6.083334
+        time: 4.4
         value: {x: 9.714001, y: -46.738003, z: 23.045002}
-        inSlope: {x: 3.8800004, y: -9.315915, z: 3.7483876}
-        outSlope: {x: 3.8800004, y: -9.315915, z: 3.7483876}
+        inSlope: {x: 3.3618631, y: -8.071863, z: 3.247826}
+        outSlope: {x: 3.3618631, y: -8.071863, z: 3.247826}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -1643,19 +1643,19 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.3500004
+        time: 2.6333334
         value: 2.8950002
-        inSlope: 1.5961643
-        outSlope: 1.5961643
+        inSlope: 2.2068183
+        outSlope: 2.2068183
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 6.083334
+        time: 4.4
         value: 9.714001
-        inSlope: 3.8800004
-        outSlope: 3.8800004
+        inSlope: 3.3618631
+        outSlope: 3.3618631
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -1689,19 +1689,19 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.3500004
+        time: 2.6333334
         value: -26.053001
-        inSlope: -7.73063
-        outSlope: -7.73063
+        inSlope: -10.688183
+        outSlope: -10.688183
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 6.083334
+        time: 4.4
         value: -46.738003
-        inSlope: -9.315915
-        outSlope: -9.315915
+        inSlope: -8.071863
+        outSlope: -8.071863
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -1735,19 +1735,19 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.3500004
+        time: 2.6333334
         value: 13.26
-        inSlope: 3.9448764
-        outSlope: 3.9448764
+        inSlope: 5.454091
+        outSlope: 5.454091
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 6.083334
+        time: 4.4
         value: 23.045002
-        inSlope: 3.7483876
-        outSlope: 3.7483876
+        inSlope: 3.247826
+        outSlope: 3.247826
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -1824,11 +1824,11 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 10.033333778381348
+    m_Start: 8.347222667270238
     m_ClipIn: 0
     m_Asset: {fileID: -7317035745137450885}
-    m_Duration: 9.933333333333334
-    m_TimeScale: 1
+    m_Duration: 9.03030303030303
+    m_TimeScale: 1.1
     m_ParentTrack: {fileID: 3424118093004774298}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
@@ -1890,7 +1890,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 10.033333778381348
+    m_PreExtrapolationTime: 8.347222667270238
     m_DisplayName: Recorded (1)
   m_Markers:
     m_Objects: []
@@ -1937,7 +1937,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -8319292833019111491}
-    m_Duration: 10.033333333333333
+    m_Duration: 8.347222222222223
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3483681079717187324}
     m_EaseInDuration: 0

@@ -20,7 +20,7 @@ public class GamePresentation : MonoBehaviour
         foreach(Image image in presentationImages)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(5.7f);
 
             crossfade.SetTrigger("Start");
             yield return new WaitForSeconds(_crossfadeTime);

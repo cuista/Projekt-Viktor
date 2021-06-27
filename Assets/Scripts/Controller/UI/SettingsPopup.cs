@@ -10,8 +10,12 @@ public class SettingsPopup : MonoBehaviour
 
     private bool _isGameOver = false;
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip openPopupSound;
+
     private void Awake() {
         Messenger.AddListener(GameEvent.GAMEOVER, OnGameOver);
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy() {
@@ -21,7 +25,10 @@ public class SettingsPopup : MonoBehaviour
     public void Open() {
         gameObject.SetActive(true);
         if(!_isGameOver)
+        {
             PauseGame();
+            _audioSource.PlayOneShot(openPopupSound);
+        }
         else
         {
             Cursor.lockState = CursorLockMode.None;

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInFrames: 1
-  timeAreaShownRange: {x: -0.68388516, y: 36.314304}
+  timeAreaShownRange: {x: -0.84492433, y: 36.669716}
   showAudioWaveform: 1
   trackScale: 1
   playRangeEnabled: 0
   timeAreaPlayRange: {x: 3.4028235e+38, y: 3.4028235e+38}
   windowTime: 6.416666666666667
-  verticalScroll: 61
+  verticalScroll: 107
   showMarkerHeader: 0
   m_Keys:
   - {fileID: -4765468210427899971, guid: 7e8cc2d262180e045a2a06522ef3c524, type: 2}
@@ -33,6 +33,7 @@ MonoBehaviour:
   - {fileID: -2693721171679586606, guid: 7e8cc2d262180e045a2a06522ef3c524, type: 2}
   - {fileID: -5237001317561388575, guid: 7e8cc2d262180e045a2a06522ef3c524, type: 2}
   - {fileID: -7247783386552117339, guid: 7e8cc2d262180e045a2a06522ef3c524, type: 2}
+  - {fileID: 9061125349413642709, guid: 7e8cc2d262180e045a2a06522ef3c524, type: 2}
   m_Vals:
   - collapsed: 0
     showMarkers: 1
@@ -277,8 +278,43 @@ MonoBehaviour:
       y: 1
       width: 1
       height: 1
-    m_MarkerTimeStampsKeys: da92fcff3a990000969a00001cc80000
-    m_MarkerTimeStampsValues: 58a59b1fbd2cd9082e5b6b31b431d908baa7a04fc634d9085f5b2cd8d834d908
+    m_MarkerTimeStampsKeys: da92fcff3a990000969a00001cc80000b68e0000
+    m_MarkerTimeStampsValues: 58a59b1fbd2cd9082e5b6b31b431d908baa7a04fc634d9085f5b2cd8d834d9087ce166b68f36d908
+  - collapsed: 0
+    showMarkers: 1
+    showInlineCurves: 0
+    inlineAnimationCurveHeight: 100
+    lastInlineCurveDataID: -1
+    inlineCurvesState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    inlineCurvesShownAreaInsideMargins:
+      serializedVersion: 2
+      x: 1
+      y: 1
+      width: 1
+      height: 1
+    m_MarkerTimeStampsKeys: 
+    m_MarkerTimeStampsValues: 
   - collapsed: 0
     showMarkers: 1
     showInlineCurves: 0

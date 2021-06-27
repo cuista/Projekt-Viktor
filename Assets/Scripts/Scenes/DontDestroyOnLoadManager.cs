@@ -70,4 +70,13 @@ public static class DontDestroyOnLoadManager
         }
         return null;
     }
+
+    public static AudioManager GetAudioManager(){
+        foreach(var go in _permanentObjects)
+        {
+            if(go.tag == "AudioManager")
+                return go.GetComponent<AudioManager>();
+        }
+        return null;
+    }
 }

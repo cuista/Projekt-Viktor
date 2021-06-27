@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 1660551225}
   m_Layer: 0
   m_Name: SoundtrackSource
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,7 +430,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 450fefb527093e3469569c2c8d356fe3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1
@@ -542,6 +542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12588c775a725f4d9b9d190d5721c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro_init: {fileID: 8300000, guid: cd1277e08cbb1d1408232be24dc8bac6, type: 3}
+  menu_soundtrack: {fileID: 8300000, guid: 5e136d1e5df962b4b8a5846277b9656e, type: 3}
+  level0_soundtrack: {fileID: 8300000, guid: b6c52deffcaa32845978dec1ac6585b9, type: 3}
+  level1_soundtrack: {fileID: 8300000, guid: 0e84a10bff17eae4db58b165707ca53f, type: 3}
+  level2_soundtrack: {fileID: 8300000, guid: e34dae53f0cb62e4fbde7ce457cc0326, type: 3}
 --- !u!114 &1660551225
 MonoBehaviour:
   m_ObjectHideFlags: 0

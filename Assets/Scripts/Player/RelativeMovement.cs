@@ -30,6 +30,14 @@ public class RelativeMovement : MonoBehaviour
 
     private Animator _animator;
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip footStepSound;
+    private float _walkStepSoundLength;
+    private float _runStepSoundLength;
+    private bool _step;
+
+    [SerializeField] private AudioClip jumpSound;
+
 
     private void Awake() {
         Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
@@ -49,6 +57,11 @@ public class RelativeMovement : MonoBehaviour
         burstEffect.SetActive(false);
 
         _animator = GetComponent<Animator>();
+
+        _audioSource = GetComponent<AudioSource>();
+        _step = true;
+        _walkStepSoundLength = 0.336f;
+        _runStepSoundLength = 0.261f;
     }
 
     // Update is called once per frame
@@ -83,12 +96,18 @@ public class RelativeMovement : MonoBehaviour
                 hitGround = hit.distance <= check;
             }
 
+            
+            if(_charController.velocity.magnitude > 1f && _step && !_isJumping){
+                _audioSource.PlayOneShot(footStepSound);
+                StartCoroutine(WaitForFootSteps(_charController.velocity.magnitude));
+            }
             _animator.SetFloat("Speed", movement.magnitude);
 
             if (hitGround) {
                 if (Input.GetButtonDown("Jump")){
                     _vertSpeed = jumpSpeed;
                     _canBurstDrive = true;
+                    _audioSource.PlayOneShot(jumpSound);
                 } else {
                     _vertSpeed = minFall;
                     _isJumping=false;
@@ -109,6 +128,7 @@ public class RelativeMovement : MonoBehaviour
                     {
                         StartCoroutine(BurstDriveCoroutine(movement));
                         _canBurstDrive = false;
+                        _audioSource.PlayOneShot(jumpSound);
                     }
                 }
 
@@ -148,6 +168,12 @@ public class RelativeMovement : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
         _contact = hit;
+    }
+
+    private IEnumerator WaitForFootSteps(float movementSpeed){
+        _step = false;
+        yield return new WaitForSeconds(movementSpeed>7?_runStepSoundLength:_walkStepSoundLength);
+        _step = true;
     }
 
     private void OnSpeedChanged(float value) {

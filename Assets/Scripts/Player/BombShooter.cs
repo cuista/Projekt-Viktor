@@ -21,6 +21,8 @@ public class BombShooter : MonoBehaviour
 
     [SerializeField] public GameObject shield;
     [SerializeField] public Slider shieldSlider;
+    private MeshRenderer _shieldMeshRenderer;
+    private GameObject _shieldEffect;
     public bool hasShield = false;
     public float shieldDuration = 5f;
     private bool _canUseShield = true;
@@ -30,6 +32,14 @@ public class BombShooter : MonoBehaviour
     private const float _minimumHeldDuration = 0.17f;
     private float _bombButtonPressedTime = 0;
     private bool _bombButtonHeld = false;
+
+    private AudioSource _audioSource;
+
+    [SerializeField] private AudioClip plantBombSound;
+    [SerializeField] private AudioClip swampSpecialBombSound;
+    [SerializeField] private AudioClip shieldSound;
+    [SerializeField] private AudioClip rechargeShieldSound;
+    [SerializeField] private AudioClip shieldReadySound;
 
     void Awake() {
         Messenger<Bomb>.AddListener(GameEvent.BOMBS_DETONATED_BECAUSE_ENEMY_DEATH, OnBombsDetonateBecauseEnemyDeath);
@@ -57,7 +67,12 @@ public class BombShooter : MonoBehaviour
 
         _currentSpecialBomb = 0;
 
-        shield.SetActive(false);
+        _shieldMeshRenderer = shield.GetComponent<MeshRenderer>();
+        _shieldMeshRenderer.enabled = false;
+        _shieldEffect = shield.transform.GetChild(0).gameObject;
+        _shieldEffect.SetActive(false);
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -90,6 +105,7 @@ public class BombShooter : MonoBehaviour
                                 _bombsPlanted.Add(bomb);
                                 _bombsPlantedCount++;
                                 Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED,-1);
+                                _audioSource.PlayOneShot(plantBombSound);
                             }
                         }
                     }
@@ -114,6 +130,7 @@ public class BombShooter : MonoBehaviour
                             _bombsPlanted.Add(bomb);
                             _bombsPlantedCount++;
                             Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, -1);
+                            _audioSource.PlayOneShot(plantBombSound);
                         }
                     }
                 }
@@ -180,6 +197,7 @@ public class BombShooter : MonoBehaviour
                                 _bombsPlantedCount++;
                                 Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, _currentSpecialBomb);
                                 Managers.Inventory.ConsumeSpecialBomb(_currentSpecialBomb);
+                                _audioSource.PlayOneShot(plantBombSound);
                             }
                         }
                     }
@@ -191,13 +209,13 @@ public class BombShooter : MonoBehaviour
             {
                 _currentSpecialBomb=MathMod(_currentSpecialBomb-1,specialBombPrefabs.Length);
                 Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
-                //Debug.Log("n+: "+_currentSpecialBomb);
+                _audioSource.PlayOneShot(swampSpecialBombSound);
             }
             else if(Input.GetKeyUp(KeyCode.E))
             {
                 _currentSpecialBomb=MathMod(_currentSpecialBomb+1,specialBombPrefabs.Length);
                 Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
-                //Debug.Log("n-: "+_currentSpecialBomb);
+                _audioSource.PlayOneShot(swampSpecialBombSound);
             }
 
             if(Input.GetKeyUp(KeyCode.F) && _canUseShield)
@@ -224,6 +242,7 @@ public class BombShooter : MonoBehaviour
                 bomb.AddBombOver();
                 _bombsPlantedCount++;
                 Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, -1);
+                _audioSource.PlayOneShot(plantBombSound);
                 return true;
             }
         }
@@ -244,20 +263,31 @@ public class BombShooter : MonoBehaviour
 
     private IEnumerator UseShield()
     {
+        _shieldMeshRenderer.enabled = true;
+        _shieldEffect.SetActive(true);
+
+        AudioSource shieldAudioSource = shield.GetComponent<AudioSource>();
+        shieldAudioSource.clip=shieldSound;
+        shieldAudioSource.Play();
+
         float totalTime = 0;
         hasShield = true;
         _canUseShield = false;
-        shield.SetActive(true);
         while(totalTime <= shieldDuration)
         {
             shieldSlider.value = 1 - (totalTime / shieldDuration);
             totalTime += Time.deltaTime;
             yield return null;
         }
-        shield.SetActive(false);
         hasShield = false;
 
+        _shieldMeshRenderer.enabled = false;
+        _shieldEffect.SetActive(false);
+        shieldAudioSource.Stop();
+
         // Recharge shield
+        shieldAudioSource.clip=rechargeShieldSound;
+        shieldAudioSource.Play();
         totalTime = 0;
         while(totalTime <= shieldRecoveryTime)
         {
@@ -266,6 +296,9 @@ public class BombShooter : MonoBehaviour
             yield return null;
         }
         _canUseShield = true;
+
+        shieldAudioSource.Stop();
+        shieldAudioSource.PlayOneShot(shieldReadySound);
     }
 
     private int MathMod(int a, int b){
