@@ -12,6 +12,7 @@ public class GamePresentation : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(Presentation());
     }
 
@@ -30,5 +31,6 @@ public class GamePresentation : MonoBehaviour
         }
         
         LoadingScenesManager.LoadingScenes("InitialMenu");
+        yield return null;
     }
 }

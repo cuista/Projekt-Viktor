@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -158,7 +158,7 @@ public class FollowingAI : MonoBehaviour, IEnemy
                     float patrolAngle=Random.Range(-110,110);
                     transform.Rotate(0,patrolAngle, 0);
                 }
-                else if(Vector3.Distance(transform.position, _defaultPosition) > range)
+                else if(Vector3.Distance(transform.position, _defaultPosition) > range || Vector3.Distance(transform.position, DontDestroyOnLoadManager.GetPlayer().gameObject.transform.position) < 5)
                 {
                     if(_isFollowing)
                     {
@@ -223,13 +223,16 @@ public class FollowingAI : MonoBehaviour, IEnemy
     }
 
     private IEnumerator Shoot() {
-        for(int i=0; i<3; i++)
+        if(!GameEvent.isPaused)
         {
-            GameObject bullet=Instantiate(bulletPrefab) as GameObject;
-            bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*2.5f);
-            bullet.transform.rotation=transform.rotation;
+            for(int i=0; i<3; i++)
+            {
+                GameObject bullet=Instantiate(bulletPrefab) as GameObject;
+                bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*2.5f);
+                bullet.transform.rotation=transform.rotation;
 
-            yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
 }

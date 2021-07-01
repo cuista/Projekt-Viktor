@@ -10,7 +10,10 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0,0,speed*Time.deltaTime);
+        if(!GameEvent.isPaused)
+        {
+            transform.Translate(0,0,speed*Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {

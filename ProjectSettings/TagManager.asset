@@ -12,6 +12,7 @@ TagManager:
   - SkipMessage
   - Enemy
   - AudioManager
+  - Controller
   layers:
   - Default
   - TransparentFX

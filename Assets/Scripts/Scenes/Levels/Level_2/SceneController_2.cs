@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class SceneController_2 : MonoBehaviour
 {
@@ -22,10 +24,23 @@ public class SceneController_2 : MonoBehaviour
     [SerializeField] private GameObject capacitor_2;
     [SerializeField] private GameObject capacitor_3;
     [SerializeField] private GameObject capacitor_4;
+    [SerializeField] private GameObject obstacle_6;
     
     private List<GameObject> _targets;
 
+    [SerializeField] private GameObject door1;
+
+    [SerializeField] private GameObject door2;
+
     public GameObject timeline2;
+    public GameObject timelineFinalBoss;
+    [SerializeField] private GameObject doctor;
+    private EnemyCharacter _finalBossEnemyCharacter;
+
+    [SerializeField] private GameObject finalBossCanvas;
+    [SerializeField] private Slider finalBossHealthBar;
+
+    private bool isFinalStageLocked = true;
 
     public float speed;
 
@@ -70,7 +85,6 @@ public class SceneController_2 : MonoBehaviour
         AddEnemy(soldier, new Vector3(82, 4.2f, -58), Quaternion.Euler(0,-90,0));
         AddEnemy(soldier, new Vector3(96, 4.2f, -70), Quaternion.Euler(0,0,0));
         AddEnemy(soldier, new Vector3(77, 4.2f, -82), Quaternion.Euler(0,90,0));
-        AddEnemy(soldier, new Vector3(43, 4.2f, -82), Quaternion.Euler(0,90,0));
         AddEnemy(soldier, new Vector3(30, 4.2f, -82), Quaternion.Euler(0,90,0));
         AddEnemy(soldier, new Vector3(12, 4.2f, -100), Quaternion.Euler(0,0,0));
         AddEnemy(soldier, new Vector3(-30, 4.2f, -106), Quaternion.Euler(0,90,0));
@@ -82,7 +96,6 @@ public class SceneController_2 : MonoBehaviour
         AddEnemy(soldier, new Vector3(32, 7.4f, -215), Quaternion.Euler(0,90,0));
         AddEnemy(soldier, new Vector3(12, 7.4f, -340), Quaternion.Euler(0,0,0));
         //miniDrones
-        AddEnemy(miniDrone, new Vector3(-7, 8f, -106), Quaternion.Euler(0,90,0));
         AddEnemy(miniDrone, new Vector3(-50, 8f, -106), Quaternion.Euler(0,90,0));
         AddEnemy(miniDrone, new Vector3(-9, 8f, -130), Quaternion.Euler(0,-90,0));
         AddEnemy(miniDrone, new Vector3(-55, 8f, -130), Quaternion.Euler(0,-90,0));
@@ -102,8 +115,14 @@ public class SceneController_2 : MonoBehaviour
         AddTarget(capacitor_2, new Vector3(0,0.1f,50), Quaternion.Euler(0,0,0));
         AddTarget(capacitor_3, new Vector3(0,0.1f,50), Quaternion.Euler(0,0,0));
         AddTarget(capacitor_4, new Vector3(0,0.1f,50), Quaternion.Euler(0,0,0));
+        AddTarget(obstacle_6, new Vector3(15,7.4f,-184), Quaternion.Euler(0,90,0));
+        AddTarget(obstacle_6, new Vector3(-70,7.4f,-184), Quaternion.Euler(0,90,0));
+        AddTarget(obstacle_6, new Vector3(15,7.4f,-244), Quaternion.Euler(0,90,0));
+        AddTarget(obstacle_6, new Vector3(-70,7.4f,-244), Quaternion.Euler(0,90,0));
         
-        Messenger<int>.Broadcast(GameEvent.TARGET_TOTAL, (_enemies.Count + _targets.Count));
+        Messenger<int>.Broadcast(GameEvent.TARGET_TOTAL, (_targets.Count));
+
+        finalBossCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -115,7 +134,6 @@ public class SceneController_2 : MonoBehaviour
             {
                 _enemies.RemoveAt(i);
                 Messenger.Broadcast(GameEvent.ENEMY_KILLED);
-                Messenger.Broadcast(GameEvent.TARGET_ELIMINATED);
             }
         }
 
@@ -128,9 +146,24 @@ public class SceneController_2 : MonoBehaviour
             }
         }
 
-        if((_enemies.Count + _targets.Count) <= 0 && !endLevel.gameObject.activeInHierarchy)
+        if((_targets.Count) <= 0 && !endLevel.gameObject.activeInHierarchy)
         {
-            endLevel.gameObject.SetActive(true);
+            if(isFinalStageLocked)
+            {
+                door1.transform.Rotate(90,0,0);
+                isFinalStageLocked=false;
+            }
+        }
+
+        if(finalBossCanvas.activeInHierarchy)
+        {
+            int finalBossLives=_finalBossEnemyCharacter.GetLives();
+            finalBossHealthBar.value=finalBossLives;
+            if(finalBossLives<=0 || _finalBossEnemyCharacter==null)
+            {
+                StartCoroutine(DeactivateFinalBossHealthBar());
+                endLevel.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -168,6 +201,7 @@ public class SceneController_2 : MonoBehaviour
         DontDestroyOnLoadManager.GetPlayer().SetActive(true);
 
         timeline2.SetActive(false);
+        timelineFinalBoss.SetActive(false);
         DontDestroyOnLoadManager.GetMainCamera().SetActive(true);
         DontDestroyOnLoadManager.GetHUD().SetActive(true);
         DontDestroyOnLoadManager.GetSkipMessage().SetActive(false);
@@ -180,5 +214,37 @@ public class SceneController_2 : MonoBehaviour
         AudioManager audioManager = DontDestroyOnLoadManager.GetAudioManager();
         if(!audioManager.isPlayingClip(audioManager.level2_soundtrack))
             audioManager.PlaySoundtrackLevel_2();
+    }
+
+    public void StartFinalBossCutscene()
+    {
+        DontDestroyOnLoadManager.GetPlayer().GetComponent<BombShooter>().ResetBombsPlanted();
+        door2.transform.Rotate(90,0,0);
+        BeforeCutscene();
+        timelineFinalBoss.SetActive(true);
+        timelineFinalBoss.GetComponent<PlayableDirector>().Play();
+        StartCoroutine(ActiveFinalBossFight());
+    }
+
+    private IEnumerator ActiveFinalBossFight()
+    {
+        while (GameEvent.isPaused)
+        {
+            yield return null;
+        }
+
+        GameObject finalBoss = Instantiate(doctor, new Vector3(12,6.1f,-435), Quaternion.Euler(0,0,0));
+        _enemies.Add(finalBoss);
+        _finalBossEnemyCharacter = finalBoss.GetComponent<EnemyCharacter>();
+        int finalBossLives=_finalBossEnemyCharacter.GetLives();
+        finalBossHealthBar.minValue=0;
+        finalBossHealthBar.maxValue=finalBossLives;
+        finalBossHealthBar.value=finalBossLives;
+        finalBossCanvas.SetActive(true);
+    }
+
+    private IEnumerator DeactivateFinalBossHealthBar(){
+        yield return new WaitForSeconds(2f);
+        finalBossCanvas.SetActive(false);
     }
 }

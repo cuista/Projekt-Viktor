@@ -7,11 +7,13 @@ public class EnemyCharacter : MonoBehaviour, IEnemy
     [SerializeField] private int lives;
 
     private bool _isMoving;
+    private bool _isShieldActive = false;
 
     private Vector3 _graviton;
 
     public void RemoveLives(int livesToRemove){
-        lives -= livesToRemove;
+        if(!_isShieldActive)
+            lives -= livesToRemove;
     }
 
     public int GetLives(){
@@ -24,6 +26,11 @@ public class EnemyCharacter : MonoBehaviour, IEnemy
 
     public void SetMoving(bool moving){
         _isMoving=moving;
+    }
+
+    public void SetShieldActive(bool isShieldActive)
+    {
+        _isShieldActive=isShieldActive;
     }
 
     public Vector3 GetGraviton(){

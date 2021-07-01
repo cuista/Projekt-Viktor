@@ -5,61 +5,108 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource _soundtrackSource;
 
     public AudioClip intro_init;
     public AudioClip menu_soundtrack;
     public AudioClip level0_soundtrack;
     public AudioClip level1_soundtrack;
     public AudioClip level2_soundtrack;
+    public AudioClip credits_soundtrack;
+
+    public float soundVolume {
+        get {return AudioListener.volume;}
+        set {AudioListener.volume = value;}
+    }
+
+    public bool soundMute {
+        get {return AudioListener.pause;}
+        set {AudioListener.pause = value;}
+    }
+
+    public float musicVolume {
+        get {
+            return _soundtrackSource.volume;
+        }
+        set {
+            if (_soundtrackSource != null) {
+                _soundtrackSource.volume = value;
+            }
+        }
+    }
+
+    public bool musicMute {
+        get {
+            if (_soundtrackSource != null) {
+                return _soundtrackSource.mute;
+            }
+            return false;
+            }
+        set {
+            if (_soundtrackSource != null) {
+                _soundtrackSource.mute = value;
+            }
+        }
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
-        _audioSource.PlayOneShot(intro_init);
+        _soundtrackSource.ignoreListenerVolume = true;
+        _soundtrackSource.ignoreListenerPause = true;
+        soundVolume = 1f;
+        musicVolume = 1f;
+        _soundtrackSource.PlayOneShot(intro_init);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    public void PlaySound(AudioClip clip) {
+        _audioSource.PlayOneShot(clip);
     }
 
-    public void PlayMenuClip()
+    public void PlaySoundtrackMenuClip()
     {
-        _audioSource.clip = menu_soundtrack;
-        _audioSource.Play();
+        _soundtrackSource.clip = menu_soundtrack;
+        _soundtrackSource.Play();
     }
 
     public void PlaySoundtrackLevel_0()
     {
-        _audioSource.clip = level0_soundtrack;
-        _audioSource.Play();
+        _soundtrackSource.clip = level0_soundtrack;
+        _soundtrackSource.Play();
     }
 
     public void PlaySoundtrackLevel_1()
     {
-        _audioSource.clip = level1_soundtrack;
-        _audioSource.Play();
+        _soundtrackSource.clip = level1_soundtrack;
+        _soundtrackSource.Play();
     }
 
     public void PlaySoundtrackLevel_2()
     {
-        _audioSource.clip = level2_soundtrack;
-        _audioSource.Play();
+        _soundtrackSource.clip = level2_soundtrack;
+        _soundtrackSource.Play();
+    }
+
+    public void PlaySoundtrackCredits()
+    {
+        _soundtrackSource.clip = credits_soundtrack;
+        _soundtrackSource.Play();
     }
 
     public void StopCurrentSoundtrack(){
-        _audioSource.Stop();
+        _soundtrackSource.Stop();
     }
 
     public bool isPlayingClip(AudioClip audio)
     {
-        return _audioSource.clip==audio?true:false;
+        return (_audioSource.clip==audio||_soundtrackSource.clip==audio)?true:false;
     }
 
-    public float GetVolume(){
-        return _audioSource.volume;
+    public float GetCreditsClipLength(){
+        return credits_soundtrack.length;
     }
 }

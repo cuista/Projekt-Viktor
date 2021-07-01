@@ -8,7 +8,7 @@ public class EndLevel_2 : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.GetComponent<PlayerCharacter>() != null){
             other.gameObject.GetComponent<BombShooter>().ResetBombsPlanted();
-            LoadingScenesManager.LoadingScenes("Level_2");
+            LoadingScenesManager.LoadingScenes("Credits");
         }
     }
 }

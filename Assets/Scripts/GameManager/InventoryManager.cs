@@ -11,11 +11,11 @@ public class InventoryManager : MonoBehaviour, IGameManager
 
     private int _specialBombsCapacity;
 
-    private AudioSource _audioSource;
+    private AudioManager audioManager;
     [SerializeField] private AudioClip itemCollectedSound;
 
     private void Awake() {
-        _audioSource = GetComponent<AudioSource>();
+        audioManager = DontDestroyOnLoadManager.GetAudioManager();
     }
 
     public void Startup(){
@@ -44,7 +44,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
         } else {
             _items[name] = 1;
         }
-        _audioSource.PlayOneShot(itemCollectedSound);
+        audioManager.PlaySound(itemCollectedSound);
 
         DisplayItems();
     }
@@ -57,7 +57,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
         }
 
         Messenger<int>.Broadcast(GameEvent.LIQUID_COLLECTED, int.Parse(name.Split(' ')[1]));
-        _audioSource.PlayOneShot(itemCollectedSound);
+        audioManager.PlaySound(itemCollectedSound);
 
         DisplayItems();
     }

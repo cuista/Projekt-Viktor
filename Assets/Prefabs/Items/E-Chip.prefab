@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 813108300832051591}
   - component: {fileID: 713761620454232949}
   - component: {fileID: 692968903555070777}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FX Border Cubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4656,7 +4656,7 @@ GameObject:
   - component: {fileID: 5886280537042416391}
   - component: {fileID: 5897244294788894457}
   - component: {fileID: 5905109898257827061}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SM_Icon_Spanners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4738,7 +4738,7 @@ GameObject:
   - component: {fileID: 8179752621597835553}
   - component: {fileID: 8179752621597835552}
   - component: {fileID: 3498173099642096069}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: E-Chip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

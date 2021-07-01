@@ -95,8 +95,10 @@ public class SceneController_1 : MonoBehaviour
         AddTarget(obstacle_5, new Vector3(11.7f,0.1f,111.9f), Quaternion.Euler(0,-90,0));
         AddTarget(obstacle_5, new Vector3(-21f,0.1f,61.8f), Quaternion.Euler(0,90,0));
         AddTarget(obstacle_5, new Vector3(26f,0.1f,50.9f), Quaternion.Euler(0,90,0));
+        AddTarget(obstacle_5, new Vector3(20,0.1f,36), Quaternion.Euler(0,90,0));
+        AddTarget(obstacle_5, new Vector3(30,0.1f,62), Quaternion.Euler(0,90,0));
         
-        Messenger<int>.Broadcast(GameEvent.TARGET_TOTAL, (_enemies.Count + _targets.Count));
+        Messenger<int>.Broadcast(GameEvent.TARGET_TOTAL, (_targets.Count));
     }
 
     // Update is called once per frame
@@ -108,7 +110,6 @@ public class SceneController_1 : MonoBehaviour
             {
                 _enemies.RemoveAt(i);
                 Messenger.Broadcast(GameEvent.ENEMY_KILLED);
-                Messenger.Broadcast(GameEvent.TARGET_ELIMINATED);
             }
         }
 
@@ -121,7 +122,7 @@ public class SceneController_1 : MonoBehaviour
             }
         }
 
-        if((_enemies.Count + _targets.Count) <= 0 && !endLevel.gameObject.activeInHierarchy)
+        if((_targets.Count) <= 0 && !endLevel.gameObject.activeInHierarchy)
         {
             endLevel.gameObject.SetActive(true);
         }

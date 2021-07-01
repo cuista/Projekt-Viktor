@@ -71,6 +71,15 @@ public static class DontDestroyOnLoadManager
         return null;
     }
 
+    public static GameObject GetController(){
+        foreach(var go in _ddolObjects)
+        {
+            if(go.tag == "Controller")
+                return go;
+        }
+        return null;
+    }
+
     public static AudioManager GetAudioManager(){
         foreach(var go in _permanentObjects)
         {

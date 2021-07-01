@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     private int _bombsCapacity;
     private int _bombsPlanted;
     [SerializeField] private Text scoreValue;
+    [SerializeField] private Text scoreEndGameValue;
     [SerializeField] private GameObject scoreMultiplier;
     private Text _multiplierValue;
 
@@ -34,6 +35,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Sprite gravitonImage;
 
     private bool isPlayingCutscene = false;
+    private bool isPlayingCredits = false;
 
     [SerializeField] private GameObject target;
 
@@ -53,6 +55,8 @@ public class UIController : MonoBehaviour
         Messenger<int>.AddListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
         Messenger.AddListener(GameEvent.CUTSCENE_STARTED, OnCutsceneStarted);
         Messenger.AddListener(GameEvent.CUTSCENE_ENDED, OnCutsceneEnded);
+        Messenger.AddListener(GameEvent.CREDITS_STARTED, OnCreditsStarted);
+        Messenger.AddListener(GameEvent.CREDITS_ENDED, OnCreditsEnded);
         Messenger<int>.AddListener(GameEvent.TARGET_TOTAL, OnTargetTotal);
         Messenger.AddListener(GameEvent.TARGET_ELIMINATED, OnTargetEliminated);
     }
@@ -68,6 +72,8 @@ public class UIController : MonoBehaviour
         Messenger<int>.RemoveListener(GameEvent.LIQUID_CONSUMED, OnLiquidConsumedChanged);
         Messenger.RemoveListener(GameEvent.CUTSCENE_STARTED, OnCutsceneStarted);
         Messenger.RemoveListener(GameEvent.CUTSCENE_ENDED, OnCutsceneEnded);
+        Messenger.RemoveListener(GameEvent.CREDITS_STARTED, OnCreditsStarted);
+        Messenger.RemoveListener(GameEvent.CREDITS_ENDED, OnCreditsEnded);
         Messenger<int>.RemoveListener(GameEvent.TARGET_TOTAL, OnTargetTotal);
         Messenger.RemoveListener(GameEvent.TARGET_ELIMINATED, OnTargetEliminated);
     }
@@ -79,9 +85,11 @@ public class UIController : MonoBehaviour
         _bombsCapacity=0;
         _bombsPlanted=0;
         scoreValue.text= _score.ToString();
+        scoreEndGameValue.text= _score.ToString();
         settingsPopup.Close();
 
         scoreValue.text=_score.ToString("D4");
+        scoreEndGameValue.text=_score.ToString("D4");
 
         for (int i = 0; i < specialBombsAnimator_slots.Length; i++)
         {
@@ -100,6 +108,8 @@ public class UIController : MonoBehaviour
         {
             if(isPlayingCutscene)
                 Messenger.Broadcast(GameEvent.CUTSCENE_STOPPED);
+            else if(isPlayingCredits)
+                Messenger.Broadcast(GameEvent.CREDITS_STOPPED);
             else
                 settingsPopup.Open();
         }
@@ -126,6 +136,7 @@ public class UIController : MonoBehaviour
     private void OnEnemyHit(){
         _score+=10*_multiplier;
         scoreValue.text = _score.ToString("D4");
+        scoreEndGameValue.text = _score.ToString("D4");
 
         _multiplier+=1;
         _comboTimer = Time.timeSinceLevelLoad;
@@ -233,6 +244,14 @@ public class UIController : MonoBehaviour
         isPlayingCutscene = false;
     }
 
+    public void OnCreditsStarted(){
+        isPlayingCredits = true;
+    }
+
+    public void OnCreditsEnded(){
+        isPlayingCredits = false;
+    }
+
     public void OnTargetTotal(int total){
         target.SetActive(true);
         targetCount.text="0";
@@ -241,6 +260,11 @@ public class UIController : MonoBehaviour
 
     public void OnTargetEliminated(){
         targetCount.text=(int.Parse(targetCount.text)+1).ToString();
+    }
+
+    public int GetScore()
+    {
+        return _score;
     }
 
     private int MathMod(int a, int b){

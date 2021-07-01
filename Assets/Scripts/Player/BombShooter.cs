@@ -225,12 +225,12 @@ public class BombShooter : MonoBehaviour
 
             if(Managers.Inventory.GetItemCount("E-Chip") != 0)
             {
-                _bombsCapacity = MathMod(_bombsCapacity+1,_maxCapacity+1);
+                _bombsCapacity = (_bombsCapacity+1<=_maxCapacity)?_bombsCapacity+1:_maxCapacity;
                 Managers.Inventory.ConsumeItem("E-Chip");
                 Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
             }
         } else {
-            _bombButtonHeld=true; //FIXME ??? fixed bug on settings popup close, viktor putted a bomb
+            _bombButtonHeld=true;
         }
 
     }

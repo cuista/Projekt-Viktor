@@ -54,9 +54,12 @@ public class WanderingAI : MonoBehaviour, IEnemy
                 GameObject hitObject = hit.transform.gameObject;
                 if(hitObject.tag == "Player"){
                     if(_bullet==null){
+                        if(!GameEvent.isPaused)
+                        {
                         _bullet=Instantiate(bulletPrefab) as GameObject;
                         _bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*1.5f);
                         _bullet.transform.rotation=transform.rotation;
+                        }
                     }
                 }else if(hit.distance < obstacleRange){
                     float angle=Random.Range(-110,110);

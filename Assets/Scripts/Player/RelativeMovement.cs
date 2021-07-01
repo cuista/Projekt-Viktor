@@ -29,6 +29,7 @@ public class RelativeMovement : MonoBehaviour
     private ControllerColliderHit _contact; //to be precise on edge of objects
 
     private Animator _animator;
+    [SerializeField] private Animator _animatorShadow;
 
     private AudioSource _audioSource;
     [SerializeField] private AudioClip footStepSound;
@@ -102,6 +103,7 @@ public class RelativeMovement : MonoBehaviour
                 StartCoroutine(WaitForFootSteps(_charController.velocity.magnitude));
             }
             _animator.SetFloat("Speed", movement.magnitude);
+            _animatorShadow.SetFloat("Speed", movement.magnitude);
 
             if (hitGround) {
                 if (Input.GetButtonDown("Jump")){
@@ -112,6 +114,7 @@ public class RelativeMovement : MonoBehaviour
                     _vertSpeed = minFall;
                     _isJumping=false;
                     _animator.SetBool("Jumping",false);
+                    _animatorShadow.SetBool("Jumping",false);
                 }
             } else {
                 _vertSpeed += gravity * 5 * Time.deltaTime;
@@ -121,6 +124,7 @@ public class RelativeMovement : MonoBehaviour
 
                 _isJumping=true;
                 _animator.SetBool("Jumping",true);
+                _animatorShadow.SetBool("Jumping",true);
 
                 if (Input.GetKeyDown(KeyCode.Space) && _canBurstDrive)
                 {
@@ -138,6 +142,7 @@ public class RelativeMovement : MonoBehaviour
                         movement = _contact.normal * _moveSpeed;
                         _isJumping=false;
                         _animator.SetBool("Jumping",false);
+                        _animatorShadow.SetBool("Jumping",false);
                     } else {
                         movement += _contact.normal * _moveSpeed * 10;
                     }

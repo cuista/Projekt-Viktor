@@ -10,12 +10,14 @@ public class SettingsPopup : MonoBehaviour
 
     private bool _isGameOver = false;
 
-    private AudioSource _audioSource;
     [SerializeField] private AudioClip openPopupSound;
+    [SerializeField] private AudioClip clickSound;
+
+    private AudioManager audioManager;
 
     private void Awake() {
         Messenger.AddListener(GameEvent.GAMEOVER, OnGameOver);
-        _audioSource = GetComponent<AudioSource>();
+        audioManager = DontDestroyOnLoadManager.GetAudioManager();
     }
 
     private void OnDestroy() {
@@ -27,7 +29,7 @@ public class SettingsPopup : MonoBehaviour
         if(!_isGameOver)
         {
             PauseGame();
-            _audioSource.PlayOneShot(openPopupSound);
+            audioManager.PlaySound(openPopupSound);
         }
         else
         {
@@ -73,4 +75,23 @@ public class SettingsPopup : MonoBehaviour
     public void OnGameOver(){
         _isGameOver = true;
     }
+
+    public void OnSoundToggle() {
+        audioManager.soundMute = !audioManager.soundMute;
+        audioManager.PlaySound(clickSound);
+    }
+    
+    public void OnSoundValue(float volume) {
+        audioManager.soundVolume = volume;
+    }
+
+    public void OnMusicToggle() {
+        audioManager.musicMute = !audioManager.musicMute;
+        audioManager.PlaySound(clickSound);
+    }
+
+    public void OnMusicValue(float volume) {
+        audioManager.musicVolume = volume;
+    }
+
 }
