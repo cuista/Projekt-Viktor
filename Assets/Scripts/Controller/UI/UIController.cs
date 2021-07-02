@@ -104,6 +104,7 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // handle ESC
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(isPlayingCutscene)
@@ -114,6 +115,7 @@ public class UIController : MonoBehaviour
                 settingsPopup.Open();
         }
 
+        // Shows score multiplier
         if(_multiplier>1)
         {
             scoreMultiplier.SetActive(true);
@@ -180,7 +182,9 @@ public class UIController : MonoBehaviour
         }
     }
 
+    //More than one bomb is detonated
     private void OnBombsDetonatedN(int numOfBombs){
+        //indexToAdjust are the index of bombs detonated
         List<int> indexToAdjust = new List<int>();
         for (int i = _bombsPlanted-1; i >= 0; i--)
         {
@@ -193,6 +197,7 @@ public class UIController : MonoBehaviour
             }
         }
 
+        //Move to the left all bombs on the right (of current index in indexToAdjust)
         foreach(int index in indexToAdjust)
         {
             for (int i = index; i < _bombsPlanted-1; i++)
@@ -216,6 +221,7 @@ public class UIController : MonoBehaviour
         Debug.Log("Pointer down");
     }
 
+    //swap 3 special bombs with my MathMod
     public void OnSpecialBombChanged(int selectedSpecialBomb){
         for (int i = 0; i < specialBombsAnimator_slots.Length; i++)
         {

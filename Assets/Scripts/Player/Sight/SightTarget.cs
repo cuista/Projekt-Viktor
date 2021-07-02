@@ -19,6 +19,7 @@ public class SightTarget : MonoBehaviour
         lineRenderer.material = _material;
         lineRenderer.widthMultiplier = 0.2f; // thickness
 
+        /* OLD LINE */
         /*
         lineRenderer.material = new Material(Shader.Find("SuperSystems/Wireframe-Transparent-Culled"));
         // A simple 2 color gradient with a fixed alpha of 1.0f.
@@ -70,7 +71,6 @@ public class SightTarget : MonoBehaviour
     private void OnTriggerEnter(Collider collider) {
         EnemyCharacter enemy=collider.GetComponent<EnemyCharacter>();
         if(enemy!=null){
-            //Debug.Log("Enemy hit <X>");
             _targetEnemy=enemy.gameObject;
         }
     }

@@ -13,11 +13,13 @@ public class ExplosionController : MonoBehaviour
         _explosionController = this;
     }
 
+    //Instantiate explosion and destroy after its duration
     public static void MakeItBoom(GameObject explosionEffect, Transform bombTransform){
         GameObject explosion = Instantiate(explosionEffect, bombTransform.position, bombTransform.rotation);
         Destroy(explosion,explosion.GetComponent<ParticleSystem>().main.duration);
     }
 
+    //raycast on the bottom and instantiate flames on the floor
     public static void MakeFloorOnFire(Transform objTransform){
         RaycastHit raycastHit;
         if(Physics.Raycast(objTransform.position, -objTransform.up, out raycastHit))

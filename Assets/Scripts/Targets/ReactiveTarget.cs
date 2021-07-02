@@ -14,6 +14,7 @@ public class ReactiveTarget : MonoBehaviour, ReactiveObject
             StartCoroutine(Open());
     }
 
+    //Destroy object and release flames on the ground
     private IEnumerator Open() {
         ExplosionController.MakeItBoom(explosionEffect, transform);
 

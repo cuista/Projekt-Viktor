@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class DontDestroyOnLoadManager
 {
-
+    //Permanent never be destroyed, ddol go through the scene but can be destroyed
     private static List<GameObject> _permanentObjects = new List<GameObject>();
     private static List<GameObject> _ddolObjects = new List<GameObject>();
 
@@ -18,6 +18,7 @@ public static class DontDestroyOnLoadManager
         _ddolObjects.Add(go);
     }
 
+    //destroy all ddol
     public static void DestroyAll(){
         foreach(var go in _ddolObjects){
             if(go != null)

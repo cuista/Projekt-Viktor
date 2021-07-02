@@ -23,11 +23,15 @@ public class SceneController_VR_Mode : MonoBehaviour
     [SerializeField] private GameObject napalm;
     [SerializeField] private GameObject graviton;
 
+    [SerializeField] private GameObject spawnEffect;
     public float speed;
 
     public GameObject directionalLight;
 
     private float _dropCount = 0;
+
+    [SerializeField] private GameObject infoLabel;
+    [SerializeField] private GameObject infoLabel2;
 
 
     private void Awake() {
@@ -41,11 +45,15 @@ public class SceneController_VR_Mode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        infoLabel.SetActive(true);
+        infoLabel2.SetActive(false);
 
         _player = DontDestroyOnLoadManager.GetPlayer();
         _player.transform.position = playerSpawn.transform.position;
 
         PlaySoundtrack();
+
+        StartCoroutine(DisableInfoLabel());
 
         int sceneColor = (int) Random.Range(0, 6);
         switch(sceneColor)
@@ -110,12 +118,12 @@ public class SceneController_VR_Mode : MonoBehaviour
             int boxType = (int) Random.Range(0, 6);
             switch(boxType)
             {
-                case 0:Instantiate(ampule_A, new Vector3(Random.Range(-75, 75),0.3f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
-                case 1:Instantiate(ampule_B, new Vector3(Random.Range(-75, 75),0.3f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
-                case 2:Instantiate(eChip, new Vector3(Random.Range(-75, 75),0.3f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
-                case 3:Instantiate(tetradox, new Vector3(Random.Range(-75, 75),0.3f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
-                case 4:Instantiate(napalm, new Vector3(Random.Range(-75, 75),0.3f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
-                case 5:Instantiate(graviton, new Vector3(Random.Range(-75, 75),0.3f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
+                case 0:Instantiate(ampule_A, new Vector3(Random.Range(-75, 75),0.1f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
+                case 1:Instantiate(ampule_B, new Vector3(Random.Range(-75, 75),0.1f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
+                case 2:Instantiate(eChip, new Vector3(Random.Range(-75, 75),0.1f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
+                case 3:Instantiate(tetradox, new Vector3(Random.Range(-75, 75),0.1f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
+                case 4:Instantiate(napalm, new Vector3(Random.Range(-75, 75),0.1f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
+                case 5:Instantiate(graviton, new Vector3(Random.Range(-75, 75),0.1f,Random.Range(-75, 75)), Quaternion.Euler(0,0,0));break;
                 default:break;
             }
 
@@ -125,6 +133,8 @@ public class SceneController_VR_Mode : MonoBehaviour
 
     private void AddEnemyAtIndex(int index,GameObject enemyPrefab, Vector3 position, Quaternion rotation){
         _enemies[index]=Instantiate(enemyPrefab, position, rotation);
+        GameObject spawn = Instantiate(spawnEffect,position,rotation);
+        Destroy(spawn, 2);
     }
 
     private void AddBox(GameObject boxPrefab, Vector3 position, Quaternion rotation){
@@ -137,7 +147,23 @@ public class SceneController_VR_Mode : MonoBehaviour
 
     public void PlaySoundtrack()
     {
-        DontDestroyOnLoadManager.GetAudioManager().PlaySoundtrackLevel_0();
+        DontDestroyOnLoadManager.GetAudioManager().PlaySoundtrackVRMode();
+    }
+
+    //Initial informations
+    private IEnumerator DisableInfoLabel()
+    {
+        yield return new WaitForSeconds(5f);
+
+        infoLabel.SetActive(false);
+
+        yield return new WaitForSeconds(0.5f);
+
+        infoLabel2.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+
+        infoLabel2.SetActive(false);
     }
 
 }

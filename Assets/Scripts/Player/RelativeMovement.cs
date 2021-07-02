@@ -105,6 +105,7 @@ public class RelativeMovement : MonoBehaviour
             _animator.SetFloat("Speed", movement.magnitude);
             _animatorShadow.SetFloat("Speed", movement.magnitude);
 
+            // player is hitting the floor
             if (hitGround) {
                 if (Input.GetButtonDown("Jump")){
                     _vertSpeed = jumpSpeed;

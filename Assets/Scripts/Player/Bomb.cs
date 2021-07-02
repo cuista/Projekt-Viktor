@@ -23,6 +23,7 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Label of number always exact rotation
         if(!isExploded)
         {
             counterLabel.transform.rotation = Quaternion.LookRotation( counterLabel.transform.position - Camera.main.transform.position );

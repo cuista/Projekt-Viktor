@@ -61,7 +61,8 @@ public class WanderingAI : MonoBehaviour, IEnemy
                         _bullet.transform.rotation=transform.rotation;
                         }
                     }
-                }else if(hit.distance < obstacleRange){
+                }else if(hit.distance < obstacleRange) //avoid walls
+                {
                     float angle=Random.Range(-110,110);
                     transform.Rotate(0,angle, 0);
                 }

@@ -2385,7 +2385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1b0b5705f9b1140a3eb54f3cea19d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8971377969218038527, guid: ac43b40724f2f3948a5ef39522205ffb,
+  bulletPrefab: {fileID: 8971377969218038527, guid: 1c98d5660c6cdac49afe794865ce6a49,
     type: 3}
   speed: 7
   obstacleRange: 1

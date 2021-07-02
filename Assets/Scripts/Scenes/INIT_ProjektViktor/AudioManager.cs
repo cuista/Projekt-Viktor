@@ -10,10 +10,13 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip intro_init;
     public AudioClip menu_soundtrack;
+    public AudioClip gameOver_soundtrack;
     public AudioClip level0_soundtrack;
     public AudioClip level1_soundtrack;
     public AudioClip level2_soundtrack;
+    public AudioClip bossFight_soundtrack;
     public AudioClip credits_soundtrack;
+    public AudioClip VR_Mode_soundtrack;
 
     public float soundVolume {
         get {return AudioListener.volume;}
@@ -73,6 +76,12 @@ public class AudioManager : MonoBehaviour
         _soundtrackSource.Play();
     }
 
+    public void PlaySoundtrackGameOver()
+    {
+        _soundtrackSource.clip = gameOver_soundtrack;
+        _soundtrackSource.Play();
+    }
+
     public void PlaySoundtrackLevel_0()
     {
         _soundtrackSource.clip = level0_soundtrack;
@@ -91,9 +100,21 @@ public class AudioManager : MonoBehaviour
         _soundtrackSource.Play();
     }
 
+    public void PlaySoundtrackBossFight()
+    {
+        _soundtrackSource.clip = bossFight_soundtrack;
+        _soundtrackSource.Play();
+    }
+
     public void PlaySoundtrackCredits()
     {
         _soundtrackSource.clip = credits_soundtrack;
+        _soundtrackSource.Play();
+    }
+
+    public void PlaySoundtrackVRMode()
+    {
+        _soundtrackSource.clip = VR_Mode_soundtrack;
         _soundtrackSource.Play();
     }
 

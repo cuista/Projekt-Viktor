@@ -161,6 +161,7 @@ public class DoctorAI : MonoBehaviour, IEnemy
                 }       
             }
 
+            //avoid walls and check for patrol position or player distance
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.SphereCast(ray,0.75f,out hit)){
@@ -185,9 +186,9 @@ public class DoctorAI : MonoBehaviour, IEnemy
             }
         }
 
+        //Start shooting at player
         if(_canShoot)
         {
-            //Debug.Log(_canShoot + " " + _shootTimer);
             _shootTimer += Time.deltaTime;
             if(_shootTimer > fireDelay)
             {
@@ -196,6 +197,7 @@ public class DoctorAI : MonoBehaviour, IEnemy
             }
         }
 
+        //protective shield alternate active and not active
         _shieldTimer += Time.deltaTime;
         if(_shieldTimer > shieldDelay)
         {
@@ -205,6 +207,7 @@ public class DoctorAI : MonoBehaviour, IEnemy
             _shieldTimer = 0;
         }
 
+        //release flames on the floor
         _specialAttackTimer+=Time.deltaTime;
         if(_isShieldActive && _specialAttackTimer > specialAttackDelay)
         {

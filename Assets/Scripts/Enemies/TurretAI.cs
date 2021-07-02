@@ -65,6 +65,7 @@ public class TurretAI : MonoBehaviour, IEnemy
             }
         }
 
+        //start shoot the player
         if(_canShoot)
         {
             _shootTimer += Time.deltaTime;

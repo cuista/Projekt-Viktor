@@ -13,9 +13,11 @@ public class GamePresentation : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         StartCoroutine(Presentation());
     }
 
+    //presentation cutscene
     private IEnumerator Presentation()
     {
         foreach(Image image in presentationImages)

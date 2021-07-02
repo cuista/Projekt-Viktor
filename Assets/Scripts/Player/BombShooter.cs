@@ -55,8 +55,6 @@ public class BombShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        //_camera = GetComponentInChildren<Camera>(); //Prima controlla il chiamante e dopo inizia a controllare i figli (restituisce il primo che trova)
-
         _bombsCapacity=2;
         _bombsPlanted=new List<GameObject>(_bombsCapacity);
         Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
@@ -137,7 +135,6 @@ public class BombShooter : MonoBehaviour
             } else if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) {
                 // Player has held the button for more than _minimumHeldDuration, consider it "held"
                 if (Time.timeSinceLevelLoad - _bombButtonPressedTime > _minimumHeldDuration) {
-                    //Debug.Log("Button helded");
                     //sight.gameObject.SetActive(true); //--> I can't disable it because the line won't work
                     sightOnTop.GetComponent<MeshRenderer>().enabled=true;
                     sight.GetComponent<MeshCollider>().enabled=true;
@@ -148,15 +145,13 @@ public class BombShooter : MonoBehaviour
                 {
                     Vector3 point = new Vector3(bomb.transform.position.x, bomb.transform.position.y, bomb.transform.position.z);
                     Collider[] hitColliders = Physics.OverlapSphere(point, bombsRadius);
-                    foreach (var hitCollider in hitColliders) { //out è un passaggio per riferimento
-                        //Debug.Log("Hit " + hit.point); //for DEBUG print of what hitted
+                    foreach (var hitCollider in hitColliders) { //out is a passage by reference
 
                         GameObject hitObject = hitCollider.transform.gameObject;
                         ReactiveObject target = hitObject.GetComponent<ReactiveObject>();
                         if(target != null){
                             if(bomb.tag != "SpecialBomb")
                             {
-                                //Debug.Log("Target hit");
                                 target.ReactToHits(bomb.GetComponent<Bomb>().GetCounter());
                                 //adding explosion force
                                 target.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
@@ -176,11 +171,11 @@ public class BombShooter : MonoBehaviour
                 }
                 _bombsPlanted.Clear();
                 Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
-            } else if (Input.GetKeyUp(KeyCode.Mouse2)){
+            } else if (Input.GetKeyUp(KeyCode.Mouse2)){ //adding special bomb
                 Vector3 point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 Ray ray = new Ray(transform.position,-transform.up);
                 RaycastHit hitInfo;
-                if (Physics.Raycast(ray, out hitInfo)) { //out è un passaggio per riferimento
+                if (Physics.Raycast(ray, out hitInfo)) { //out is a passage by reference
                     if(_bombsPlantedCount < _bombsCapacity)
                     {
                         if(!IncrementIfOverlappingBomb(hitInfo.point) && !GetComponent<RelativeMovement>().isJumping()) {
@@ -218,6 +213,7 @@ public class BombShooter : MonoBehaviour
                 _audioSource.PlayOneShot(swampSpecialBombSound);
             }
 
+            //activate shield
             if(Input.GetKeyUp(KeyCode.F) && _canUseShield)
             {
                 StartCoroutine(UseShield());
@@ -235,6 +231,7 @@ public class BombShooter : MonoBehaviour
 
     }
 
+    //if the new bomb is closer to another, it increase the counter of that bomb
     private bool IncrementIfOverlappingBomb(Vector3 point){
         foreach(GameObject bombPlanted in _bombsPlanted) { 
             Bomb bomb = bombPlanted.GetComponent<Bomb>();

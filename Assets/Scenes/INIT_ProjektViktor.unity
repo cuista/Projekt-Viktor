@@ -578,10 +578,14 @@ MonoBehaviour:
   _soundtrackSource: {fileID: 1894824006}
   intro_init: {fileID: 8300000, guid: cd1277e08cbb1d1408232be24dc8bac6, type: 3}
   menu_soundtrack: {fileID: 8300000, guid: 5e136d1e5df962b4b8a5846277b9656e, type: 3}
+  gameOver_soundtrack: {fileID: 8300000, guid: 94aa902ce3ee39340a2c782a0f1fa75f, type: 3}
   level0_soundtrack: {fileID: 8300000, guid: b6c52deffcaa32845978dec1ac6585b9, type: 3}
   level1_soundtrack: {fileID: 8300000, guid: 0e84a10bff17eae4db58b165707ca53f, type: 3}
   level2_soundtrack: {fileID: 8300000, guid: e34dae53f0cb62e4fbde7ce457cc0326, type: 3}
+  bossFight_soundtrack: {fileID: 8300000, guid: 2e6d78723f054cb4982560c6c61e22e9,
+    type: 3}
   credits_soundtrack: {fileID: 8300000, guid: 9c654183d8a981841a49eb190526d804, type: 3}
+  VR_Mode_soundtrack: {fileID: 8300000, guid: 2c7d6547778c64c4e85c35729214abce, type: 3}
 --- !u!114 &1660551225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,7 +1004,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -148,7 +148,8 @@ public class FollowingAI : MonoBehaviour, IEnemy
 
                 }       
             }
-
+            
+            //avoid walls and check for patrol position or player distance
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.SphereCast(ray,0.75f,out hit)){
@@ -173,9 +174,9 @@ public class FollowingAI : MonoBehaviour, IEnemy
             }
         }
 
+        //start shooting the player
         if(_canShoot)
         {
-            //Debug.Log(_canShoot + " " + _shootTimer);
             _shootTimer += Time.deltaTime;
             if(_shootTimer > fireDelay)
             {

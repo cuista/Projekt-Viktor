@@ -145,6 +145,7 @@ public class DroneAI : MonoBehaviour, IEnemy
                 }       
             }
 
+            //avoid walls and check for patrol position or player distance
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.SphereCast(ray,0.75f,out hit)){
@@ -168,9 +169,9 @@ public class DroneAI : MonoBehaviour, IEnemy
             }
         }
 
+        //Start shooting at player
         if(_canShoot)
         {
-            //Debug.Log(_canShoot + " " + _shootTimer);
             _shootTimer += Time.deltaTime;
             if(_shootTimer > fireDelay)
             {

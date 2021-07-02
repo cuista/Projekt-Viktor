@@ -102,7 +102,7 @@ public class MainMenu : MonoBehaviour
         {
             case 1920:Screen.SetResolution(width,1080,fullscreen);break;
             case 1280:Screen.SetResolution(width,720,fullscreen);break;
-            case 720:Screen.SetResolution(width,576,fullscreen);break;
+            case 1024:Screen.SetResolution(width,576,fullscreen);break;
             default:Screen.SetResolution(1920,1080,fullscreen);break;
         }
     }

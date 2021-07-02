@@ -7,10 +7,12 @@ public class ReactiveBox : MonoBehaviour, ReactiveObject
     [SerializeField] public GameObject item;
     [SerializeField] public GameObject explosionEffect;
 
+    //start coroutine to open box
     public void ReactToHits(int numHits){
         StartCoroutine(Open());
     }
 
+    //open the box with explosion effect
     private IEnumerator Open() {
         ExplosionController.MakeItBoom(explosionEffect, transform);
 

@@ -210,10 +210,6 @@ public class SceneController_2 : MonoBehaviour
 
         //To make special_bombs animators works after cutscene
         Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED, 0);
-
-        AudioManager audioManager = DontDestroyOnLoadManager.GetAudioManager();
-        if(!audioManager.isPlayingClip(audioManager.level2_soundtrack))
-            audioManager.PlaySoundtrackLevel_2();
     }
 
     public void StartFinalBossCutscene()
@@ -221,6 +217,7 @@ public class SceneController_2 : MonoBehaviour
         DontDestroyOnLoadManager.GetPlayer().GetComponent<BombShooter>().ResetBombsPlanted();
         door2.transform.Rotate(90,0,0);
         BeforeCutscene();
+        DontDestroyOnLoadManager.GetAudioManager().PlaySoundtrackBossFight();
         timelineFinalBoss.SetActive(true);
         timelineFinalBoss.GetComponent<PlayableDirector>().Play();
         StartCoroutine(ActiveFinalBossFight());
