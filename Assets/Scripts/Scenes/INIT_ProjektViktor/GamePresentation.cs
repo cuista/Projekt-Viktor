@@ -12,15 +12,18 @@ public class GamePresentation : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         StartCoroutine(Presentation());
     }
 
+    //presentation cutscene
     private IEnumerator Presentation()
     {
         foreach(Image image in presentationImages)
         {
             image.gameObject.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(5.7f);
 
             crossfade.SetTrigger("Start");
             yield return new WaitForSeconds(_crossfadeTime);
@@ -30,5 +33,6 @@ public class GamePresentation : MonoBehaviour
         }
         
         LoadingScenesManager.LoadingScenes("InitialMenu");
+        yield return null;
     }
 }

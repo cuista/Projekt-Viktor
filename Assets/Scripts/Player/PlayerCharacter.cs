@@ -19,6 +19,10 @@ public class PlayerCharacter : MonoBehaviour
     private Image healthBarBackground;
     private bool damaged;
 
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,8 @@ public class PlayerCharacter : MonoBehaviour
         barValueDamage = Managers.Player.barValueDamage;
         healthBarBackground = healthBar.GetComponentInChildren<Image>();
 
+        _audioSource = GetComponent<AudioSource>();
+
         gameOver.SetActive(false);
     }
 
@@ -37,6 +43,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if(!GameEvent.isPaused)
         {
+            //restor energy ampule-A
             if(Managers.Inventory.GetItemCount("Heal Ampule-A") != 0)
             {
                 health += healthPackValueA;
@@ -49,6 +56,7 @@ public class PlayerCharacter : MonoBehaviour
 
                 Managers.Inventory.ConsumeItem("Heal Ampule-A");
             }
+            //restor energy ampule-B
             else if(Managers.Inventory.GetItemCount("Heal Ampule-B") != 0)
             {
                 health += healthPackValueB;
@@ -74,15 +82,18 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    //player lose one or more lives (damage)
     public void Hurt(int damage){
         if(!GetComponent<BombShooter>().hasShield)
         {
             damaged=true;
             health-=damage;
             healthBar.value -= barValueDamage;
+            _audioSource.PlayOneShot(hurtSound);
         }
     }
 
+    //Trigger the gameOver
     public void Death(){
         fillImg.enabled=false;
         gameOver.SetActive(true);
@@ -91,11 +102,14 @@ public class PlayerCharacter : MonoBehaviour
         Messenger.Broadcast(GameEvent.GAMEOVER);
 
         GameEvent.isPaused = true;
+        _audioSource.PlayOneShot(deathSound);
         StartCoroutine(Die());
     }
 
     private IEnumerator Die() {
         GetComponent<Animator>().SetBool("Dying",true);
+
+        DontDestroyOnLoadManager.GetAudioManager().PlaySoundtrackGameOver();
 
         Image gameOverLogo = gameOver.GetComponentInChildren<Image>();
         Vector3 finalPosition = gameOverLogo.transform.position;

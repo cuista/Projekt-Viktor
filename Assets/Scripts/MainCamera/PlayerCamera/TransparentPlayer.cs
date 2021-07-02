@@ -29,9 +29,9 @@ public class TransparentPlayer : MonoBehaviour
         Vector3 p2 = p1 + Vector3.up * playerCharContr.height;
         float playerToCamDistance = (transform.position-player.transform.position).magnitude;
 
+        //if there something between camera and player, it swap material to a trasparent one and viceversa
         if (Physics.CapsuleCast(p1, p2, playerCharContr.radius, (player.transform.position-transform.position).normalized, out hit, playerToCamDistance))
         {
-            //Debug.Log(hit.collider.gameObject.ToString());
             if(hit.collider.gameObject.GetComponent<PlayerCharacter>() != null)
             {
                 _playerRenderer.material=visibleMaterial;

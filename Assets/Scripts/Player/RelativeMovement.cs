@@ -29,6 +29,15 @@ public class RelativeMovement : MonoBehaviour
     private ControllerColliderHit _contact; //to be precise on edge of objects
 
     private Animator _animator;
+    [SerializeField] private Animator _animatorShadow;
+
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip footStepSound;
+    private float _walkStepSoundLength;
+    private float _runStepSoundLength;
+    private bool _step;
+
+    [SerializeField] private AudioClip jumpSound;
 
 
     private void Awake() {
@@ -49,6 +58,11 @@ public class RelativeMovement : MonoBehaviour
         burstEffect.SetActive(false);
 
         _animator = GetComponent<Animator>();
+
+        _audioSource = GetComponent<AudioSource>();
+        _step = true;
+        _walkStepSoundLength = 0.336f;
+        _runStepSoundLength = 0.261f;
     }
 
     // Update is called once per frame
@@ -83,16 +97,25 @@ public class RelativeMovement : MonoBehaviour
                 hitGround = hit.distance <= check;
             }
 
+            
+            if(_charController.velocity.magnitude > 1f && _step && !_isJumping){
+                _audioSource.PlayOneShot(footStepSound);
+                StartCoroutine(WaitForFootSteps(_charController.velocity.magnitude));
+            }
             _animator.SetFloat("Speed", movement.magnitude);
+            _animatorShadow.SetFloat("Speed", movement.magnitude);
 
+            // player is hitting the floor
             if (hitGround) {
                 if (Input.GetButtonDown("Jump")){
                     _vertSpeed = jumpSpeed;
                     _canBurstDrive = true;
+                    _audioSource.PlayOneShot(jumpSound);
                 } else {
                     _vertSpeed = minFall;
                     _isJumping=false;
                     _animator.SetBool("Jumping",false);
+                    _animatorShadow.SetBool("Jumping",false);
                 }
             } else {
                 _vertSpeed += gravity * 5 * Time.deltaTime;
@@ -102,6 +125,7 @@ public class RelativeMovement : MonoBehaviour
 
                 _isJumping=true;
                 _animator.SetBool("Jumping",true);
+                _animatorShadow.SetBool("Jumping",true);
 
                 if (Input.GetKeyDown(KeyCode.Space) && _canBurstDrive)
                 {
@@ -109,6 +133,7 @@ public class RelativeMovement : MonoBehaviour
                     {
                         StartCoroutine(BurstDriveCoroutine(movement));
                         _canBurstDrive = false;
+                        _audioSource.PlayOneShot(jumpSound);
                     }
                 }
 
@@ -118,6 +143,7 @@ public class RelativeMovement : MonoBehaviour
                         movement = _contact.normal * _moveSpeed;
                         _isJumping=false;
                         _animator.SetBool("Jumping",false);
+                        _animatorShadow.SetBool("Jumping",false);
                     } else {
                         movement += _contact.normal * _moveSpeed * 10;
                     }
@@ -148,6 +174,12 @@ public class RelativeMovement : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
         _contact = hit;
+    }
+
+    private IEnumerator WaitForFootSteps(float movementSpeed){
+        _step = false;
+        yield return new WaitForSeconds(movementSpeed>7?_runStepSoundLength:_walkStepSoundLength);
+        _step = true;
     }
 
     private void OnSpeedChanged(float value) {

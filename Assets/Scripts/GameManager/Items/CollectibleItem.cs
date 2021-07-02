@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollectibleItem : MonoBehaviour
 {
     [SerializeField] private string itemName;
+
+    //add item
     private void OnTriggerEnter(Collider other) {
         if(other.GetComponent<CharacterController>()){
             Debug.Log("Consumed: " + itemName);

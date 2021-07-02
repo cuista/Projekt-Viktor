@@ -71,12 +71,12 @@ public class DroneAI : MonoBehaviour, IEnemy
             {
                 GameObject hitOverlapSphere = hitCollider.transform.gameObject;
                 // check if player is within range
-                if(hitOverlapSphere.GetComponent<PlayerCharacter>() != null)
+                if(hitOverlapSphere.tag == "Player")
                 {
                     _isFollowing = true;
                     RaycastHit hitLinecast;
                     // if there are NO obstacles between this enemy and player
-                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.GetComponent<PlayerCharacter>() != null)
+                    if(Physics.Linecast(transform.position, hitOverlapSphere.transform.position, out hitLinecast) && hitLinecast.transform.gameObject.tag == "Player")
                     {
                         Vector3 direction = (hitOverlapSphere.transform.position - transform.position).normalized;
                         Quaternion toRotation = Quaternion.LookRotation(direction);
@@ -145,6 +145,7 @@ public class DroneAI : MonoBehaviour, IEnemy
                 }       
             }
 
+            //avoid walls and check for patrol position or player distance
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.SphereCast(ray,0.75f,out hit)){
@@ -154,7 +155,7 @@ public class DroneAI : MonoBehaviour, IEnemy
                     float patrolAngle=Random.Range(-110,110);
                     transform.Rotate(0,patrolAngle, 0);
                 }
-                else if(Vector3.Distance(transform.position, _defaultPosition) > range)
+                else if(Vector3.Distance(transform.position, _defaultPosition) > range || Vector3.Distance(transform.position, DontDestroyOnLoadManager.GetPlayer().gameObject.transform.position) < 5)
                 {
                     if(_isFollowing)
                     {
@@ -168,9 +169,9 @@ public class DroneAI : MonoBehaviour, IEnemy
             }
         }
 
+        //Start shooting at player
         if(_canShoot)
         {
-            //Debug.Log(_canShoot + " " + _shootTimer);
             _shootTimer += Time.deltaTime;
             if(_shootTimer > fireDelay)
             {
@@ -215,13 +216,16 @@ public class DroneAI : MonoBehaviour, IEnemy
     }
 
     private IEnumerator Shoot() {
-        for(int i=0; i<3; i++)
+        if(!GameEvent.isPaused)
         {
-            GameObject bullet=Instantiate(bulletPrefab) as GameObject;
-            bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*2.5f);
-            bullet.transform.LookAt(_targetPosition);
+            for(int i=0; i<3; i++)
+            {
+                GameObject bullet=Instantiate(bulletPrefab) as GameObject;
+                bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*2.5f);
+                bullet.transform.LookAt(_targetPosition);
 
-            yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
 }

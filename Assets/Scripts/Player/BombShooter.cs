@@ -21,6 +21,8 @@ public class BombShooter : MonoBehaviour
 
     [SerializeField] public GameObject shield;
     [SerializeField] public Slider shieldSlider;
+    private MeshRenderer _shieldMeshRenderer;
+    private GameObject _shieldEffect;
     public bool hasShield = false;
     public float shieldDuration = 5f;
     private bool _canUseShield = true;
@@ -30,6 +32,14 @@ public class BombShooter : MonoBehaviour
     private const float _minimumHeldDuration = 0.17f;
     private float _bombButtonPressedTime = 0;
     private bool _bombButtonHeld = false;
+
+    private AudioSource _audioSource;
+
+    [SerializeField] private AudioClip plantBombSound;
+    [SerializeField] private AudioClip swampSpecialBombSound;
+    [SerializeField] private AudioClip shieldSound;
+    [SerializeField] private AudioClip rechargeShieldSound;
+    [SerializeField] private AudioClip shieldReadySound;
 
     void Awake() {
         Messenger<Bomb>.AddListener(GameEvent.BOMBS_DETONATED_BECAUSE_ENEMY_DEATH, OnBombsDetonateBecauseEnemyDeath);
@@ -45,8 +55,6 @@ public class BombShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        //_camera = GetComponentInChildren<Camera>(); //Prima controlla il chiamante e dopo inizia a controllare i figli (restituisce il primo che trova)
-
         _bombsCapacity=2;
         _bombsPlanted=new List<GameObject>(_bombsCapacity);
         Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
@@ -57,7 +65,12 @@ public class BombShooter : MonoBehaviour
 
         _currentSpecialBomb = 0;
 
-        shield.SetActive(false);
+        _shieldMeshRenderer = shield.GetComponent<MeshRenderer>();
+        _shieldMeshRenderer.enabled = false;
+        _shieldEffect = shield.transform.GetChild(0).gameObject;
+        _shieldEffect.SetActive(false);
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -90,6 +103,7 @@ public class BombShooter : MonoBehaviour
                                 _bombsPlanted.Add(bomb);
                                 _bombsPlantedCount++;
                                 Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED,-1);
+                                _audioSource.PlayOneShot(plantBombSound);
                             }
                         }
                     }
@@ -114,13 +128,13 @@ public class BombShooter : MonoBehaviour
                             _bombsPlanted.Add(bomb);
                             _bombsPlantedCount++;
                             Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, -1);
+                            _audioSource.PlayOneShot(plantBombSound);
                         }
                     }
                 }
             } else if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) {
                 // Player has held the button for more than _minimumHeldDuration, consider it "held"
                 if (Time.timeSinceLevelLoad - _bombButtonPressedTime > _minimumHeldDuration) {
-                    //Debug.Log("Button helded");
                     //sight.gameObject.SetActive(true); //--> I can't disable it because the line won't work
                     sightOnTop.GetComponent<MeshRenderer>().enabled=true;
                     sight.GetComponent<MeshCollider>().enabled=true;
@@ -131,15 +145,13 @@ public class BombShooter : MonoBehaviour
                 {
                     Vector3 point = new Vector3(bomb.transform.position.x, bomb.transform.position.y, bomb.transform.position.z);
                     Collider[] hitColliders = Physics.OverlapSphere(point, bombsRadius);
-                    foreach (var hitCollider in hitColliders) { //out è un passaggio per riferimento
-                        //Debug.Log("Hit " + hit.point); //for DEBUG print of what hitted
+                    foreach (var hitCollider in hitColliders) { //out is a passage by reference
 
                         GameObject hitObject = hitCollider.transform.gameObject;
                         ReactiveObject target = hitObject.GetComponent<ReactiveObject>();
                         if(target != null){
                             if(bomb.tag != "SpecialBomb")
                             {
-                                Debug.Log("Target hit");
                                 target.ReactToHits(bomb.GetComponent<Bomb>().GetCounter());
                                 //adding explosion force
                                 target.AddExplosionForce(1000f, bomb.transform.position, bombsRadius);
@@ -159,11 +171,11 @@ public class BombShooter : MonoBehaviour
                 }
                 _bombsPlanted.Clear();
                 Messenger.Broadcast(GameEvent.BOMBS_DETONATED);
-            } else if (Input.GetKeyUp(KeyCode.Mouse2)){
+            } else if (Input.GetKeyUp(KeyCode.Mouse2)){ //adding special bomb
                 Vector3 point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 Ray ray = new Ray(transform.position,-transform.up);
                 RaycastHit hitInfo;
-                if (Physics.Raycast(ray, out hitInfo)) { //out è un passaggio per riferimento
+                if (Physics.Raycast(ray, out hitInfo)) { //out is a passage by reference
                     if(_bombsPlantedCount < _bombsCapacity)
                     {
                         if(!IncrementIfOverlappingBomb(hitInfo.point) && !GetComponent<RelativeMovement>().isJumping()) {
@@ -180,6 +192,7 @@ public class BombShooter : MonoBehaviour
                                 _bombsPlantedCount++;
                                 Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, _currentSpecialBomb);
                                 Managers.Inventory.ConsumeSpecialBomb(_currentSpecialBomb);
+                                _audioSource.PlayOneShot(plantBombSound);
                             }
                         }
                     }
@@ -191,15 +204,16 @@ public class BombShooter : MonoBehaviour
             {
                 _currentSpecialBomb=MathMod(_currentSpecialBomb-1,specialBombPrefabs.Length);
                 Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
-                Debug.Log("n+: "+_currentSpecialBomb);
+                _audioSource.PlayOneShot(swampSpecialBombSound);
             }
             else if(Input.GetKeyUp(KeyCode.E))
             {
                 _currentSpecialBomb=MathMod(_currentSpecialBomb+1,specialBombPrefabs.Length);
                 Messenger<int>.Broadcast(GameEvent.SPECIALBOMB_CHANGED,_currentSpecialBomb);
-                Debug.Log("n-: "+_currentSpecialBomb);
+                _audioSource.PlayOneShot(swampSpecialBombSound);
             }
 
+            //activate shield
             if(Input.GetKeyUp(KeyCode.F) && _canUseShield)
             {
                 StartCoroutine(UseShield());
@@ -207,16 +221,17 @@ public class BombShooter : MonoBehaviour
 
             if(Managers.Inventory.GetItemCount("E-Chip") != 0)
             {
-                _bombsCapacity = MathMod(_bombsCapacity+1,_maxCapacity+1);
+                _bombsCapacity = (_bombsCapacity+1<=_maxCapacity)?_bombsCapacity+1:_maxCapacity;
                 Managers.Inventory.ConsumeItem("E-Chip");
                 Messenger<int>.Broadcast(GameEvent.BOMBS_CAPACITY_CHANGED, _bombsCapacity);
             }
         } else {
-            _bombButtonHeld=true; //FIXME ??? fixed bug on settings popup close, viktor putted a bomb
+            _bombButtonHeld=true;
         }
 
     }
 
+    //if the new bomb is closer to another, it increase the counter of that bomb
     private bool IncrementIfOverlappingBomb(Vector3 point){
         foreach(GameObject bombPlanted in _bombsPlanted) { 
             Bomb bomb = bombPlanted.GetComponent<Bomb>();
@@ -224,6 +239,7 @@ public class BombShooter : MonoBehaviour
                 bomb.AddBombOver();
                 _bombsPlantedCount++;
                 Messenger<int>.Broadcast(GameEvent.BOMB_PLANTED, -1);
+                _audioSource.PlayOneShot(plantBombSound);
                 return true;
             }
         }
@@ -244,20 +260,31 @@ public class BombShooter : MonoBehaviour
 
     private IEnumerator UseShield()
     {
+        _shieldMeshRenderer.enabled = true;
+        _shieldEffect.SetActive(true);
+
+        AudioSource shieldAudioSource = shield.GetComponent<AudioSource>();
+        shieldAudioSource.clip=shieldSound;
+        shieldAudioSource.Play();
+
         float totalTime = 0;
         hasShield = true;
         _canUseShield = false;
-        shield.SetActive(true);
         while(totalTime <= shieldDuration)
         {
             shieldSlider.value = 1 - (totalTime / shieldDuration);
             totalTime += Time.deltaTime;
             yield return null;
         }
-        shield.SetActive(false);
         hasShield = false;
 
+        _shieldMeshRenderer.enabled = false;
+        _shieldEffect.SetActive(false);
+        shieldAudioSource.Stop();
+
         // Recharge shield
+        shieldAudioSource.clip=rechargeShieldSound;
+        shieldAudioSource.Play();
         totalTime = 0;
         while(totalTime <= shieldRecoveryTime)
         {
@@ -266,6 +293,9 @@ public class BombShooter : MonoBehaviour
             yield return null;
         }
         _canUseShield = true;
+
+        shieldAudioSource.Stop();
+        shieldAudioSource.PlayOneShot(shieldReadySound);
     }
 
     private int MathMod(int a, int b){

@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Controller\UI\SettingsPopup.cs" />
      <Compile Include="Assets\Scripts\Controller\UI\UIController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Enemies\DoctorAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\DroneAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyCharacter.cs" />
      <Compile Include="Assets\Scripts\Enemies\FollowingAI.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\Scripts\Enemies\ReactiveEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\TurretAI.cs" />
      <Compile Include="Assets\Scripts\Enemies\WanderingAI.cs" />
+     <Compile Include="Assets\Scripts\ExplosionClipSwitch.cs" />
      <Compile Include="Assets\Scripts\FlamesTrigger.cs" />
      <Compile Include="Assets\Scripts\GameManager\IGameManager.cs" />
      <Compile Include="Assets\Scripts\GameManager\InventoryManager.cs" />
@@ -78,6 +80,7 @@
      <Compile Include="Assets\Scripts\Player\Sight\SightTarget.cs" />
      <Compile Include="Assets\Scripts\Player\Sight\Spin.cs" />
      <Compile Include="Assets\Scripts\ReactiveObject.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Credits\GameCredits.cs" />
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Scripts\Scenes\DontDestroyOnLoadManager.cs" />
      <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\AudioManager.cs" />
@@ -86,14 +89,23 @@
      <Compile Include="Assets\Scripts\Scenes\INIT_ProjektViktor\SkipMessage.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\CameraMenu.cs" />
      <Compile Include="Assets\Scripts\Scenes\InitialMenu\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\AdaptToAudioManager.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\EndLevel_0.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\SceneController_0.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\TriggerDefence.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\TriggerEnemyLock.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\TriggerFinishLevel.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\TriggerFirstTarget.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\TriggerItems.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_0\TriggerSecondTarget.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_1\EndLevel_1.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_1\SceneController_1.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_2\EndLevel_2.cs" />
      <Compile Include="Assets\Scripts\Scenes\Levels\Level_2\SceneController_2.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Levels\Level_2\TriggerFinalBoss.cs" />
      <Compile Include="Assets\Scripts\Scenes\LoadingScenesManager.cs" />
      <Compile Include="Assets\Scripts\Scenes\SimpleMenu\SimpleMenu.cs" />
+     <Compile Include="Assets\Scripts\Scenes\VR_Mode\SceneController_VR_Mode.cs" />
      <Compile Include="Assets\Scripts\Targets\ReactiveTarget.cs" />
      <Compile Include="Assets\Shaders\Wireframe\Examples\Scripts\AutoRotate.cs" />
      <Compile Include="Assets\Shaders\Wireframe\ImageEffect\WireframeImageEffect.cs" />

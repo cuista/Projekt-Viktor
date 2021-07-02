@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class DontDestroyOnLoadManager
 {
-
+    //Permanent never be destroyed, ddol go through the scene but can be destroyed
     private static List<GameObject> _permanentObjects = new List<GameObject>();
     private static List<GameObject> _ddolObjects = new List<GameObject>();
 
@@ -18,6 +18,7 @@ public static class DontDestroyOnLoadManager
         _ddolObjects.Add(go);
     }
 
+    //destroy all ddol
     public static void DestroyAll(){
         foreach(var go in _ddolObjects){
             if(go != null)
@@ -67,6 +68,24 @@ public static class DontDestroyOnLoadManager
         {
             if(go.tag == "SkipMessage")
                 return go;
+        }
+        return null;
+    }
+
+    public static GameObject GetController(){
+        foreach(var go in _ddolObjects)
+        {
+            if(go.tag == "Controller")
+                return go;
+        }
+        return null;
+    }
+
+    public static AudioManager GetAudioManager(){
+        foreach(var go in _permanentObjects)
+        {
+            if(go.tag == "AudioManager")
+                return go.GetComponent<AudioManager>();
         }
         return null;
     }

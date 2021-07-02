@@ -26,6 +26,7 @@ public class SceneControllerN : MonoBehaviour
     {
         _enemies=new GameObject[enemiesCount];
 
+        //Instantiate enemy for debugging
         for(int i=0; i<_enemies.Length; i++){
             if(_enemies[i]==null){
                 if(i==_enemies.Length-1){
@@ -77,7 +78,7 @@ public class SceneControllerN : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frame and instantiate an enemy for every dead
     void Update()
     {
         for(int i=0; i<_enemies.Length; i++){

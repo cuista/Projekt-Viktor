@@ -28,6 +28,7 @@ public class SpecialEffectController : MonoBehaviour
         _specialEffectController.StartCoroutine(GravitationalAttraction(enemy, graviton));
     }
 
+    //For a period of time block the enemy movement
     private static IEnumerator Paralyze(EnemyCharacter enemy){
         GameObject lightingOnEnemy = Instantiate(_specialEffectController.lightingEffect, enemy.transform.position, enemy.transform.rotation);
         lightingOnEnemy.transform.parent = enemy.transform;
@@ -46,6 +47,7 @@ public class SpecialEffectController : MonoBehaviour
         Destroy(lightingOnEnemy);
     }
 
+    //For a period set the enmy on fire
     private static IEnumerator SetOnFire(EnemyCharacter enemy){
         GameObject flamesOnEnemy = Instantiate(_specialEffectController.flamesEffect, enemy.transform.position, enemy.transform.rotation);
         flamesOnEnemy.transform.parent = enemy.transform;
@@ -58,6 +60,7 @@ public class SpecialEffectController : MonoBehaviour
         }
     }
 
+    //For a period of time make the enmy move toward the gravitation point
     private static IEnumerator GravitationalAttraction(EnemyCharacter enemy, Vector3 graviton){
         GameObject gravitonOnEnemy = Instantiate(_specialEffectController.gravitonEffect, enemy.transform.position, enemy.transform.rotation);
         gravitonOnEnemy.transform.parent = enemy.transform;

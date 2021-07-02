@@ -52,13 +52,17 @@ public class WanderingAI : MonoBehaviour, IEnemy
             RaycastHit hit;
             if (Physics.SphereCast(ray,0.75f,out hit)){
                 GameObject hitObject = hit.transform.gameObject;
-                if(hitObject.GetComponent<PlayerCharacter>()){
+                if(hitObject.tag == "Player"){
                     if(_bullet==null){
+                        if(!GameEvent.isPaused)
+                        {
                         _bullet=Instantiate(bulletPrefab) as GameObject;
                         _bullet.transform.position=(bulletCreationPoint!=null)?bulletCreationPoint.transform.position:transform.TransformPoint(Vector3.forward*1.5f);
                         _bullet.transform.rotation=transform.rotation;
+                        }
                     }
-                }else if(hit.distance < obstacleRange){
+                }else if(hit.distance < obstacleRange) //avoid walls
+                {
                     float angle=Random.Range(-110,110);
                     transform.Rotate(0,angle, 0);
                 }

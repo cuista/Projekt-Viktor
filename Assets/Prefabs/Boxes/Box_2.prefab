@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4098029024131471789}
   - component: {fileID: 4082223742683563409}
   - component: {fileID: 4071964205848655423}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_Crate_Military_02_Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4072272326635118343}
   - component: {fileID: 4050485812879188857}
   - component: {fileID: 8772877056707922012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Box_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
